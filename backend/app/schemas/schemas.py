@@ -167,6 +167,12 @@ class EvidenceResponse(BaseModel):
     verified_at: Optional[datetime]
     is_valid: bool
     created_at: datetime
+    search_url: str = ""
+    search_label: str = ""
+    search_term: str = ""
+    link_kind: str = "unavailable"
+    link_label: str = ""
+    source_checked: bool = False
 
     class Config:
         from_attributes = True

@@ -9,8 +9,9 @@ from sqlalchemy.orm import Session
 
 from app.services.source_links import source_link, present_card, search_link
 from app.services.source_research import SourceResearchService
-from app.api.terminology import auto_research_term, _term_to_response
+from app.api.terminology import auto_research_term, _term_to_response, add_evidence, list_evidence
 from app.models.database import Base, TerminologyEntry, SourceEvidence
+from app.schemas.schemas import EvidenceCreate, EvidenceResponse
 
 
 OFFICIAL_GROUP = "00000000000000000000000000000000"
@@ -23,6 +24,28 @@ ENTRY = {
 
 
 class SourceLinksTests(unittest.TestCase):
+    def test_each_registered_source_uses_the_current_term_including_special_characters(self):
+        sources = [
+            ("https://www.termonline.cn/search?searchText=old", "searchText", True),
+            ("https://www.nature.com", "q", False),
+            ("https://www.iso.org/obp", "q", False),
+            ("https://ieeexplore.ieee.org", "queryText", False),
+            ("https://dl.acm.org", "AllField", False),
+            ("https://www.ncbi.nlm.nih.gov/mesh", "term", False),
+        ]
+        terms = [
+            ("水力压裂", "hydraulic fracturing"),
+            ("注意力机制", "attention mechanism"),
+            ("生命周期评价", "Life Cycle Assessment (LCA)"),
+            ("钠离子与α相", "Na+ & α-phase / 50%"),
+        ]
+        for source, parameter, chinese in sources:
+            for term, translation in terms:
+                with self.subTest(source=source, term=term):
+                    card = present_card({"source_url": source, "recommended_translation": translation}, term)
+                    self.assertEqual(parse_qs(urlsplit(card["search_url"]).query)[parameter], [term if chinese else translation])
+                    self.assertEqual(card["search_term"], term if chinese else translation)
+
     def test_primary_button_opens_prefilled_source_search_even_when_entry_is_known(self):
         card = present_card({
             "source_url": "https://www.termonline.cn/wordDetail?termName=word&subject=123&base=1",
@@ -119,6 +142,27 @@ class ResearchTests(unittest.IsolatedAsyncioTestCase):
 
 
 class PersistenceTests(unittest.IsolatedAsyncioTestCase):
+    async def test_manual_evidence_links_work_immediately_and_after_reload_for_each_term(self):
+        engine = create_engine("sqlite:///:memory:")
+        Base.metadata.create_all(engine)
+        with Session(engine) as db:
+            for source_term in ("水力压裂", "注意力机制", "生命周期评价"):
+                with self.subTest(term=source_term):
+                    term = TerminologyEntry(project_id=1, source_term=source_term)
+                    db.add(term)
+                    db.commit()
+                    # A pasted URL may still contain a previous search term.
+                    response = add_evidence(term.id, EvidenceCreate(
+                        source_level=1, source_url="https://www.termonline.cn/search?searchText=old",
+                        candidate_translation="candidate",
+                    ), db)
+                    immediate = EvidenceResponse.model_validate(response).model_dump()
+                    reloaded = _term_to_response(term, db)
+                    listed = list_evidence(term.id, db)
+                    for evidence in (immediate, reloaded["evidence"][0], listed[0], reloaded["cards"][0]):
+                        self.assertEqual(parse_qs(urlsplit(evidence["search_url"]).query), {"searchText": [source_term]})
+        engine.dispose()
+
     async def test_research_survives_reload_without_overwriting_user_decision_or_duplicate_records(self):
         engine = create_engine("sqlite:///:memory:")
         Base.metadata.create_all(engine)

@@ -186,14 +186,18 @@ def add_evidence(term_id: int, data: EvidenceCreate, db: Session = Depends(get_d
 
     db.commit()
     db.refresh(evidence)
-    return evidence
+    return _evidence_to_response(evidence, term.source_term)
 
 
 @router.get("/{term_id}/evidence", response_model=List[EvidenceResponse], summary="获取术语所有证据")
 def list_evidence(term_id: int, db: Session = Depends(get_db)):
-    return db.query(SourceEvidence).filter(
+    term = db.query(TerminologyEntry).filter(TerminologyEntry.id == term_id).first()
+    if not term:
+        raise HTTPException(status_code=404, detail="术语不存在")
+    evidences = db.query(SourceEvidence).filter(
         SourceEvidence.term_id == term_id
     ).order_by(SourceEvidence.source_level).all()
+    return [_evidence_to_response(e, term.source_term) for e in evidences]
 
 
 @router.put("/evidence/{evidence_id}/verify", summary="确认/标记证据有效性")
@@ -231,6 +235,15 @@ def confirm_term(
 # ============================================================
 # 辅助函数
 # ============================================================
+
+def _evidence_to_response(evidence: SourceEvidence, term: str) -> dict:
+    """Use the same current-term links on create, list, and detail responses."""
+    result = EvidenceResponse.model_validate(evidence).model_dump()
+    result.update(source_link(evidence.source_url or "", term, evidence.candidate_translation or ""))
+    result.update(search_link(evidence.source_url or "", term, evidence.candidate_translation or ""))
+    result["source_checked"] = bool(evidence.verified_at and evidence.is_valid)
+    return result
+
 
 def _term_to_response(term: TerminologyEntry, db: Session) -> dict:
     evidences = db.query(SourceEvidence).filter(
@@ -285,22 +298,5 @@ def _term_to_response(term: TerminologyEntry, db: Session) -> dict:
         "cards": cards,
         "decomposition": decomposition,
         "research_summary": parsed_meta,
-        "evidence": [
-            {
-                "id": e.id,
-                "source_level": e.source_level,
-                "source_type": e.source_type,
-                "source_name": e.source_name,
-                **source_link(e.source_url or "", term.source_term, e.candidate_translation or ""),
-                **search_link(e.source_url or "", term.source_term, e.candidate_translation or ""),
-                "source_checked": bool(e.verified_at and e.is_valid),
-                "evidence_text": e.evidence_text,
-                "candidate_translation": e.candidate_translation,
-                "published_date": e.published_date,
-                "is_valid": e.is_valid,
-                "verified_at": e.verified_at,
-                "created_at": e.created_at,
-            }
-            for e in evidences
-        ],
+        "evidence": [_evidence_to_response(e, term.source_term) for e in evidences],
     }
