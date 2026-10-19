@@ -1,10 +1,11 @@
 """
 权威信源查证服务 (Source Research Service)
 遵循《翻译质量保障流程总表》信源优先级：
-一级信源：既有清单中的政府、机构、术语库等官方来源
-二级信源：既有清单中的学术、媒体等来源，需独立交叉核对
-三级信源：既有清单中的弱源/禁用源，不作译法证据
-完整清单及具体规则统一由 source_catalog 读取。
+一级信源：官方词典、权威机构定义（如全国科学技术名词审定委员会、IUPAC等）
+二级信源：国际/国家行业标准（ISO、IEC、GB/T、ASTM）
+三级信源：权威专业期刊（Nature, Science, IEEE, ACM, Elsevier）
+四级信源：权威媒体、高校教材
+五级信源：专业参考资料
 
 提供：
 1. 术语学科领域自动识别
@@ -28,9 +29,62 @@ logger = logging.getLogger(__name__)
 # 专业领域预设权威信源库 (Source Repositories)
 # ============================================================
 
-from app.services.source_catalog import SOURCES
-
-AUTHORITY_SOURCES_REGISTRY = SOURCES
+AUTHORITY_SOURCES_REGISTRY = [
+    {
+        "id": "term_online",
+        "name": "全国科学技术名词审定委员会 (TermOnline)",
+        "source_level": 1,
+        "source_type": "国家权威机构名词库",
+        "domain": "通用科技",
+        "url": "https://www.termonline.cn",
+        "reliability": "最高（国家规范名词）"
+    },
+    {
+        "id": "iso_standards",
+        "name": "ISO 国际标准化组织术语库 (ISO OBP)",
+        "source_level": 2,
+        "source_type": "国际标准",
+        "domain": "工程技术/通用",
+        "url": "https://www.iso.org/obp",
+        "reliability": "高（国际标准定义）"
+    },
+    {
+        "id": "ieee_explore",
+        "name": "IEEE Xplore Standards Dictionary",
+        "source_level": 2,
+        "source_type": "行业权威标准",
+        "domain": "电子信息/计算机/通信",
+        "url": "https://ieeexplore.ieee.org",
+        "reliability": "高（行业权威定义）"
+    },
+    {
+        "id": "nature_terms",
+        "name": "Nature Research Subject Areas & Glossaries",
+        "source_level": 3,
+        "source_type": "顶级学术期刊",
+        "domain": "综合科学/生物医药/化学/物理",
+        "url": "https://www.nature.com",
+        "reliability": "高（同行评议顶级文献）"
+    },
+    {
+        "id": "acm_dl",
+        "name": "ACM Digital Library Computing Classification System",
+        "source_level": 3,
+        "source_type": "专业学会期刊与分类体系",
+        "domain": "计算机科学与技术",
+        "url": "https://dl.acm.org",
+        "reliability": "高（学术共同体共识）"
+    },
+    {
+        "id": "ncbi_mesh",
+        "name": "NCBI MeSH (Medical Subject Headings)",
+        "source_level": 1,
+        "source_type": "国家医学图书馆主题词表",
+        "domain": "生物医药/临床医学",
+        "url": "https://www.ncbi.nlm.nih.gov/mesh",
+        "reliability": "最高（医学国际通用标准）"
+    }
+]
 
 # 常见领域关键词映射
 DOMAIN_KEYWORDS = {
@@ -58,11 +112,13 @@ class SourceResearchService:
         return "通用学术"
 
     def get_registered_sources_for_domain(self, domain: str) -> List[Dict[str, Any]]:
-        """按优先级返回完整可用清单，避免按领域标签漏掉来源。"""
-        # The full configured list remains available; a domain label must not
-        # silently exclude government, university, or specialist repositories.
-        return sorted((dict(src) for src in AUTHORITY_SOURCES_REGISTRY if not src["blocked"]),
-                      key=lambda x: x["source_level"])
+        """按优先级升序返回适用于该领域的权威信源表"""
+        matched = []
+        for src in AUTHORITY_SOURCES_REGISTRY:
+            if domain in src["domain"] or "通用" in src["domain"]:
+                matched.append(src)
+        # 按照信源等级 1 级 -> 2 级 -> 3 级排序
+        return sorted(matched, key=lambda x: x["source_level"])
 
     # ============================================================
     # 4步渐进式查证流水线实现

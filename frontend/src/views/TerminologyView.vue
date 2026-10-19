@@ -72,8 +72,8 @@
         </el-table-column>
         <el-table-column label="操作" width="220" fixed="right">
           <template #default="{ row }">
-            <el-button size="small" @click="triggerAutoResearch(row)" link type="warning" :loading="researchingIds.includes(row.id)">自动查证</el-button>
-            <el-button size="small" @click="openDetail(row)" link type="primary">信源与证据</el-button>
+            <el-button size="small" @click="triggerAutoResearch(row)" link type="warning" :loading="researchingIds.includes(row.id)">逐级查证</el-button>
+            <el-button size="small" @click="openDetail(row)" link type="primary">查看证据</el-button>
             <el-button size="small" @click="deleteTerm(row)" link type="danger">删除</el-button>
           </template>
         </el-table-column>
@@ -168,51 +168,13 @@
           </table>
         </div>
 
-        <section class="source-catalog mb-16" v-loading="sourcesLoading">
-          <div class="catalog-heading">
-            <div>
-              <strong>按级别查找信源</strong>
-              <p>先核对相关一级源；一级源无依据时，再用至少两个独立二级源交叉核对。三级弱源不作译法证据。</p>
-            </div>
-            <span class="catalog-count">{{ sources.length }} 类信源</span>
-          </div>
-          <div class="catalog-query">
-            <span>中文：{{ selectedTerm.source_term }}</span>
-            <el-input v-model="searchEnglish" placeholder="英文站检索词：选择候选译法或自行输入" @keyup.enter="loadSources" clearable />
-            <el-button @click="loadSources" :loading="sourcesLoading">更新检索词</el-button>
-          </div>
-          <p class="catalog-note">站内检索会自动带入上方词语。「外部搜索」通过搜索引擎限定该网站，覆盖可能不全；「官网」保留原网站入口。</p>
-          <el-tabs v-model="sourceTier">
-            <el-tab-pane v-for="level in [1, 2, 3]" :key="level" :name="String(level)" :label="`${['', '一级 · 优先', '二级 · 交叉核对', '三级 · 弱源禁用'][level]}（${sources.filter(s => s.source_level === level).length}）`" />
-          </el-tabs>
-          <el-input v-model="sourceFilter" placeholder="筛选信源名称或域名，如：政府、知网、OnePetro" clearable class="mb-12" />
-          <div class="catalog-list">
-            <article v-for="source in visibleSources" :key="source.id" class="catalog-source" :class="{ blocked: source.blocked }">
-              <div class="source-row-title">
-                <strong>{{ source.name }}</strong>
-                <el-tag v-if="source.blocked" size="small" type="danger">不可采信</el-tag>
-                <span v-else class="text-muted">{{ source.origin }}</span>
-              </div>
-              <p v-if="source.notes" class="catalog-note">{{ source.notes }}</p>
-              <div v-for="link in source.links" :key="link.domain" class="catalog-links">
-                <span class="source-domain">{{ link.domain }}</span>
-                <a :href="link.url" target="_blank" rel="noopener noreferrer">官网 ↗</a>
-                <a v-if="link.search_url && !source.blocked" :href="link.search_url" :title="`检索词：${link.search_term}`" target="_blank" rel="noopener noreferrer">{{ link.search_label }}</a>
-              </div>
-              <p v-if="!source.links.length" class="catalog-note">没有可识别域名，不能生成可靠链接，需先确认原始网址。</p>
-            </article>
-            <el-empty v-if="!visibleSources.length && !sourcesLoading" description="没有符合筛选条件的信源" :image-size="45" />
-          </div>
-          <p class="catalog-note">自动读取原文目前接入术语在线；其余链接供打开页面核对，列出入口不表示已检索到证据。既有清单 40 类，另补充 9 类学科信源。</p>
-        </section>
-
         <!-- 权威判断证据卡 (Evidence Cards) -->
         <div class="cards-section mb-16">
           <div class="flex-between mb-12">
             <div>
               <strong style="font-size: 15px;">📋 权威判断证据卡 (Evidence Cards)</strong>
               <div class="text-muted" style="font-size: 12px; margin-top: 2px;">
-                站内检索会带入当前词语；外部搜索已单独标注，搜索结果需打开原文核对。
+                点击链接会在对应信源中搜索此词，打开后直接显示检索结果，无需再次输入。
               </div>
             </div>
             <el-button
@@ -244,7 +206,7 @@
                   type="success"
                   size="small"
                   @click="adoptCard(card.recommended_translation)"
-                  :disabled="!card.recommended_translation || card.match_type === 'core_only' || card.source_blocked"
+                  :disabled="!card.recommended_translation || card.match_type === 'core_only'"
                   :loading="confirming"
                 >
                   <el-icon><Check /></el-icon> 确认采用此译法
@@ -280,8 +242,7 @@
                   <a v-if="card.search_url" :href="card.search_url" :title="`检索词：${card.search_term}`" target="_blank" rel="noopener noreferrer" class="source-external-link">
                     {{ card.search_label }}
                   </a>
-                  <span v-else class="text-muted" style="font-size:12px;">{{ card.search_label || '缺少来源网址，请补充实际出处' }}</span>
-                  <a v-if="card.original_url" :href="card.original_url" target="_blank" rel="noopener noreferrer" class="source-external-link">原始来源 ↗</a>
+                  <span v-else class="text-muted" style="font-size:12px;">此信源暂未接入带词检索</span>
                 </div>
               </div>
             </div>
@@ -330,8 +291,11 @@
               <el-form :model="evidenceForm" label-width="90px" size="small">
                 <el-form-item label="信源等级">
                   <el-select v-model="evidenceForm.source_level" style="width:100%">
-                    <el-option :value="1" label="1级 - 政府/机构/官方术语等优先来源" />
-                    <el-option :value="2" label="2级 - 需独立交叉核对的来源" />
+                    <el-option :value="1" label="1级 - 官方词典/标准机构" />
+                    <el-option :value="2" label="2级 - 行业权威标准" />
+                    <el-option :value="3" label="3级 - 权威专业期刊" />
+                    <el-option :value="4" label="4级 - 知名媒体/教材" />
+                    <el-option :value="5" label="5级 - 其他参考来源" />
                   </el-select>
                 </el-form-item>
                 <el-form-item label="来源类型">
@@ -377,13 +341,12 @@
                     </el-tag>
                   </div>
                   <div class="flex gap-8">
-                    <el-button size="small" link :disabled="ev.source_blocked && !ev.is_valid" @click="verifyEvidence(ev, !ev.is_valid)">
+                    <el-button size="small" link @click="verifyEvidence(ev, !ev.is_valid)">
                       {{ ev.is_valid ? '标记无效' : '标记有效' }}
                     </el-button>
                     <a v-if="ev.search_url" :href="ev.search_url" :title="`检索词：${ev.search_term}`" target="_blank" rel="noopener noreferrer" style="font-size:12px;">
                       {{ ev.search_label }}
                     </a>
-                    <a v-if="ev.original_url" :href="ev.original_url" target="_blank" rel="noopener noreferrer" style="font-size:12px;">原始来源 ↗</a>
                   </div>
                 </div>
                 <div v-if="ev.evidence_text" class="evidence-text">
@@ -391,7 +354,6 @@
                 </div>
                 <div class="evidence-meta">
                   {{ ev.source_type }}
-                  <span v-if="ev.source_blocked" style="color: #b42318;"> · 三级弱源，不可采信</span>
                   <span v-if="!ev.source_checked"> · 历史或人工记录，尚未核对出处</span>
                   <span v-if="ev.published_date"> · {{ ev.published_date }}</span>
                   <span v-if="!ev.is_valid" style="color: #ff4d4f;"> · 已标记无效</span>
@@ -426,35 +388,6 @@ const confirmTranslation = ref('')
 const confirming = ref(false)
 const showEvidenceForm = ref(false)
 const addingEvidence = ref(false)
-const sources = ref<any[]>([])
-const sourcesLoading = ref(false)
-const sourceTier = ref('1')
-const sourceFilter = ref('')
-const searchEnglish = ref('')
-let sourceRequest = 0
-const visibleSources = computed(() => {
-  const filter = sourceFilter.value.trim().toLowerCase()
-  return sources.value.filter(s => String(s.source_level) === sourceTier.value &&
-    (!filter || `${s.name} ${s.domains.join(' ')} ${s.notes || ''}`.toLowerCase().includes(filter)))
-})
-
-const loadSources = async () => {
-  if (!selectedTerm.value) return
-  const request = ++sourceRequest
-  const termId = selectedTerm.value.id
-  sourcesLoading.value = true
-  try {
-    const result = await terminologyApi.sources(termId, searchEnglish.value.trim())
-    if (request === sourceRequest && selectedTerm.value?.id === termId) sources.value = result.sources
-  } catch (e: any) {
-    if (request === sourceRequest) {
-      sources.value = []
-      ElMessage.error('信源清单加载失败：' + e.message)
-    }
-  } finally {
-    if (request === sourceRequest) sourcesLoading.value = false
-  }
-}
 
 const confirmedCount = computed(() => terms.value.filter(t => t.status === 'confirmed').length)
 const pendingCount = computed(() => terms.value.filter(t => t.status === 'pending').length)
@@ -493,10 +426,6 @@ const triggerAutoResearch = async (term: any) => {
       if (selectedTerm.value && selectedTerm.value.id === term.id) {
         selectedTerm.value = res.term
         confirmTranslation.value = res.term.confirmed_translation || (res.term.candidate_translations?.[0] || '')
-        if (!searchEnglish.value) {
-          searchEnglish.value = res.term.confirmed_translation || res.term.candidate_translations?.[0] || ''
-          await loadSources()
-        }
       }
       if (res.term.research_summary?.is_exact) {
         ElMessage.success(`已找到「${term.source_term}」的官方词条，信源链接会打开该词的检索结果`)
@@ -546,13 +475,8 @@ const addTerm = async () => {
 const openDetail = async (term: any) => {
   selectedTerm.value = await terminologyApi.get(term.id) as any
   confirmTranslation.value = selectedTerm.value.confirmed_translation || (selectedTerm.value.candidate_translations?.[0] || '')
-  searchEnglish.value = confirmTranslation.value
-  sourceTier.value = '1'
-  sourceFilter.value = ''
-  sources.value = []
   showDetailDialog.value = true
   showEvidenceForm.value = false
-  await loadSources()
 }
 
 const adoptCard = async (cand: string) => {
@@ -635,33 +559,6 @@ onMounted(loadTerms)
 </script>
 
 <style scoped>
-.source-catalog {
-  padding: 20px;
-  border: 1px solid #e5e5e7;
-  border-radius: 16px;
-  background: #fafafa;
-}
-.catalog-heading, .source-row-title, .catalog-links, .catalog-query {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.catalog-heading { justify-content: space-between; align-items: flex-start; }
-.catalog-heading p { color: #6e6e73; font-size: 12px; max-width: 580px; line-height: 1.6; }
-.catalog-count { color: #6e6e73; font-size: 12px; white-space: nowrap; }
-.catalog-query { margin: 14px 0 8px; font-size: 12px; }
-.catalog-query .el-input { flex: 1; min-width: 220px; }
-.catalog-note { font-size: 12px; color: #6e6e73; line-height: 1.6; margin: 6px 0; }
-.catalog-list { max-height: 340px; overflow-y: auto; padding-right: 4px; }
-.catalog-source { background: white; padding: 14px; border: 1px solid #e5e5e7; border-radius: 12px; margin-bottom: 8px; }
-.source-row-title { font-size: 13px; }
-.source-row-title .text-muted { font-size: 11px; }
-.catalog-links { font-size: 12px; margin-top: 8px; }
-.catalog-links a { color: #0066cc; text-decoration: none; }
-.catalog-links a:hover { text-decoration: underline; }
-.source-domain { min-width: 135px; color: #6e6e73; overflow-wrap: anywhere; }
-.catalog-source.blocked { background: #fdf9f9; }
 .source-pending {
   margin: 16px 0;
   color: #8a6115;

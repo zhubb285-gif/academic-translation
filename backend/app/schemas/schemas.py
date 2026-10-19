@@ -173,9 +173,6 @@ class EvidenceResponse(BaseModel):
     link_kind: str = "unavailable"
     link_label: str = ""
     source_checked: bool = False
-    search_kind: str = ""
-    source_blocked: bool = False
-    original_url: str = ""
 
     class Config:
         from_attributes = True

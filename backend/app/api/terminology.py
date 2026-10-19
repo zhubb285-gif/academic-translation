@@ -17,17 +17,8 @@ from app.schemas.schemas import (
 )
 from app.services.source_research import source_research_service
 from app.services.source_links import present_card, source_link, search_link
-from app.services.source_catalog import find_source, source_catalog
 
 router = APIRouter(prefix="/terminology", tags=["术语管理"])
-
-
-@router.get("/{term_id}/sources", summary="按术语生成完整一级到三级信源检索清单")
-def get_term_sources(term_id: int, candidate: str = "", db: Session = Depends(get_db)):
-    term = db.query(TerminologyEntry).filter(TerminologyEntry.id == term_id).first()
-    if not term:
-        raise HTTPException(status_code=404, detail="术语不存在")
-    return {"term": term.source_term, "sources": source_catalog(term.source_term, candidate)}
 
 
 @router.post("/project/{project_id}", response_model=TermResponse, summary="创建术语条目")
@@ -90,7 +81,7 @@ def delete_term(term_id: int, db: Session = Depends(get_db)):
     return {"success": True}
 
 
-@router.post("/{term_id}/auto-research", summary="自动读取术语在线词条，区分完整与核心词证据")
+@router.post("/{term_id}/auto-research", summary="依据信源优先级自动检索权威证据")
 async def auto_research_term(term_id: int, db: Session = Depends(get_db)):
     term = db.query(TerminologyEntry).filter(TerminologyEntry.id == term_id).first()
     if not term:
@@ -184,14 +175,7 @@ def add_evidence(term_id: int, data: EvidenceCreate, db: Session = Depends(get_d
     if not term:
         raise HTTPException(status_code=404, detail="术语不存在")
 
-    source = find_source(data.source_url or "", data.source_name or "")
-    if source and source["blocked"]:
-        raise HTTPException(status_code=400, detail="该网站属于三级弱源，不能添加为译法证据，请使用一级或二级来源")
-    values = data.model_dump()
-    if source:
-        values["source_level"] = source["source_level"]
-        values["source_url"] = data.source_url or source["url"]
-    evidence = SourceEvidence(term_id=term_id, **values)
+    evidence = SourceEvidence(term_id=term_id, **data.model_dump())
     db.add(evidence)
 
     # 自动更新术语的候选译法列表
@@ -226,9 +210,6 @@ def verify_evidence(
     ev = db.query(SourceEvidence).filter(SourceEvidence.id == evidence_id).first()
     if not ev:
         raise HTTPException(status_code=404, detail="证据不存在")
-    source = find_source(ev.source_url or "", ev.source_name or "")
-    if is_valid and source and source["blocked"]:
-        raise HTTPException(status_code=400, detail="三级弱源不能标记为有效译法证据")
     ev.is_valid = is_valid
     ev.verified_by = verifier
     ev.verified_at = datetime.utcnow()
@@ -258,18 +239,9 @@ def confirm_term(
 def _evidence_to_response(evidence: SourceEvidence, term: str) -> dict:
     """Use the same current-term links on create, list, and detail responses."""
     result = EvidenceResponse.model_validate(evidence).model_dump()
-    source = find_source(evidence.source_url or "", evidence.source_name or "")
-    url = evidence.source_url or (source["url"] if source else "")
-    result["original_url"] = url if source_link(url, term)["source_url"] else ""
-    result.update(source_link(url, term, evidence.candidate_translation or ""))
-    result.update(search_link(url, term, evidence.candidate_translation or ""))
-    result["source_blocked"] = bool(source and source["blocked"])
-    if source:
-        result["source_level"] = source["source_level"]
-        if evidence.source_name == source.get("original_name"):
-            result["source_name"] = source["name"]
-    result["source_checked"] = bool(evidence.verified_at and evidence.is_valid and evidence.evidence_text
-                                    and result["link_kind"] == "entry" and not result["source_blocked"])
+    result.update(source_link(evidence.source_url or "", term, evidence.candidate_translation or ""))
+    result.update(search_link(evidence.source_url or "", term, evidence.candidate_translation or ""))
+    result["source_checked"] = bool(evidence.verified_at and evidence.is_valid)
     return result
 
 

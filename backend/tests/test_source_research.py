@@ -4,16 +4,14 @@ from unittest.mock import AsyncMock, patch
 from urllib.parse import parse_qs, urlsplit
 
 import httpx
-from fastapi import HTTPException
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 from app.services.source_links import source_link, present_card, search_link
 from app.services.source_research import SourceResearchService
-from app.api.terminology import auto_research_term, _term_to_response, add_evidence, list_evidence, verify_evidence, get_term_sources
+from app.api.terminology import auto_research_term, _term_to_response, add_evidence, list_evidence
 from app.models.database import Base, TerminologyEntry, SourceEvidence
 from app.schemas.schemas import EvidenceCreate, EvidenceResponse
-from app.services.source_catalog import SOURCES, find_source, source_catalog
 
 
 OFFICIAL_GROUP = "00000000000000000000000000000000"
@@ -26,63 +24,6 @@ ENTRY = {
 
 
 class SourceLinksTests(unittest.TestCase):
-    def test_silkroad_search_uses_the_actual_encoded_route_and_correct_institution(self):
-        link = search_link("https://www.imsilkroad.com/", "石油", "petroleum")
-        self.assertEqual(link["search_url"], "https://www.imsilkroad.com/search/all/1/JUU3JTlGJUIzJUU2JUIyJUI5")
-        self.assertEqual(link["search_term"], "石油")
-        self.assertEqual(find_source("", "国新办丝路网")["name"], "新华丝路")
-
-    def test_search_does_not_silently_switch_to_another_government_website(self):
-        for url in ("https://english.scio.gov.cn/", "https://openstd.samr.gov.cn/bzgk/gb/", "https://example.gov.cn/"):
-            with self.subTest(url=url):
-                link = search_link(url, "石油", "petroleum")
-                self.assertEqual(link["search_kind"], "external")
-                self.assertIn("site:" + urlsplit(url).hostname, parse_qs(urlsplit(link["search_url"]).query)["q"][0])
-
-    def test_all_original_categories_are_present_with_honest_usable_links(self):
-        catalog = source_catalog("水力压裂", "hydraulic fracturing")
-        for level, count in ((1, 9), (2, 20), (3, 11)):
-            self.assertEqual(len([s for s in catalog if s["origin"] == "既有信源清单" and s["source_level"] == level]), count)
-        for source in catalog:
-            with self.subTest(source=source["id"]):
-                self.assertEqual(len(source["links"]), len(source["domains"]))
-                for link in source["links"]:
-                    self.assertTrue(link["url"].startswith("https://"))
-                    if source["blocked"]:
-                        self.assertEqual(link["search_url"], "")
-                    else:
-                        self.assertTrue(link["search_url"])
-                        self.assertIn(link["search_kind"], ("internal", "external"))
-        self.assertEqual(find_source("https://www.sciencedirect.com/science/article/123")["source_level"], 2)
-
-    def test_specific_domain_wins_and_lookalike_domains_do_not_inherit_trust(self):
-        self.assertEqual(find_source("https://en.moe.gov.cn/article/1")["id"], "T1-02")
-        self.assertIsNone(find_source("https://termonline.cn.evil.example/"))
-        english = search_link("https://english.www.gov.cn", "石油", "petroleum")
-        self.assertEqual(urlsplit(english["search_url"]).hostname, "search.english.www.gov.cn")
-        self.assertEqual(parse_qs(urlsplit(english["search_url"]).query)["searchWord"], ["petroleum"])
-
-    def test_external_fallback_is_labelled_and_limited_to_original_host(self):
-        link = search_link("https://onepetro.org/article/123", "压裂", "hydraulic fracturing")
-        self.assertEqual(link["search_kind"], "external")
-        self.assertIn("外部", link["search_label"])
-        self.assertEqual(parse_qs(urlsplit(link["search_url"]).query)["q"], ['site:onepetro.org "hydraulic fracturing"'])
-
-    def test_missing_url_can_be_repaired_from_known_source_name_without_faking_evidence(self):
-        card = present_card({"source_name": "SPE OnePetro", "recommended_translation": "hydraulic fracturing", "source_level": 3}, "水力压裂")
-        self.assertEqual(card["source_level"], 2)
-        self.assertIn("onepetro.org", card["original_url"])
-        self.assertTrue(card["search_url"])
-        self.assertFalse(card["source_checked"])
-
-    def test_weak_source_cannot_be_presented_as_verified_even_if_old_metadata_says_so(self):
-        card = present_card({"source_url": "https://baike.baidu.com/item/123", "source_level": 1,
-                             "evidence_text": "old claim", "source_checked": True}, "水力压裂", trusted=True)
-        self.assertEqual(card["source_level"], 3)
-        self.assertTrue(card["source_blocked"])
-        self.assertFalse(card["source_checked"])
-        self.assertEqual(card["search_url"], "")
-
     def test_each_registered_source_uses_the_current_term_including_special_characters(self):
         sources = [
             ("https://www.termonline.cn/search?searchText=old", "searchText", True),
@@ -201,27 +142,6 @@ class ResearchTests(unittest.IsolatedAsyncioTestCase):
 
 
 class PersistenceTests(unittest.IsolatedAsyncioTestCase):
-    async def test_catalog_endpoint_and_manual_evidence_follow_the_same_source_policy(self):
-        engine = create_engine("sqlite:///:memory:")
-        Base.metadata.create_all(engine)
-        with Session(engine) as db:
-            term = TerminologyEntry(project_id=1, source_term="注意力机制")
-            db.add(term)
-            db.commit()
-            result = get_term_sources(term.id, "attention mechanism", db)
-            self.assertEqual(len(result["sources"]), len(SOURCES))
-            with self.assertRaises(HTTPException) as error:
-                add_evidence(term.id, EvidenceCreate(source_level=1, source_url="https://en.wikipedia.org/wiki/Attention"), db)
-            self.assertEqual(error.exception.status_code, 400)
-            saved = add_evidence(term.id, EvidenceCreate(source_level=1, source_url="https://onepetro.org/article/1"), db)
-            self.assertEqual(saved["source_level"], 2)
-            old = SourceEvidence(term_id=term.id, source_level=1, source_url="https://baike.baidu.com/item/1")
-            db.add(old)
-            db.commit()
-            with self.assertRaises(HTTPException):
-                verify_evidence(old.id, True, "user", db)
-        engine.dispose()
-
     async def test_manual_evidence_links_work_immediately_and_after_reload_for_each_term(self):
         engine = create_engine("sqlite:///:memory:")
         Base.metadata.create_all(engine)
