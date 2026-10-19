@@ -52,7 +52,7 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="信源证据" width="100">
+        <el-table-column label="信源记录" width="100">
           <template #default="{ row }">
             <el-tag type="info" size="small">{{ row.evidence?.length || 0 }} 条</el-tag>
           </template>
@@ -108,7 +108,7 @@
             <div class="step-num">1</div>
             <div class="step-info">
               <div class="step-title">先查完整词语</div>
-              <div class="step-desc">{{ selectedTerm.decomposition?.length ? '未命中单一词条' : '直接官方条目' }}</div>
+              <div class="step-desc">{{ selectedTerm.research_summary?.source_verification_version === 2 && selectedTerm.research_summary?.is_exact ? '已取得完整词条' : '尚未取得完整词条证据' }}</div>
             </div>
           </div>
           <div class="step-arrow">➔</div>
@@ -116,15 +116,15 @@
             <div class="step-num">2</div>
             <div class="step-info">
               <div class="step-title">自动语义拆解</div>
-              <div class="step-desc">核心专业术语 + 范围限定</div>
+              <div class="step-desc">{{ selectedTerm.research_summary?.source_verification_version === 2 && selectedTerm.research_summary?.is_exact ? '完整命中，无需拆解' : '核心专业术语 + 范围限定' }}</div>
             </div>
           </div>
           <div class="step-arrow">➔</div>
           <div class="workflow-step" :class="{ 'active': true }">
             <div class="step-num">3</div>
             <div class="step-info">
-              <div class="step-title">扩大权威信源</div>
-              <div class="step-desc">1级官方 ➔ 2/3级行业期刊</div>
+              <div class="step-title">核对来源页面</div>
+              <div class="step-desc">词条原文与候选译法对应</div>
             </div>
           </div>
           <div class="step-arrow">➔</div>
@@ -174,7 +174,7 @@
             <div>
               <strong style="font-size: 15px;">📋 权威判断证据卡 (Evidence Cards)</strong>
               <div class="text-muted" style="font-size: 12px; margin-top: 2px;">
-                依据《翻译质量保障流程总表》信源优先级生成，提供推荐译法、适用领域、来源原文、链接与推荐理由
+                点击链接会在对应信源中搜索此词，打开后直接显示检索结果，无需再次输入。
               </div>
             </div>
             <el-button
@@ -197,8 +197,8 @@
               <div class="card-top-bar flex-between">
                 <div class="flex items-center gap-8">
                   <span class="card-badge">推荐 {{ Number(cIdx) + 1 }}</span>
-                  <span class="card-title-en">{{ card.recommended_translation }}</span>
-                  <el-tag size="small" :type="card.match_type === 'exact' ? 'success' : 'warning'">
+                  <span class="card-title-en">{{ card.recommended_translation || selectedTerm.source_term }}</span>
+                  <el-tag size="small" :type="card.source_checked ? 'success' : 'warning'">
                     {{ card.status_tag || (card.match_type === 'exact' ? '官方精确收录' : '组合推导译法') }}
                   </el-tag>
                 </div>
@@ -206,6 +206,7 @@
                   type="success"
                   size="small"
                   @click="adoptCard(card.recommended_translation)"
+                  :disabled="!card.recommended_translation || card.match_type === 'core_only'"
                   :loading="confirming"
                 >
                   <el-icon><Check /></el-icon> 确认采用此译法
@@ -224,22 +225,24 @@
                   <div class="reason-body" style="white-space: pre-line;">{{ card.recommendation_reason }}</div>
                 </div>
 
-                <div class="field-row">
+                <div v-if="card.evidence_text && card.source_checked" class="field-row">
                   <span class="field-k">📖 来源原文：</span>
                   <div class="source-quote-box">
                     "{{ card.evidence_text }}"
                   </div>
                 </div>
+                <div v-else class="source-pending">尚未取得可核对的原文，此卡片不能作为译法证明。</div>
 
                 <div class="field-row flex-between mt-8" style="align-items: center;">
                   <div>
-                    <span class="field-k">🏛️ 权威信源：</span>
-                    <el-tag size="small" :type="levelTagType(card.source_level)">{{ card.source_level }}级信源</el-tag>
+                    <span class="field-k">{{ card.source_checked ? '🏛️ 原文出处：' : '检索网站：' }}</span>
+                    <el-tag v-if="card.source_checked" size="small" :type="levelTagType(card.source_level)">{{ card.source_level }}级信源</el-tag>
                     <span class="ml-8 text-secondary" style="font-size: 13px;">{{ card.source_name }}</span>
                   </div>
-                  <a v-if="card.source_url" :href="card.source_url" target="_blank" class="source-external-link">
-                    查看权威出处链接 ↗
+                  <a v-if="card.search_url" :href="card.search_url" :title="`检索词：${card.search_term}`" target="_blank" rel="noopener noreferrer" class="source-external-link">
+                    {{ card.search_label }}
                   </a>
+                  <span v-else class="text-muted" style="font-size:12px;">此信源暂未接入带词检索</span>
                 </div>
               </div>
             </div>
@@ -341,8 +344,8 @@
                     <el-button size="small" link @click="verifyEvidence(ev, !ev.is_valid)">
                       {{ ev.is_valid ? '标记无效' : '标记有效' }}
                     </el-button>
-                    <a v-if="ev.source_url" :href="ev.source_url" target="_blank" style="font-size:12px;">
-                      查看来源 ↗
+                    <a v-if="ev.search_url" :href="ev.search_url" :title="`检索词：${ev.search_term}`" target="_blank" rel="noopener noreferrer" style="font-size:12px;">
+                      {{ ev.search_label }}
                     </a>
                   </div>
                 </div>
@@ -351,6 +354,7 @@
                 </div>
                 <div class="evidence-meta">
                   {{ ev.source_type }}
+                  <span v-if="!ev.source_checked"> · 历史或人工记录，尚未核对出处</span>
                   <span v-if="ev.published_date"> · {{ ev.published_date }}</span>
                   <span v-if="!ev.is_valid" style="color: #ff4d4f;"> · 已标记无效</span>
                 </div>
@@ -423,8 +427,11 @@ const triggerAutoResearch = async (term: any) => {
         selectedTerm.value = res.term
         confirmTranslation.value = res.term.confirmed_translation || (res.term.candidate_translations?.[0] || '')
       }
-      const matchTag = res.term.decomposition?.length ? '（触发自动语义拆解并多级扩检）' : '（1级官方精确条目收录）'
-      ElMessage.success(`术语「${term.source_term}」4步查证完毕${matchTag}，已生成证据卡`)
+      if (res.term.research_summary?.is_exact) {
+        ElMessage.success(`已找到「${term.source_term}」的官方词条，信源链接会打开该词的检索结果`)
+      } else {
+        ElMessage.warning('尚未取得完整词条的官方证据，已提供带词检索入口')
+      }
     }
   } catch (e: any) {
     ElMessage.error('自动查证失败: ' + e.message)
@@ -552,6 +559,11 @@ onMounted(loadTerms)
 </script>
 
 <style scoped>
+.source-pending {
+  margin: 16px 0;
+  color: #8a6115;
+  font-size: 13px;
+}
 .confirmed-term {
   color: #389e0d;
   font-weight: 600;
