@@ -85,6 +85,8 @@ export const terminologyApi = {
   create: (projectId: number, data: any): Promise<any> =>
     http.post(`/terminology/project/${projectId}`, data),
   get: (termId: number): Promise<any> => http.get(`/terminology/${termId}`),
+  sources: (termId: number, candidate = ''): Promise<any> =>
+    http.get(`/terminology/${termId}/sources`, { params: { candidate } }),
   update: (termId: number, data: any): Promise<any> => http.put(`/terminology/${termId}`, data),
   delete: (termId: number): Promise<any> => http.delete(`/terminology/${termId}`),
   confirm: (termId: number, translation: string): Promise<any> =>

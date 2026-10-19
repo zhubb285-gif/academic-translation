@@ -1,0 +1,156 @@
+{
+  "springer.com": {
+    "url": "https://link.springer.com/search?query={q}",
+    "kind": "site-search",
+    "query_lang": "en",
+    "encode": "normal",
+    "label": "Springer 站内检索",
+    "note": "2026-10-19 由官网搜索框提交并核对结果页"
+  },
+  "gov.cn": {
+    "url": "https://sousuo.www.gov.cn/sousuo/search.shtml?code=17da70961a7&searchWord={q}",
+    "kind": "site-search",
+    "query_lang": "zh",
+    "encode": "normal",
+    "label": "中国政府网站内检索",
+    "note": "中国政府网中文检索（sousuo.www.gov.cn）"
+  },
+  "english.www.gov.cn": {
+    "url": "https://search.english.www.gov.cn/en/search.shtml?code=17dbe3acd9d&dataTypeId=57&searchWord={q}",
+    "kind": "site-search",
+    "query_lang": "en",
+    "encode": "normal",
+    "label": "中国政府网英文版检索",
+    "note": "英文站点，参数名为 searchWord（注意大写 W）；用中文词检索无结果"
+  },
+  "moe.gov.cn": {
+    "url": "http://www.moe.gov.cn/was5/web/search?searchword={q}&channelid=254028&page=1",
+    "kind": "site-search",
+    "query_lang": "en",
+    "encode": "normal",
+    "label": "教育部英文官网检索",
+    "note": "en.moe.gov.cn 的检索表单实际提交到 www.moe.gov.cn 的 TRS 检索，故用该地址；英文站须用英文词"
+  },
+  "en.moe.gov.cn": {
+    "url": "http://www.moe.gov.cn/was5/web/search?searchword={q}&channelid=254028&page=1",
+    "kind": "site-search",
+    "query_lang": "en",
+    "encode": "normal",
+    "label": "教育部英文官网检索",
+    "note": "与 moe.gov.cn 同一检索后端"
+  },
+  "termonline.cn": {
+    "url": "https://www.termonline.cn/search?searchText={q}",
+    "kind": "site-search",
+    "query_lang": "zh",
+    "encode": "normal",
+    "label": "术语在线站内检索",
+    "note": "参数名是 searchText（不是 k），由站点 JS 分包确证并浏览器实测"
+  },
+  "cas.cn": {
+    "url": "https://www.cas.cn/search/index.shtml?keyword={q}",
+    "kind": "site-search",
+    "query_lang": "zh",
+    "encode": "double",
+    "label": "中国科学院站内检索",
+    "note": "参数名是 keyword（不是 iptSword）；该页前端会再 decodeURI 一次，必须双重编码否则中文变乱码查不到"
+  },
+  "scio.gov.cn": {
+    "kind": "homepage",
+    "query_lang": "en",
+    "label": "国务院新闻办公室",
+    "note": "该站未暴露可用检索入口，只能打开官网"
+  },
+  "swpu.edu.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "label": "西南石油大学官网",
+    "note": "本校官网无站内检索入口，只能打开官网"
+  },
+  "samr.gov.cn": {
+    "kind": "form",
+    "query_lang": "zh",
+    "url": "https://std.samr.gov.cn/gb/gbQuery",
+    "label": "国家标准全文公开系统",
+    "note": "标准查询为表单提交，无检索深链；需在页面内手动输入标准名称"
+  },
+  "std.samr.gov.cn": {
+    "kind": "form",
+    "query_lang": "zh",
+    "url": "https://std.samr.gov.cn/gb/gbQuery",
+    "label": "国家标准全文公开系统",
+    "note": "标准查询为表单提交，无检索深链"
+  },
+  "cnpc.com.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "label": "中国石油",
+    "note": "存在反爬机制，只能打开官网"
+  },
+  "sinopecgroup.com": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "label": "中国石化",
+    "note": "只能打开官网"
+  },
+  "cnooc.com.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "label": "中国海油",
+    "note": "只能打开官网"
+  },
+  "imsilkroad.com": {
+    "url": "https://www.imsilkroad.com/search/all/1/{q}",
+    "kind": "site-search",
+    "query_lang": "zh",
+    "encode": "base64-uri",
+    "label": "新华丝路站内检索",
+    "note": "2026-10-19 由官网搜索框提交，确认查询路由与结果；路径为 encodeURIComponent 后的 Base64。"
+  },
+  "cnki.net": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "label": "中国知网",
+    "note": "需在站内手动检索"
+  },
+  "syxb-cps.com.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  },
+  "chinanews.com.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  },
+  "cup.edu.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  },
+  "tju.edu.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  },
+  "fudan.edu.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  },
+  "catl.org.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  },
+  "ccl.pku.edu.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  },
+  "ncpssd.cn": {
+    "kind": "homepage",
+    "query_lang": "zh",
+    "note": "尚无已确认的站内带词检索规则；外部限定搜索使用中文原词。"
+  }
+}
