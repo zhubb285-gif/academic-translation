@@ -1,0 +1,39 @@
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python and Node dependencies / build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
+.pytest_cache/
+
+# Private documents, databases, datasets and model weights
+/data/
+/backend/data/
+/backend/sample_documents/
+/backend/demo_pipeline.py
+*.db
+*.db-*
+*.sqlite*
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# Local backups, screenshots and editor files
+.ui-backup*/
+/docs/ui-preview/
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.local
