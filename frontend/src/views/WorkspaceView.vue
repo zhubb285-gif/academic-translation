@@ -4,7 +4,7 @@
     <div class="page-header flex-between mb-32">
       <div>
         <div class="header-badge">WORKSPACE</div>
-        <h1 class="page-title">你的翻译工作空间。</h1>
+        <h1 class="page-title"><TextType text="你的翻译工作空间。" :typing-speed="75" :pause-duration="4000" :deleting-speed="50" type-effect="fade" cursor-style="bar" :cursor-glide="true" :show-cursor="true" /></h1>
         <p class="page-desc">从一篇中文文稿开始，清楚地推进每一次翻译。</p>
       </div>
       <button class="apple-btn-primary" @click="showCreateDialog = true">
@@ -194,6 +194,7 @@
 </template>
 
 <script setup lang="ts">
+import TextType from '../components/TextType.vue'
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'

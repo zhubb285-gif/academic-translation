@@ -13,6 +13,8 @@ from app.models.database import (
     QualityReport, Project, TerminologyEntry,
 )
 import os
+import json
+from app.core.providers import PROVIDERS, auth_headers
 import time
 import logging
 import httpx
@@ -93,60 +95,37 @@ models_router = APIRouter(prefix="/models", tags=["模型配置"])
 
 @models_router.get("/settings/keys", response_model=APIKeysSchema, summary="获取在线配置的 API Keys")
 def get_api_keys():
-    return APIKeysSchema(
-        openai_api_key=settings.openai_api_key or "",
-        openai_base_url=settings.openai_base_url or "https://api.openai.com/v1",
-        deepseek_api_key=settings.deepseek_api_key or "",
-        deepseek_base_url=settings.deepseek_base_url or "https://api.deepseek.com/v1",
-        anthropic_api_key=settings.anthropic_api_key or "",
-        custom_api_key=settings.custom_api_key or "",
-        custom_base_url=settings.custom_base_url or "",
-    )
+    return APIKeysSchema(**{field: getattr(settings, field, "") for field in APIKeysSchema.model_fields})
 
 
 @models_router.post("/settings/keys", summary="在线保存并持久化 API Keys")
 def save_api_keys(data: APIKeysSchema):
-    updates = data.model_dump(exclude_none=True)
-    env_updates = {
-        "OPENAI_API_KEY": data.openai_api_key or "",
-        "OPENAI_BASE_URL": data.openai_base_url or "https://api.openai.com/v1",
-        "DEEPSEEK_API_KEY": data.deepseek_api_key or "",
-        "DEEPSEEK_BASE_URL": data.deepseek_base_url or "https://api.deepseek.com/v1",
-        "ANTHROPIC_API_KEY": data.anthropic_api_key or "",
-        "CUSTOM_API_KEY": data.custom_api_key or "",
-        "CUSTOM_BASE_URL": data.custom_base_url or "",
-    }
-    for field, val in updates.items():
-        if hasattr(settings, field):
-            setattr(settings, field, val or "")
-
+    # A partial update must not clear credentials belonging to another provider.
+    updates = data.model_dump(exclude_unset=True, exclude_none=True)
+    env_updates = {field.upper(): value for field, value in updates.items()}
     env_file = os.path.abspath(".env")
-    existing_lines = []
+    lines = []
     if os.path.exists(env_file):
-        with open(env_file, "r", encoding="utf-8") as f:
-            existing_lines = f.readlines()
-
-    new_lines = []
-    written_keys = set()
-    for line in existing_lines:
-        line_matched = False
-        for k, v in env_updates.items():
-            if line.strip().startswith(f"{k}=") or line.strip().startswith(f"{k} ="):
-                new_lines.append(f'{k}="{v}"\n')
-                written_keys.add(k)
-                line_matched = True
-                break
-        if not line_matched:
-            new_lines.append(line)
-
-    for k, v in env_updates.items():
-        if k not in written_keys:
-            new_lines.append(f'{k}="{v}"\n')
-
+        with open(env_file, encoding="utf-8") as f:
+            lines = f.readlines()
+    written = set()
+    result = []
+    for line in lines:
+        key = line.split("=", 1)[0].strip()
+        if key in env_updates:
+            if key not in written:
+                result.append(f"{key}={json.dumps(env_updates[key], ensure_ascii=False)}\n")
+            written.add(key)
+        else:
+            result.append(line if line.endswith("\n") else line + "\n")
+    for key, value in env_updates.items():
+        if key not in written:
+            result.append(f"{key}={json.dumps(value, ensure_ascii=False)}\n")
     with open(env_file, "w", encoding="utf-8") as f:
-        f.writelines(new_lines)
-
-    return {"success": True, "message": "API Keys 已在线保存并即时生效！"}
+        f.writelines(result)
+    for field, value in updates.items():
+        setattr(settings, field, value)
+    return {"success": True, "message": "连接设置已保存并即时生效"}
 
 
 @models_router.post("/test-provider", summary="测试指定提供商连通性")
@@ -156,33 +135,13 @@ async def test_provider_connection(req: TestProviderRequest):
     base_url = req.base_url or ""
     model = req.model or ""
 
-    if not api_key:
-        if provider == "openai":
-            api_key = settings.openai_api_key
-        elif provider == "deepseek":
-            api_key = settings.deepseek_api_key
-        elif provider == "anthropic":
-            api_key = settings.anthropic_api_key
-        elif provider == "custom":
-            api_key = settings.custom_api_key
-
-    if not base_url:
-        if provider == "openai":
-            base_url = settings.openai_base_url or "https://api.openai.com/v1"
-        elif provider == "deepseek":
-            base_url = settings.deepseek_base_url or "https://api.deepseek.com/v1"
-        elif provider == "custom":
-            base_url = settings.custom_base_url
-
+    if provider not in PROVIDERS:
+        raise HTTPException(status_code=400, detail="不支持的服务商")
+    api_key = api_key or getattr(settings, f"{provider}_api_key", "")
+    base_url = base_url or getattr(settings, f"{provider}_base_url", "") or PROVIDERS[provider]["base"]
+    model = model or PROVIDERS[provider]["model"]
     if not model:
-        if provider == "openai":
-            model = "gpt-4o"
-        elif provider == "deepseek":
-            model = "deepseek-chat"
-        elif provider == "anthropic":
-            model = "claude-3-5-sonnet-20241022"
-        elif provider == "custom":
-            model = settings.custom_model_id or "gpt-3.5-turbo"
+        return {"success": False, "provider": provider, "error": "请填写控制台提供的准确模型 ID"}
 
     if not api_key:
         return {
@@ -209,10 +168,7 @@ async def test_provider_connection(req: TestProviderRequest):
                 resp.raise_for_status()
                 text = resp.json()["content"][0]["text"].strip()
         else:
-            headers = {
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-            }
+            headers = auth_headers(provider, api_key)
             payload = {
                 "model": model,
                 "messages": [{"role": "user", "content": "Reply OK"}],
@@ -274,6 +230,18 @@ def delete_model_config(config_id: int, db: Session = Depends(get_db)):
     db.delete(config)
     db.commit()
     return {"success": True}
+
+
+@models_router.put("/{config_id}", response_model=ModelConfigResponse, summary="更新模型配置")
+def update_model_config(config_id: int, data: ModelConfigCreate, db: Session = Depends(get_db)):
+    config = db.query(ModelConfig).filter(ModelConfig.id == config_id).first()
+    if not config:
+        raise HTTPException(status_code=404, detail="配置不存在")
+    for field, value in data.model_dump().items():
+        setattr(config, field, value)
+    db.commit()
+    db.refresh(config)
+    return config
 
 
 # ============================================================

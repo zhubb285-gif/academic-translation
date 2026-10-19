@@ -1,60 +1,42 @@
 <template>
   <div class="journals-view">
-    <div class="apple-back-bar mb-20 flex-between">
-      <button class="apple-back-pill" @click="$router.push('/workspace')">
-        <el-icon><ArrowLeft /></el-icon>
-        <span>返回我的项目</span>
-      </button>
-      <span class="bar-hint">查阅投稿指南，准备适合目标期刊的写作要求。</span>
+    <div class="apple-back-bar journal-back">
+      <button class="apple-back-pill" @click="$router.push('/workspace')"><el-icon><ArrowLeft /></el-icon><span>返回我的项目</span></button>
+      <span class="bar-hint">JOURNAL COLLECTION</span>
     </div>
 
-    <div class="page-header flex-between mb-24">
-      <div>
-        <div class="page-title">期刊规范</div>
-        <div class="page-desc">维护目标期刊的官方投稿指南和风格规范</div>
-      </div>
-      <el-button type="primary" @click="showDialog = true">
-        <el-icon><Plus /></el-icon> 添加期刊
-      </el-button>
+    <header class="journal-heading">
+      <div><p class="eyebrow">为你的下一篇论文</p><h1>找到你的目标期刊。</h1><p class="heading-desc">从写作风格到投稿要求，让每一次表达更有方向。</p></div>
+      <el-button round type="primary" @click="openCreate"><el-icon><Plus /></el-icon>添加期刊</el-button>
+    </header>
+
+    <div class="collection-toolbar">
+      <div><span class="collection-label">期刊规范</span><span class="collection-count">{{ journals.length }} 本期刊</span></div>
+      <el-input v-model="searchQuery" aria-label="搜索期刊" placeholder="搜索期刊名称或缩写" clearable @input="debouncedSearch"><template #prefix><el-icon><Search /></el-icon></template></el-input>
     </div>
 
-    <!-- 搜索 -->
-    <div class="card mb-24">
-      <el-input
-        v-model="searchQuery"
-        placeholder="搜索期刊名称或缩写..."
-        @input="debouncedSearch"
-        clearable
-      >
-        <template #prefix><el-icon><Search /></el-icon></template>
-      </el-input>
-    </div>
-
-    <!-- 期刊列表 -->
-    <div class="journals-grid">
-      <div v-for="journal in journals" :key="journal.id" class="journal-card card">
-        <div class="journal-name">{{ journal.name }}</div>
-        <div v-if="journal.abbreviation" class="journal-abbr">{{ journal.abbreviation }}</div>
-        <div class="journal-tags flex gap-8 mb-8">
-          <el-tag v-if="journal.publisher" size="small" type="info">{{ journal.publisher }}</el-tag>
-          <el-tag v-if="journal.domain" size="small">{{ journal.domain }}</el-tag>
-          <el-tag size="small" type="success">{{ journal.english_variant }} English</el-tag>
+    <div v-if="loading" class="gallery-loading" role="status">正在整理你的期刊书架…</div>
+    <div v-else-if="loadError" class="gallery-loading" role="alert"><p>{{ loadError }}</p><el-button @click="loadJournals(searchQuery)">重新加载</el-button></div>
+    <template v-else-if="journals.length">
+      <ConcaveJournalCarousel v-model="selectedIndex" :items="galleryItems" />
+      <section v-if="selectedJournal" class="journal-details" aria-label="当前期刊规范">
+        <div class="details-heading">
+          <div><p class="eyebrow">投稿之前，先了解它</p><h2>{{ selectedJournal.name }}</h2><p class="journal-domain">{{ selectedJournal.domain || '学科领域待补充' }}</p></div>
+          <div class="details-actions"><a v-if="selectedJournal.author_guide_url" class="guide-link" :href="selectedJournal.author_guide_url" target="_blank" rel="noopener noreferrer">官方作者指南 ↗</a><el-button round @click="editJournal(selectedJournal)">编辑风格规则</el-button></div>
         </div>
-        <el-descriptions :column="1" size="small" border class="mb-8">
-          <el-descriptions-item label="摘要上限">{{ journal.abstract_word_limit || '未设定' }} 词</el-descriptions-item>
-          <el-descriptions-item label="引用格式">{{ journal.citation_style || '未设定' }}</el-descriptions-item>
-          <el-descriptions-item label="作者指南">
-            <a v-if="journal.author_guide_url" :href="journal.author_guide_url" target="_blank" style="color: #4096ff;">
-              查看 ↗
-            </a>
-            <span v-else style="color: #aaa">未录入</span>
-          </el-descriptions-item>
-        </el-descriptions>
-        <el-button size="small" @click="editJournal(journal)">编辑风格规则</el-button>
-      </div>
-    </div>
-
-    <el-empty v-if="journals.length === 0 && !loading" description="暂无期刊，请添加" />
+        <div class="specs-grid">
+          <div><span>英语规范</span><strong>{{ selectedJournal.english_variant === 'British' ? '英式英语' : selectedJournal.english_variant === 'American' ? '美式英语' : selectedJournal.english_variant || '未设定' }}</strong></div>
+          <div><span>摘要字数上限</span><strong>{{ selectedJournal.abstract_word_limit ? `${selectedJournal.abstract_word_limit} 词` : '未设定' }}</strong></div>
+          <div><span>引用格式</span><strong>{{ selectedJournal.citation_style || '未设定' }}</strong></div>
+          <div><span>出版方</span><strong>{{ selectedJournal.publisher || '未设定' }}</strong></div>
+        </div>
+        <div v-if="selectedRules.length" class="style-notes"><div v-for="rule in selectedRules" :key="rule.label"><h3>{{ rule.label }}</h3><p>{{ rule.text }}</p></div></div>
+        <div v-else class="no-rules">还没有录入写作风格规则，可根据官方作者指南补充。</div>
+        <footer class="details-footer"><span>指南核验：{{ selectedJournal.guide_verified_date || '待核验' }} · 投稿前请以期刊最新官方要求为准</span><div class="cover-tools"><a v-if="coverSource" :href="coverSource" target="_blank" rel="noopener noreferrer">图片来源 ↗</a><span v-else-if="customCovers[selectedJournal.id]">自定义封面 · 保存在当前浏览器</span><span v-else>专属文字封面</span><button @click="coverInput?.click()">更换封面</button><button v-if="customCovers[selectedJournal.id]" @click="removeCustomCover">还原</button><input ref="coverInput" type="file" accept="image/png,image/jpeg,image/webp" aria-label="上传当前期刊的封面图片" hidden @change="uploadCover" /></div></footer>
+      </section>
+      <p class="gallery-hint">拖动封面，探索更多期刊 · 左右方向键也可切换</p>
+    </template>
+    <el-empty v-else :description="searchQuery ? '没有找到匹配的期刊，换个关键词试试' : '还没有期刊，添加第一本吧'" />
 
     <!-- 添加/编辑期刊对话框 -->
     <el-dialog v-model="showDialog" :title="editingId ? '编辑期刊' : '添加期刊'" width="680px">
@@ -150,12 +132,56 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { ElMessage } from 'element-plus'
 import { Plus, Search, ArrowLeft } from '@element-plus/icons-vue'
 import { journalsApi } from '../api'
+import ConcaveJournalCarousel from '../components/ConcaveJournalCarousel.vue'
+import { journalCover } from '../data/journalCovers'
 
 const journals = ref<any[]>([])
+const selectedIndex = ref(0)
+const loadError = ref('')
+const coverInput = ref<HTMLInputElement>()
+const customCovers = ref<Record<string, string>>({})
+try { customCovers.value = JSON.parse(localStorage.getItem('academic-qa-journal-covers') || '{}') } catch { /* Private mode or malformed cache: use publisher covers. */ }
+const selectedJournal = computed(() => journals.value[selectedIndex.value])
+const galleryItems = computed(() => journals.value.map(j => ({
+  id: j.id, title: j.name, subtitle: j.publisher,
+  ...journalCover(j.name), image: customCovers.value[j.id] || journalCover(j.name).image,
+})))
+const coverSource = computed(() => selectedJournal.value && !customCovers.value[selectedJournal.value.id] ? journalCover(selectedJournal.value.name).source : undefined)
+const selectedRules = computed(() => {
+  const rules = selectedJournal.value?.style_rules || {}
+  const labels: Record<string, string> = { tense: '时态', voice: '表达与语态', abbreviations: '术语与缩写', other: '其他写作要求' }
+  return Object.entries(rules).filter(([key, value]) => key !== 'cover_image' && value).map(([key, value]) => ({
+    label: labels[key] || key,
+    text: Array.isArray(value) ? value.join('；') : typeof value === 'object' ? JSON.stringify(value) : String(value),
+  }))
+})
+function persistCovers(next: Record<string, string>) {
+  try { localStorage.setItem('academic-qa-journal-covers', JSON.stringify(next)); customCovers.value = next; return true }
+  catch { ElMessage.error('浏览器存储空间不足，请使用更小的图片'); return false }
+}
+function uploadCover(event: Event) {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  input.value = ''
+  const journalId = selectedJournal.value?.id
+  if (!file || !journalId) return
+  if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type) || file.size > 2 * 1024 * 1024) {
+    ElMessage.warning('请选择 2 MB 以内的 JPG、PNG 或 WebP 图片'); return
+  }
+  const reader = new FileReader()
+  reader.onload = () => { if (persistCovers({ ...customCovers.value, [journalId]: String(reader.result) })) ElMessage.success('期刊封面已更新，保存在当前浏览器') }
+  reader.onerror = () => ElMessage.error('图片读取失败，请重试')
+  reader.readAsDataURL(file)
+}
+function removeCustomCover() {
+  const next = { ...customCovers.value }; delete next[selectedJournal.value.id]; persistCovers(next)
+}
+function openCreate() { resetForm(); showDialog.value = true }
+
 const loading = ref(false)
 const searchQuery = ref('')
 const showDialog = ref(false)
@@ -184,8 +210,12 @@ const resetForm = () => {
 
 const loadJournals = async (search?: string) => {
   loading.value = true
+  loadError.value = ''
   try {
     journals.value = await journalsApi.list({ search, limit: 100 }) as any[]
+    selectedIndex.value = 0
+  } catch (e: any) {
+    loadError.value = e.message || '期刊加载失败，请检查服务后重试'
   } finally {
     loading.value = false
   }
@@ -239,33 +269,61 @@ const saveJournal = async () => {
 }
 
 onMounted(() => loadJournals())
+onBeforeUnmount(() => clearTimeout(searchTimeout))
 </script>
 
 <style scoped>
-.journals-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 20px;
+.journals-view { max-width: 1240px; margin: 0 auto; }
+.journal-back { display: flex; align-items: center; justify-content: space-between; margin-bottom: 44px; }
+.journal-back .bar-hint { letter-spacing: 2px; font-size: 10px; }
+.journal-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 46px; }
+.eyebrow { font-size: 11px; color: #86868b; letter-spacing: 1.5px; margin: 0 0 14px; }
+.journal-heading h1 { font-size: clamp(30px, 4vw, 48px); line-height: 1.2; font-weight: 650; letter-spacing: -2px; color: #1d1d1f; margin: 0; }
+.heading-desc { color: #86868b; font-size: 14px; line-height: 1.7; margin: 18px 0 0; }
+.journal-heading > .el-button { height: 40px; padding: 0 20px; }
+.collection-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid #dedee3; padding-top: 24px; }
+.collection-label { color: #1d1d1f; font-size: 14px; font-weight: 600; }
+.collection-count { margin-left: 14px; font-size: 12px; color: #86868b; }
+.collection-toolbar > .el-input { width: 264px; }
+.collection-toolbar :deep(.el-input__wrapper) { border-radius: 24px; background: #eaeaefaa; box-shadow: none; padding: 4px 14px; }
+.gallery-loading { display: grid; justify-items: center; align-content: center; min-height: 420px; gap: 12px; color: #86868b; }
+.journal-details { background: #fff; border: 1px solid #e7e7ec; border-radius: 24px; padding: 32px 36px 20px; margin-top: 36px; }
+.details-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 28px; }
+.details-heading .eyebrow { margin-bottom: 8px; font-size: 10px; }
+.details-heading h2 { font-size: 24px; line-height: 1.3; font-weight: 600; color: #1d1d1f; letter-spacing: -.7px; margin: 0; text-wrap: balance; }
+.journal-domain { font-size: 12px; color: #86868b; margin: 10px 0 0; }
+.details-actions { display: flex; gap: 14px; align-items: center; flex-shrink: 0; }
+.guide-link { font-size: 12px; color: #0071e3; text-decoration: none; }
+.specs-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr 1.5fr; padding: 22px 0; border-top: 1px solid #eeeef1; border-bottom: 1px solid #eeeef1; gap: 24px; }
+.specs-grid > div { display: flex; flex-direction: column; gap: 10px; }
+.specs-grid span { font-size: 11px; color: #86868b; }
+.specs-grid strong { font-size: 13px; font-weight: 500; line-height: 1.5; color: #1d1d1f; }
+.style-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 36px; padding: 26px 0; }
+.style-notes h3 { font-size: 12px; font-weight: 600; color: #1d1d1f; margin: 0 0 8px; }
+.style-notes p { font-size: 12px; line-height: 1.9; color: #6e6e73; margin: 0; }
+.no-rules { padding: 28px 0; color: #86868b; font-size: 13px; }
+.details-footer { border-top: 1px solid #eeeef1; padding-top: 16px; color: #98989d; font-size: 10px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; line-height: 1.7; }
+.cover-tools { display: flex; align-items: center; gap: 10px; }
+.cover-tools a, .cover-tools button { color: #86868b; font-size: 10px; text-decoration: none; }
+.cover-tools button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #0071e3; }
+.gallery-hint { text-align: center; font-size: 10px; letter-spacing: .5px; color: #98989d; margin: 22px 0 12px; }
+@media (max-width: 800px) {
+  .details-heading { align-items: flex-start; flex-direction: column; }
+  .specs-grid { grid-template-columns: 1fr 1fr; }
+  .journal-details { padding: 26px 24px 20px; }
 }
-
-.journal-card {
-  padding: 20px;
-}
-
-.journal-name {
-  font-size: 17px;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 4px;
-}
-
-.journal-abbr {
-  font-size: 13px;
-  color: #888;
-  margin-bottom: 10px;
-}
-
-.journal-tags {
-  flex-wrap: wrap;
+@media (max-width: 600px) {
+  .journal-back { margin-bottom: 30px; }
+  .journal-back .bar-hint { display: none; }
+  .journal-heading { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
+  .journal-heading h1 { letter-spacing: -1px; }
+  .heading-desc { font-size: 12px; margin-top: 12px; }
+  .collection-toolbar { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .collection-toolbar > .el-input { width: 100%; }
+  .style-notes { grid-template-columns: 1fr; gap: 20px; }
+  .journal-details { padding: 24px 20px 18px; margin-top: 28px; }
+  .details-heading h2 { font-size: 22px; }
+  .details-actions { flex-wrap: wrap; gap: 12px; }
+  :deep(.el-dialog) { max-width: calc(100vw - 24px); }
 }
 </style>

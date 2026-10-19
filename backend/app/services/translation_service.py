@@ -11,6 +11,7 @@ from typing import Optional, Dict, List, Any
 import httpx
 
 from app.core.config import settings
+from app.core.providers import PROVIDERS, auth_headers
 
 logger = logging.getLogger(__name__)
 
@@ -135,10 +136,7 @@ class OpenAICompatProvider(TranslationProvider):
                 f"{self.provider_name.upper()} API Key 未配置。可直接选择已就绪的 DeepSeek，或前往「🤖 模型配置」页面填入 API Key。"
             )
 
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json",
-        }
+        headers = auth_headers(self.provider_name, self.api_key)
         payload = {
             "model": model,
             "messages": [
@@ -266,28 +264,15 @@ class TranslationService:
         """根据提供商名称获取对应实例"""
         if provider_name == "simulation" or provider_name == "demo":
             return AcademicSimulationProvider()
-        elif provider_name == "openai":
-            return OpenAICompatProvider(
-                api_key=settings.openai_api_key,
-                base_url=settings.openai_base_url,
-                provider_name="openai",
-            )
-        elif provider_name == "deepseek":
-            return OpenAICompatProvider(
-                api_key=settings.deepseek_api_key,
-                base_url=settings.deepseek_base_url,
-                provider_name="deepseek",
-            )
-        elif provider_name == "anthropic":
+        if provider_name == "anthropic":
             return AnthropicProvider(api_key=settings.anthropic_api_key)
-        elif provider_name == "custom":
+        if provider_name in PROVIDERS:
             return OpenAICompatProvider(
-                api_key=settings.custom_api_key,
-                base_url=settings.custom_base_url,
-                provider_name="custom",
+                api_key=getattr(settings, f"{provider_name}_api_key", ""),
+                base_url=getattr(settings, f"{provider_name}_base_url", "") or PROVIDERS[provider_name]["base"],
+                provider_name=provider_name,
             )
-        else:
-            raise ValueError(f"不支持的提供商: {provider_name}")
+        raise ValueError(f"不支持的提供商: {provider_name}")
 
     async def translate_segment(
         self,

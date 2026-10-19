@@ -119,6 +119,7 @@ export const journalsApi = {
 export const modelsApi = {
   list: (useFor?: string): Promise<any> => http.get('/models', { params: { use_for: useFor } }),
   create: (data: any): Promise<any> => http.post('/models', data),
+  update: (id: number, data: any): Promise<any> => http.put(`/models/${id}`, data),
   delete: (id: number): Promise<any> => http.delete(`/models/${id}`),
   getKeys: (): Promise<any> => http.get('/models/settings/keys'),
   saveKeys: (data: any): Promise<any> => http.post('/models/settings/keys', data),

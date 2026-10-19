@@ -9,6 +9,7 @@ from typing import Optional, Dict, List, Any
 import httpx
 
 from app.core.config import settings
+from app.core.providers import PROVIDERS, auth_headers
 
 logger = logging.getLogger(__name__)
 
@@ -167,12 +168,10 @@ class MQMReviewService:
         api_key: str,
         base_url: str,
         model: str,
+        provider: str = "openai",
     ) -> str:
         """调用 OpenAI 兼容接口"""
-        headers = {
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        }
+        headers = auth_headers(provider, api_key)
         payload = {
             "model": model,
             "messages": [
@@ -272,13 +271,10 @@ class MQMReviewService:
 
     def _get_api_config(self, provider: str) -> tuple:
         """获取 API 配置 (api_key, base_url)"""
-        if provider == "openai":
-            return settings.openai_api_key, settings.openai_base_url
-        elif provider == "deepseek":
-            return settings.deepseek_api_key, settings.deepseek_base_url
-        elif provider == "custom":
-            return settings.custom_api_key, settings.custom_base_url
-        return "", ""
+        if provider not in PROVIDERS:
+            raise ValueError(f"不支持的提供商: {provider}")
+        return (getattr(settings, f"{provider}_api_key", ""),
+                getattr(settings, f"{provider}_base_url", "") or PROVIDERS[provider]["base"])
 
     async def review_segment(
         self,
@@ -330,7 +326,7 @@ class MQMReviewService:
                 api_key, base_url = self._get_api_config(provider)
                 if not api_key:
                     raise ValueError(f"{provider.upper()} API Key 未配置。可直接选择已就绪的 DeepSeek，或前往「🤖 模型配置」填写 Key。")
-                raw_response = await self._call_openai_compatible(prompt, api_key, base_url, model)
+                raw_response = await self._call_openai_compatible(prompt, api_key, base_url, model, provider)
                 issues = parse_mqm_response(raw_response)
 
             # 统计

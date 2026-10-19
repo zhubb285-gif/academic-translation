@@ -21,11 +21,8 @@
       </div>
       <div class="flex gap-8 mt-16" style="align-items: center; flex-wrap: wrap;">
         <el-select v-model="proofProvider" style="width: 200px">
-          <el-option label="DeepSeek (推荐/已就绪)" value="deepseek" />
-          <el-option label="学术仿真演示 (免Key)" value="simulation" />
-          <el-option label="OpenAI (需配置Key)" value="openai" />
-          <el-option label="Claude (需配置Key)" value="anthropic" />
-          <el-option label="自定义兼容接口" value="custom" />
+          <el-option v-for="p in PROVIDERS.filter(p => p.id !== 'custom')" :key="p.id" :label="p.name" :value="p.id" />
+          <el-option label="学术仿真演示（免 Key）" value="simulation" />
         </el-select>
         <el-input v-model="proofModel" placeholder="模型 ID" style="width: 180px" />
         <el-button @click="testProofConnection" :loading="testingProofConn">
@@ -294,6 +291,7 @@
 </template>
 
 <script setup lang="ts">
+import { PROVIDERS, defaultModel } from "../data/modelProviders"
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
@@ -319,11 +317,7 @@ const batchProofreading = ref(false)
 const batchProgress = ref('')
 
 watch(proofProvider, (newP) => {
-  if (newP === 'deepseek') proofModel.value = 'deepseek-chat'
-  else if (newP === 'simulation') proofModel.value = 'academic-simulation'
-  else if (newP === 'openai') proofModel.value = 'gpt-4o'
-  else if (newP === 'anthropic') proofModel.value = 'claude-3-5-sonnet-20241022'
-  else if (newP === 'custom') proofModel.value = 'custom-model'
+  proofModel.value = newP === 'simulation' ? 'academic-simulation' : defaultModel(newP)
 })
 
 const testProofConnection = async () => {

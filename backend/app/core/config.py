@@ -31,6 +31,20 @@ class Settings(BaseSettings):
     custom_base_url: str = ""
     custom_model_id: str = ""
 
+    qwen_api_key: str = ""
+    qwen_base_url: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    mimo_api_key: str = ""
+    mimo_base_url: str = "https://api.xiaomimimo.com/v1"
+    moonshot_api_key: str = ""
+    moonshot_base_url: str = "https://api.moonshot.cn/v1"
+    zhipu_api_key: str = ""
+    zhipu_base_url: str = "https://open.bigmodel.cn/api/paas/v4"
+    doubao_api_key: str = ""
+    doubao_base_url: str = "https://ark.cn-beijing.volces.com/api/v3"
+    minimax_api_key: str = ""
+    minimax_base_url: str = "https://api.minimaxi.com/v1"
+    google_base_url: str = "https://generativelanguage.googleapis.com/v1beta/openai"
+
     # 默认模型
     default_translation_provider: str = "openai"
     default_translation_model: str = "gpt-4o"

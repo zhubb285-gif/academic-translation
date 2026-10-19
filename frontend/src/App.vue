@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const menuOpen = ref(false)
 const isHome = computed(() => route.path === '/')
+const isModels = computed(() => route.path === '/models')
 const navigation = [
   { path: '/', label: '概览', active: (path: string) => path === '/' },
   { path: '/workspace', label: '翻译工作台', active: (path: string) => path === '/workspace' || path.startsWith('/project/') },
@@ -15,7 +16,7 @@ watch(() => route.path, () => { menuOpen.value = false })
 </script>
 
 <template>
-  <div class="app-container" :class="{ 'is-home': isHome }">
+  <div class="app-container" :class="{ 'is-home': isHome, 'is-models': isModels }">
     <header class="site-header">
       <div class="header-inner">
         <router-link to="/" class="brand-link" aria-label="Academic QA 首页">
@@ -61,6 +62,20 @@ watch(() => route.path, () => { menuOpen.value = false })
 .mobile-nav { padding: 8px 24px 24px; border-top: 1px solid var(--apple-border); }.mobile-nav a { display: flex; justify-content: space-between; text-decoration: none; color: #6e6e73; padding: 14px 0; font-size: 16px; }.mobile-nav a.active { color: var(--apple-blue); }
 .app-main { flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 48px 32px 88px; }.is-home .app-main { max-width: none; padding: 0; }
 .site-footer { padding: 0 32px; background: #f5f5f7; color: #6e6e73; font-size: 12px; }.footer-top,.footer-bottom { max-width: 1136px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }.footer-top { padding: 32px 0; border-bottom: 1px solid var(--apple-border); }.footer-brand { color: #1d1d1f; font-size: 16px; font-weight: 600; text-decoration: none; letter-spacing: -.4px; }.footer-bottom { padding: 20px 0 26px; }.footer-bottom div { display: flex; gap: 24px; }.footer-bottom a { color: #626269; text-decoration: none; }.footer-bottom a:hover { text-decoration: underline; }
+.is-models { background: #fff; color: #1d1d1f; }
+.is-models .app-main { max-width: none; padding: 0; }
+.is-models .site-header { background: rgba(250,250,252,.9); border-color: var(--apple-border); }
+.is-models .brand-link, .is-models .desktop-nav a.active, .is-models .desktop-nav a:hover { color: #1d1d1f; }
+.is-models .desktop-nav a, .is-models .mobile-nav a { color: #626269; }
+.is-models .header-cta { color: #fff; background: var(--apple-blue); }
+.is-models .mobile-menu-button span { background: #1d1d1f; }
+.is-models .mobile-nav { background: #fff; border-color: var(--apple-border); }
+.is-models .mobile-nav a.active { color: var(--apple-blue); }
+.is-models .site-footer { background: #f5f5f7; color: #6e6e73; }
+.is-models .footer-top { border-color: var(--apple-border); }
+.is-models .footer-brand { color: #1d1d1f; }
+.is-models .footer-bottom a { color: #626269; }
+.is-models :is(a,button):focus-visible { outline: 2px solid #0066cc; outline-offset: 5px; }
 @media(max-width: 900px) { .header-inner { gap: 24px; }.desktop-nav { gap: 22px; } }
 @media(max-width: 700px) { .header-inner { padding: 0 20px; min-height: 60px; gap: 12px; }.desktop-nav { display: none; }.mobile-menu-button { display: block; }.brand-link { font-size: 16px; }.header-cta { padding: 7px 12px; }.header-actions { gap: 10px; }.app-main { padding: 28px 20px 56px; }.site-footer { padding: 0 20px; }.footer-top,.footer-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }.footer-bottom div { flex-wrap: wrap; } }
 </style>

@@ -7,11 +7,8 @@
     <div class="toolbar card mb-16">
       <div class="flex gap-8">
         <el-select v-model="provider" style="width: 195px">
-          <el-option label="DeepSeek（需配置服务）" value="deepseek" />
-          <el-option label="学术仿真演示 (免Key)" value="simulation" />
-          <el-option label="OpenAI (需配置Key)" value="openai" />
-          <el-option label="Claude (需配置Key)" value="anthropic" />
-          <el-option label="自定义兼容接口" value="custom" />
+          <el-option v-for="p in PROVIDERS.filter(p => p.id !== 'custom')" :key="p.id" :label="p.name" :value="p.id" />
+          <el-option label="学术仿真演示（免 Key）" value="simulation" />
         </el-select>
         <el-input v-model="model" placeholder="模型 ID" style="width: 170px" />
         <el-button @click="testConnection" :loading="testingConn">
@@ -143,6 +140,7 @@
 </template>
 
 <script setup lang="ts">
+import { PROVIDERS, defaultModel } from "../data/modelProviders"
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
@@ -170,11 +168,7 @@ const provider = ref('deepseek')
 const model = ref('deepseek-chat')
 
 watch(provider, (newP) => {
-  if (newP === 'deepseek') model.value = 'deepseek-chat'
-  else if (newP === 'simulation') model.value = 'academic-simulation'
-  else if (newP === 'openai') model.value = 'gpt-4o'
-  else if (newP === 'anthropic') model.value = 'claude-3-5-sonnet-20241022'
-  else if (newP === 'custom') model.value = 'custom-model'
+  model.value = newP === 'simulation' ? 'academic-simulation' : defaultModel(newP)
 })
 
 const sections = computed(() => {
