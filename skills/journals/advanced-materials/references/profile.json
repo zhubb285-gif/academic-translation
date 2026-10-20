@@ -1,0 +1,31 @@
+{
+  "article_count": 92,
+  "abstract_sample_count": 92,
+  "full_text_count": 0,
+  "abstract_median_words": 150,
+  "sentence_median_words": 23,
+  "abstract_first_person_fraction": 0.185,
+  "abstract_numeric_fraction": 0.424,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1002/adma.202107668",
+      "quote": "Photocatalysis is a green technology to use ubiquitous and intermittent sunlight. The emerging S-scheme heterojunction has demonstrated its superiority in photocatalysis. This …",
+      "source_url": "https://openalex.org/W4200426529",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1002/adma.202107538",
+      "quote": "Electromagnetic (EM) wave absorption materials possess exceptionally high EM energy loss efficiency. With vigorous developments in nanotechnology, such materials have exhibited numerous …",
+      "source_url": "https://openalex.org/W3212534526",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1002/adma.202103393",
+      "quote": "Abstract Since their discovery in 2011, the number of 2D transition metal carbides and nitrides (MXenes) has steadily increased. Currently more than …",
+      "source_url": "https://openalex.org/W3193369452",
+      "section": "abstract"
+    }
+  ]
+}

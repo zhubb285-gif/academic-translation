@@ -1,0 +1,31 @@
+{
+  "article_count": 77,
+  "abstract_sample_count": 77,
+  "full_text_count": 0,
+  "abstract_median_words": 175,
+  "sentence_median_words": 22,
+  "abstract_first_person_fraction": 0.688,
+  "abstract_numeric_fraction": 0.351,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1145/3691338",
+      "quote": "Time series anomaly detection is important for a wide range of research fields and applications, including financial markets, economics, earth sciences, manufacturing, …",
+      "source_url": "https://openalex.org/W4402056503",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1145/3626235",
+      "quote": "Diffusion models have emerged as a powerful new family of deep generative models with record-breaking performance in many applications, including image synthesis, …",
+      "source_url": "https://openalex.org/W4387195417",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1145/3625558",
+      "quote": "Federated learning (FL) has drawn increasing attention owing to its potential use in large-scale industrial applications. Existing FL works mainly focus on …",
+      "source_url": "https://openalex.org/W4387105517",
+      "section": "abstract"
+    }
+  ]
+}

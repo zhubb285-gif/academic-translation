@@ -15,8 +15,8 @@ const steps = [
   { key: 'proofread', number: '04', label: '校对与报告', suffix: '/proofread' },
 ]
 const hints = {
-  overview: '先上传中文文稿，再选择目标期刊和翻译要求。',
-  terminology: '确认关键词的译法与信源，再带着术语表进入翻译。',
+  overview: '选择期刊风格（可选），上传中文文稿，再确认翻译要求。',
+  terminology: 'AI 先找出疑似专业术语，再查期刊用法和分级信源，人工确认后进入翻译。',
   translate: '逐段对照原文与译文，保存修改后进入校对。',
   proofread: '检查译文，处理审校意见，再导出成果。',
 }

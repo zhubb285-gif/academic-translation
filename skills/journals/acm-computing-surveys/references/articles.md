@@ -1,0 +1,79 @@
+# ACM Computing Surveys — 实际语料清单
+
+- Data clustering (1999); DOI: 10.1145/331499.331504; 仅摘要; https://openalex.org/W1992419399
+- Machine learning in automated text categorization (2002); DOI: 10.1145/505282.505283; 仅摘要; https://openalex.org/W2118020653
+- A Survey on Bias and Fairness in Machine Learning (2021); DOI: 10.1145/3457607; 仅摘要; https://openalex.org/W2969896603
+- Survey of Hallucination in Natural Language Generation (2022); DOI: 10.1145/3571730; 仅摘要; https://openalex.org/W4309674289
+- Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing (2022); DOI: 10.1145/3560815; 仅摘要; https://openalex.org/W3185341429
+- A survey on concept drift adaptation (2014); DOI: 10.1145/2523813; 仅摘要; https://openalex.org/W2099419573
+- The interdisciplinary study of coordination (1994); DOI: 10.1145/174666.174668; 仅摘要; https://openalex.org/W2128677857
+- Generalizing from a Few Examples (2020); DOI: 10.1145/3386252; 仅摘要; https://openalex.org/W3034942609
+- Feature Selection (2017); DOI: 10.1145/3136625; 仅摘要; https://openalex.org/W4289236186
+- Knowledge Graphs (2021); DOI: 10.1145/3447772; 仅摘要; https://openalex.org/W3010336026
+- Privacy-preserving data publishing (2010); DOI: 10.1145/1749603.1749605; 仅摘要; https://openalex.org/W2142406320
+- Diffusion Models: A Comprehensive Survey of Methods and Applications (2023); DOI: 10.1145/3626235; 仅摘要; https://openalex.org/W4387195417
+- Deep Learning--based Text Classification (2021); DOI: 10.1145/3439726; 仅摘要; https://openalex.org/W3156333129
+- A Survey on Deep Learning (2018); DOI: 10.1145/3234150; 仅摘要; https://openalex.org/W2892341857
+- Recent Advances in Natural Language Processing via Large Pre-trained Language Models: A Survey (2023); DOI: 10.1145/3605943; 仅摘要; https://openalex.org/W4382246105
+- Explainable AI (XAI): Core Ideas, Techniques, and Solutions (2022); DOI: 10.1145/3561048; 仅摘要; https://openalex.org/W4294559022
+- The Hearsay-II Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty (1980); DOI: 10.1145/356810.356816; 仅摘要; https://openalex.org/W2051768896
+- Graph Neural Networks in Recommender Systems: A Survey (2022); DOI: 10.1145/3535101; 仅摘要; https://openalex.org/W3097300053
+- Techniques for automatically correcting words in text (1992); DOI: 10.1145/146370.146380; 仅摘要; https://openalex.org/W2010595692
+- A Survey of Deep Active Learning (2021); DOI: 10.1145/3472291; 仅摘要; https://openalex.org/W3205626500
+- A Review on Outlier/Anomaly Detection in Time Series Data (2021); DOI: 10.1145/3444690; 仅摘要; https://openalex.org/W3005893373
+- A Survey of Techniques for Approximate Computing (2016); DOI: 10.1145/2893356; 仅摘要; https://openalex.org/W2265166184
+- Imitation Learning (2017); DOI: 10.1145/3054912; 仅摘要; https://openalex.org/W2604382266
+- Three-dimensional object recognition (1985); DOI: 10.1145/4078.4081; 仅摘要; https://openalex.org/W1996773532
+- Security and Privacy on Blockchain (2019); DOI: 10.1145/3316481; 仅摘要; https://openalex.org/W2921980263
+- k-Nearest Neighbour Classifiers - A Tutorial (2021); DOI: 10.1145/3459665; 仅摘要; https://openalex.org/W3015461837
+- Integrating Scientific Knowledge with Machine Learning for Engineering and Environmental Systems (2022); DOI: 10.1145/3514228; 仅摘要; https://openalex.org/W3185585276
+- A Survey on Distributed Machine Learning (2020); DOI: 10.1145/3377454; 仅摘要; https://openalex.org/W2996075766
+- Federated Learning for Smart Healthcare: A Survey (2022); DOI: 10.1145/3501296; 仅摘要; https://openalex.org/W4226461837
+- Many-Objective Evolutionary Algorithms (2015); DOI: 10.1145/2792984; 仅摘要; https://openalex.org/W2040622444
+- Game theory meets network security and privacy (2013); DOI: 10.1145/2480741.2480742; 仅摘要; https://openalex.org/W2067064328
+- Detection and Resolution of Rumours in Social Media (2018); DOI: 10.1145/3161603; 仅摘要; https://openalex.org/W3125491592
+- An updated survey of GA-based multiobjective optimization techniques (2000); DOI: 10.1145/358923.358929; 仅摘要; https://openalex.org/W2036109172
+- Deep Learning-based Human Pose Estimation: A Survey (2023); DOI: 10.1145/3603618; 仅摘要; https://openalex.org/W4379985979
+- A Comprehensive Survey of Few-shot Learning: Evolution, Applications, Challenges, and Opportunities (2023); DOI: 10.1145/3582688; 仅摘要; https://openalex.org/W4319163914
+- Machine Learning for Survival Analysis (2019); DOI: 10.1145/3214306; 仅摘要; https://openalex.org/W2963232127
+- Formal methods (2009); DOI: 10.1145/1592434.1592436; 仅摘要; https://openalex.org/W2150189917
+- Metamorphic Testing (2018); DOI: 10.1145/3143561; 仅摘要; https://openalex.org/W2782311202
+- Fairness in Machine Learning: A Survey (2023); DOI: 10.1145/3616865; 仅摘要; https://openalex.org/W3092541244
+- Federated database systems for managing distributed, heterogeneous, and autonomous databases (1990); DOI: 10.1145/96602.96604; 仅摘要; https://openalex.org/W1537257884
+- On understanding types, data abstraction, and polymorphism (1985); DOI: 10.1145/6041.6042; 仅摘要; https://openalex.org/W2027657506
+- Multidimensional access methods (1998); DOI: 10.1145/280277.280279; 仅摘要; https://openalex.org/W2106642566
+- Software reuse (1992); DOI: 10.1145/130844.130856; 仅摘要; https://openalex.org/W2294861651
+- A Survey on Homomorphic Encryption Schemes (2018); DOI: 10.1145/3214303; 仅摘要; https://openalex.org/W2606882085
+- Security-control methods for statistical databases: a comparative study (1989); DOI: 10.1145/76894.76895; 仅摘要; https://openalex.org/W2113427031
+- Searching in high-dimensional spaces (2001); DOI: 10.1145/502807.502809; 仅摘要; https://openalex.org/W2124222502
+- Compiler transformations for high-performance computing (1994); DOI: 10.1145/197405.197406; 仅摘要; https://openalex.org/W2049890071
+- Search-based software engineering (2012); DOI: 10.1145/2379776.2379787; 仅摘要; https://openalex.org/W1977321274
+- A Survey on Blockchain Interoperability: Past, Present, and Future Trends (2021); DOI: 10.1145/3471140; 仅摘要; https://openalex.org/W3029616339
+- Formal methods (1996); DOI: 10.1145/242223.242257; 仅摘要; https://openalex.org/W4296471858
+- A logical design methodology for relational databases using the extended entity-relationship model (1986); DOI: 10.1145/7474.7475; 仅摘要; https://openalex.org/W2113827629
+- A Survey of Symbolic Execution Techniques (2018); DOI: 10.1145/3182657; 仅摘要; https://openalex.org/W2528040273
+- A Comprehensive Survey of Privacy-preserving Federated Learning (2021); DOI: 10.1145/3460427; 仅摘要; https://openalex.org/W3180608480
+- Challenges in Deploying Machine Learning: A Survey of Case Studies (2022); DOI: 10.1145/3533378; 仅摘要; https://openalex.org/W3104128335
+- A Survey of Methods for Explaining Black Box Models (2018); DOI: 10.1145/3236009; 仅摘要; https://openalex.org/W2786715987
+- The state of the art in end-user software engineering (2011); DOI: 10.1145/1922649.1922658; 仅摘要; https://openalex.org/W2093495548
+- Deep Learning for Time Series Anomaly Detection: A Survey (2024); DOI: 10.1145/3691338; 仅摘要; https://openalex.org/W4402056503
+- Efficient Deep Learning: A Survey on Making Deep Learning Models Smaller, Faster, and Better (2023); DOI: 10.1145/3578938; 仅摘要; https://openalex.org/W3170647102
+- Version models for software configuration management (1998); DOI: 10.1145/280277.280280; 仅摘要; https://openalex.org/W2001907377
+- Information retrieval on the web (2000); DOI: 10.1145/358923.358934; 仅摘要; https://openalex.org/W2046325278
+- Semantic trajectories modeling and analysis (2013); DOI: 10.1145/2501654.2501656; 仅摘要; https://openalex.org/W2028031999
+- Ubiquitous B-Tree (1979); DOI: 10.1145/356770.356776; 仅摘要; https://openalex.org/W2161694911
+- A survey of peer-to-peer content distribution technologies (2004); DOI: 10.1145/1041680.1041681; 仅摘要; https://openalex.org/W2160279333
+- Facial Expression Analysis under Partial Occlusion (2018); DOI: 10.1145/3158369; 仅摘要; https://openalex.org/W2788728386
+- WiFi Sensing with Channel State Information (2019); DOI: 10.1145/3310194; 仅摘要; https://openalex.org/W2952065976
+- A Survey on Malware Detection Using Data Mining Techniques (2017); DOI: 10.1145/3073559; 仅摘要; https://openalex.org/W2732916693
+- Heterogeneous Federated Learning: State-of-the-art and Research Challenges (2023); DOI: 10.1145/3625558; 仅摘要; https://openalex.org/W4387105517
+- A Survey on End-Edge-Cloud Orchestrated Network Computing Paradigms (2019); DOI: 10.1145/3362031; 仅摘要; https://openalex.org/W2980789769
+- Membership Inference Attacks on Machine Learning: A Survey (2022); DOI: 10.1145/3523273; 仅摘要; https://openalex.org/W3138815606
+- Edge Computing with Artificial Intelligence: A Machine Learning Perspective (2022); DOI: 10.1145/3555802; 仅摘要; https://openalex.org/W4291972732
+- Graphical passwords (2012); DOI: 10.1145/2333112.2333114; 仅摘要; https://openalex.org/W2126453598
+- A Survey of Physics-Based Attack Detection in Cyber-Physical Systems (2018); DOI: 10.1145/3203245; 仅摘要; https://openalex.org/W2803355698
+- Survey and taxonomy of packet classification techniques (2005); DOI: 10.1145/1108956.1108958; 仅摘要; https://openalex.org/W2159669151
+- Nudges for Privacy and Security (2017); DOI: 10.1145/3054926; 仅摘要; https://openalex.org/W2545457694
+- Demystifying Arm TrustZone (2019); DOI: 10.1145/3291047; 仅摘要; https://openalex.org/W2913096406
+- A Systematic Review on Imbalanced Data Challenges in Machine Learning (2019); DOI: 10.1145/3343440; 仅摘要; https://openalex.org/W2971644666
+- A Survey on Ethereum Systems Security (2020); DOI: 10.1145/3391195; 仅摘要; https://openalex.org/W3034459010

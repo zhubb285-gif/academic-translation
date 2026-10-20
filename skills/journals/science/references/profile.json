@@ -1,0 +1,31 @@
+{
+  "article_count": 225,
+  "abstract_sample_count": 224,
+  "full_text_count": 82,
+  "abstract_median_words": 125,
+  "sentence_median_words": 22,
+  "abstract_first_person_fraction": 0.661,
+  "abstract_numeric_fraction": 0.714,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1126/science.aed9286",
+      "quote": "Abstract Neutrophil extracellular traps (NETs) feature a branched chromatin architecture whose origin and function remain unknown. We found that NET branching is …",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7619443/fullTextXML",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1126/science.aeh1475",
+      "quote": "The cellular distribution of mitochondria in response to stress and local energy needs is governed by the relative activities of the microtubule-based …",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13545989/fullTextXML",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1126/science.aea5113",
+      "quote": "Local fibroblast development and densities influence organ health and disease, although it remains unclear how tissue fibroblast topography is controlled in situ …",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7619465/fullTextXML",
+      "section": "abstract"
+    }
+  ]
+}

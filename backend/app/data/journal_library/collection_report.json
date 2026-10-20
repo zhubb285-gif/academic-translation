@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-10-20",
+  "counts": {
+    "Nature Communications": 241,
+    "IEEE Transactions on Pattern Analysis and Machine Intelligence": 80,
+    "Journal of the American Chemical Society": 110,
+    "Science": 225,
+    "Advanced Materials": 92,
+    "The Lancet": 53,
+    "ACM Computing Surveys": 77,
+    "IEEE Access": 56,
+    "SPE Journal": 107,
+    "Marine and Petroleum Geology": 85,
+    "Energy & Fuels": 105
+  },
+  "total": 1231,
+  "full_text": 182,
+  "abstract_only": 1049,
+  "errors": [],
+  "limitations": [
+    "当前11刊以自然科学、工程和医学为主。马克思主义理论与法学未建立专业论文覆盖；涉及法律或政治理论的术语，不得用自然科学论文中的同名词证明专业译法。",
+    "英文用法出现不等于中英译法得到证实，必须人工裁决。",
+    "摘要样本只能支撑摘要风格观察，不能推出正文或方法章节风格。",
+    "摘要获取不代表获得全文下载或模型训练授权。"
+  ]
+}

@@ -84,6 +84,10 @@ def build_proofreading_prompt(
             f"【目标期刊】{journal_name}",
             f"【语言规范】{english_variant} English",
         ])
+        if journal_style.get("style_skill_enabled", True):
+            from app.services.journal_library import style_instruction
+            prompt_parts.append(style_instruction(journal_name))
+            prompt_parts.append("样本统计是描述性观察，不能仅因偏离中位数、使用第一人称或主动语态而报错。")
 
     prompt_parts.extend([
         "",
@@ -242,7 +246,7 @@ class MQMReviewService:
                     })
 
         # 2. 期刊风格（第一人称检查）
-        if journal_style and any(w in translated_text.split() for w in ["We", "we", "Our", "our"]):
+        if journal_style and (journal_style.get("style_rules") or {}).get("prohibit_first_person") and any(w in translated_text.split() for w in ["We", "we", "Our", "our"]):
             issues.append({
                 "error_type": "Style",
                 "error_subtype": "VoiceOrTense",

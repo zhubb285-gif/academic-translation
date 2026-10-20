@@ -1,0 +1,31 @@
+{
+  "article_count": 241,
+  "abstract_sample_count": 241,
+  "full_text_count": 100,
+  "abstract_median_words": 153,
+  "sentence_median_words": 22,
+  "abstract_first_person_fraction": 0.942,
+  "abstract_numeric_fraction": 0.801,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1038/s41467-026-78211-7",
+      "quote": "Abstract Large repetitive elements and complex chromosomal organization continue to challenge accurate assembly of eukaryotic genomes. Optical genome mapping (OGM) provides long-range …",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631253/fullTextXML",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1038/s41467-026-77782-9",
+      "quote": "Neural dynamics at the laminar level are critical for cortical computation. However, in humans, non-invasive methods to probe such dynamics have been …",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627721/fullTextXML",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1038/s41467-026-77933-y",
+      "quote": "In wavefront shaping, light, sound, and other waves are focused through complex scattering media onto one or more target positions, and the …",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627650/fullTextXML",
+      "section": "abstract"
+    }
+  ]
+}

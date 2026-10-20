@@ -1,0 +1,31 @@
+{
+  "article_count": 105,
+  "abstract_sample_count": 105,
+  "full_text_count": 0,
+  "abstract_median_words": 222,
+  "sentence_median_words": 24,
+  "abstract_first_person_fraction": 0.2,
+  "abstract_numeric_fraction": 0.876,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1021/acs.energyfuels.4c02513",
+      "quote": "As the global imperative to CO 2 emissions intensifies, carbon capture and storage (CCS) technologies, particularly CO 2 post-combustion capture, emerge as …",
+      "source_url": "https://openalex.org/W4400646404",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1021/acs.energyfuels.1c01618",
+      "quote": "Aiming at meeting the global goals established for carbon dioxide (CO2) reduction, carbon capture and storage (CCS) plays a key role. In …",
+      "source_url": "https://openalex.org/W3191648510",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1021/acs.energyfuels.1c01666",
+      "quote": "In recent decades, the production of H 2 from biomass, waste plastics, and their mixtures has attracted increasing attention in the literature …",
+      "source_url": "https://openalex.org/W3188507440",
+      "section": "abstract"
+    }
+  ]
+}

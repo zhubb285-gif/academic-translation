@@ -80,6 +80,7 @@ class Project(Base):
 
     # 期刊关联
     journal_id = Column(Integer, ForeignKey("journals.id"), nullable=True)
+    style_skill_enabled = Column(Boolean, default=True, server_default="1", nullable=False)
     article_type = Column(String(100), nullable=True, comment="文章类型：研究论文/综述/短文等")
 
     # 翻译配置
@@ -118,6 +119,7 @@ class Document(Base):
     file_path = Column(String(1000), nullable=False)
     parse_status = Column(String(50), default="pending", comment="pending/parsing/done/error")
     parse_error = Column(Text, nullable=True)
+    terminology_analysis = Column(JSON, nullable=True, comment="AI术语识别与逐级查证进度")
     word_count = Column(Integer, default=0, comment="中文字符数")
     segment_count = Column(Integer, default=0)
 

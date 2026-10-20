@@ -1,0 +1,112 @@
+# Journal of the American Chemical Society — 实际语料清单
+
+- A New Zirconium Inorganic Building Brick Forming Metal Organic Frameworks with Exceptional Stability (2008); DOI: 10.1021/ja8057953; 仅摘要; https://openalex.org/W1986238480
+- Nickel–Iron Oxyhydroxide Oxygen-Evolution Electrocatalysts: The Role of Intentional and Incidental Iron Incorporation (2014); DOI: 10.1021/ja502379c; 仅摘要; https://openalex.org/W2312725582
+- Enhanced Hydrogen Evolution Catalysis from Chemically Exfoliated Metallic MoS 2 Nanosheets (2013); DOI: 10.1021/ja404523s; 仅摘要; https://openalex.org/W1996162207
+- Nanostructured Nickel Phosphide as an Electrocatalyst for the Hydrogen Evolution Reaction (2013); DOI: 10.1021/ja403440e; 仅摘要; https://openalex.org/W2050104692
+- Construction of Covalent Organic Framework for Catalysis: Pd/COF-LZU1 in Suzuki–Miyaura Coupling Reaction (2011); DOI: 10.1021/ja206846p; 仅摘要; https://openalex.org/W2013200143
+- Preparation, Clathration Ability, and Catalysis of a Two-Dimensional Square Network Material Composed of Cadmium(II) and 4,4'-Bipyridine (1994); DOI: 10.1021/ja00082a055; 仅摘要; https://openalex.org/W1966555774
+- Catalysis with TiO2/Gold Nanocomposites. Effect of Metal Particle Size on the Fermi Level Equilibration (2004); DOI: 10.1021/ja0315199; 仅摘要; https://openalex.org/W2022621714
+- A Homochiral Porous Metal−Organic Framework for Highly Enantioselective Heterogeneous Asymmetric Catalysis (2005); DOI: 10.1021/ja052431t; 仅摘要; https://openalex.org/W2090748133
+- New Strategies for Organic Catalysis: The First Highly Enantioselective Organocatalytic Diels−Alder Reaction (2000); DOI: 10.1021/ja000092s; 仅摘要; https://openalex.org/W2062355662
+- Tetrazine Ligation: Fast Bioconjugation Based on Inverse-Electron-Demand Diels−Alder Reactivity (2008); DOI: 10.1021/ja8053805; 仅摘要; https://openalex.org/W2062524026
+- Aqueous CO 2 Reduction at Very Low Overpotential on Oxide-Derived Au Nanoparticles (2012); DOI: 10.1021/ja309317u; 仅摘要; https://openalex.org/W2011564123
+- Doping Metal–Organic Frameworks for Water Oxidation, Carbon Dioxide Reduction, and Organic Photocatalysis (2011); DOI: 10.1021/ja203564w; 仅摘要; https://openalex.org/W2075535386
+- Solution-Cast Metal Oxide Thin Film Electrocatalysts for Oxygen Evolution (2012); DOI: 10.1021/ja307507a; 仅摘要; https://openalex.org/W2011685920
+- Single Atomic Iron Catalysts for Oxygen Reduction in Acidic Media: Particle Size Control and Thermal Activation (2017); DOI: 10.1021/jacs.7b06514; 仅摘要; https://openalex.org/W2755768317
+- Cobalt Particle Size Effects in the Fischer−Tropsch Reaction Studied with Carbon Nanofiber Supported Catalysts (2006); DOI: 10.1021/ja058282w; 仅摘要; https://openalex.org/W2117523245
+- Single Cobalt Atoms Anchored on Porous N-Doped Graphene with Dual Reaction Sites for Efficient Fenton-like Catalysis (2018); DOI: 10.1021/jacs.8b05992; 仅摘要; https://openalex.org/W2888827392
+- A New Photoactive Crystalline Highly Porous Titanium(IV) Dicarboxylate (2009); DOI: 10.1021/ja903726m; 仅摘要; https://openalex.org/W2001283055
+- Enhanced Nitrate-to-Ammonia Activity on Copper–Nickel Alloys via Tuning of Intermediate Adsorption (2020); DOI: 10.1021/jacs.9b13347; 仅摘要; https://openalex.org/W3009486424
+- Phosphorus-Doped Carbon Nitride Solid: Enhanced Electrical Conductivity and Photocurrent Generation (2010); DOI: 10.1021/ja101749y; 仅摘要; https://openalex.org/W2090045000
+- Efficient Water Oxidation Using Nanostructured α-Nickel-Hydroxide as an Electrocatalyst (2014); DOI: 10.1021/ja502128j; 仅摘要; https://openalex.org/W2316303567
+- Selective carbon-carbon bond formation by cross-coupling of Grignard reagents with organic halides. Catalysis by nickel-phosphine complexes (1972); DOI: 10.1021/ja00767a075; 仅摘要; https://openalex.org/W2085925544
+- Tuning Selectivity of CO2 Hydrogenation Reactions at the Metal/Oxide Interface (2017); DOI: 10.1021/jacs.7b05362; 仅摘要; https://openalex.org/W2722013064
+- Construction of ZnIn 2 S 4 –In 2 O 3 Hierarchical Tubular Heterostructures for Efficient CO 2 Photoreduction (2018); DOI: 10.1021/jacs.8b02200; 仅摘要; https://openalex.org/W2794692883
+- Synthesis of Graphene Aerogel with High Electrical Conductivity (2010); DOI: 10.1021/ja1072299; 仅摘要; https://openalex.org/W2019702852
+- Synthetic Methods Driven by the Photoactivity of Electron Donor–Acceptor Complexes (2020); DOI: 10.1021/jacs.0c01416; 仅摘要; https://openalex.org/W3010504693
+- Promoter Effects of Alkali Metal Cations on the Electrochemical Reduction of Carbon Dioxide (2017); DOI: 10.1021/jacs.7b06765; 仅摘要; https://openalex.org/W2738629485
+- Oxygen Evolution Reaction Dynamics, Faradaic Charge Efficiency, and the Active Metal Redox States of Ni–Fe Oxide Water Splitting Electrocatalysts (2016); DOI: 10.1021/jacs.6b00332; 仅摘要; https://openalex.org/W2323340717
+- Frustrated Lewis Pairs (2015); DOI: 10.1021/jacs.5b06794; 仅摘要; https://openalex.org/W2142839187
+- Metal–Organic Frameworks for Electrocatalytic Reduction of Carbon Dioxide (2015); DOI: 10.1021/jacs.5b08212; 仅摘要; https://openalex.org/W2340814919
+- Ruthenium(II)-Catalyzed Asymmetric Transfer Hydrogenation of Ketones Using a Formic Acid−Triethylamine Mixture (1996); DOI: 10.1021/ja954126l; 仅摘要; https://openalex.org/W2005257160
+- Three-Dimensional Graphene-Based Macro- and Mesoporous Frameworks for High-Performance Electrochemical Capacitive Energy Storage (2012); DOI: 10.1021/ja308676h; 仅摘要; https://openalex.org/W2050819310
+- Boosting Oxygen Reduction of Single Iron Active Sites via Geometric and Electronic Engineering: Nitrogen and Phosphorus Dual Coordination (2020); DOI: 10.1021/jacs.9b11852; 仅摘要; https://openalex.org/W2998215827
+- Fe-g-C3N4-Catalyzed Oxidation of Benzene to Phenol Using Hydrogen Peroxide and Visible Light (2009); DOI: 10.1021/ja903923s; 仅摘要; https://openalex.org/W2083343486
+- Ultrathin Black Phosphorus Nanosheets for Efficient Singlet Oxygen Generation (2015); DOI: 10.1021/jacs.5b06025; 仅摘要; https://openalex.org/W2399945589
+- Vapor-Phase Metalation by Atomic Layer Deposition in a Metal–Organic Framework (2013); DOI: 10.1021/ja4050828; 仅摘要; https://openalex.org/W2025831662
+- Electron-Transfer Photoredox Catalysis: Development of a Tin-Free Reductive Dehalogenation Reaction (2009); DOI: 10.1021/ja9033582; 仅摘要; https://openalex.org/W1985066293
+- Copper Oxide Nanocrystals (2005); DOI: 10.1021/ja050006u; 仅摘要; https://openalex.org/W2011679767
+- Metal–Organic Frameworks as A Tunable Platform for Designing Functional Molecular Materials (2013); DOI: 10.1021/ja308229p; 仅摘要; https://openalex.org/W2057523617
+- Application of Carbon Nanotubes as Supports in Heterogeneous Catalysis (1994); DOI: 10.1021/ja00096a076; 仅摘要; https://openalex.org/W2054551180
+- Organometal Halide Perovskites as Visible-Light Sensitizers for Photovoltaic Cells (2009); DOI: 10.1021/ja809598r; 仅摘要; https://openalex.org/W2057327293
+- Development and Testing of the OPLS All-Atom Force Field on Conformational Energetics and Properties of Organic Liquids (1996); DOI: 10.1021/ja9621760; 仅摘要; https://openalex.org/W2051381895
+- A Second Generation Force Field for the Simulation of Proteins, Nucleic Acids, and Organic Molecules (1995); DOI: 10.1021/ja00124a002; 仅摘要; https://openalex.org/W2122199548
+- The Li-Ion Rechargeable Battery: A Perspective (2013); DOI: 10.1021/ja3091438; 仅摘要; https://openalex.org/W2021172010
+- Electrophilicity Index (1999); DOI: 10.1021/ja983494x; 仅摘要; https://openalex.org/W4231649355
+- Benchmarking Heterogeneous Electrocatalysts for the Oxygen Evolution Reaction (2013); DOI: 10.1021/ja407115p; 仅摘要; https://openalex.org/W2114291507
+- Cancer Cell Imaging and Photothermal Therapy in the Near-Infrared Region by Using Gold Nanorods (2006); DOI: 10.1021/ja057254a; 仅摘要; https://openalex.org/W2080376276
+- The OPLS [optimized potentials for liquid simulations] potential functions for proteins, energy minimizations for crystals of cyclic peptides and crambin (1988); DOI: 10.1021/ja00214a001; 仅摘要; https://openalex.org/W2041189078
+- MoS 2 Nanoparticles Grown on Graphene: An Advanced Catalyst for the Hydrogen Evolution Reaction (2011); DOI: 10.1021/ja201269b; 仅摘要; https://openalex.org/W2043775186
+- Biomimetic Hydrogen Evolution: MoS 2 Nanoparticles as Catalyst for Hydrogen Evolution (2005); DOI: 10.1021/ja0504690; 仅摘要; https://openalex.org/W2133795748
+- Vapor-Liquid Equilibrium. XI. A New Expression for the Excess Free Energy of Mixing (1964); DOI: 10.1021/ja01056a002; 仅摘要; https://openalex.org/W2314077734
+- HADDOCK: A Protein−Protein Docking Approach Based on Biochemical or Biophysical Information (2003); DOI: 10.1021/ja026939x; 仅摘要; https://openalex.org/W2153983456
+- An Advanced Ni–Fe Layered Double Hydroxide Electrocatalyst for Water Oxidation (2013); DOI: 10.1021/ja4027715; 仅摘要; https://openalex.org/W2058916144
+- Highly Phosphorescent Bis-Cyclometalated Iridium Complexes: Synthesis, Photophysical Characterization, and Use in Organic Light Emitting Diodes (2001); DOI: 10.1021/ja003693s; 仅摘要; https://openalex.org/W2052329392
+- Molecular Optimization Enables over 13% Efficiency in Organic Solar Cells (2017); DOI: 10.1021/jacs.7b02677; 仅摘要; https://openalex.org/W2615203216
+- Identification of Highly Active Fe Sites in (Ni,Fe)OOH for Electrocatalytic Water Splitting (2015); DOI: 10.1021/ja511559d; 仅摘要; https://openalex.org/W2323275360
+- Storage of Hydrogen, Methane, and Carbon Dioxide in Highly Porous Covalent Organic Frameworks for Clean Energy Applications (2009); DOI: 10.1021/ja9015765; 仅摘要; https://openalex.org/W2049541689
+- Engineering of Efficient Panchromatic Sensitizers for Nanocrystalline TiO 2 -Based Solar Cells (2001); DOI: 10.1021/ja003299u; 仅摘要; https://openalex.org/W1984576643
+- Lanthanide Double-Decker Complexes Functioning as Magnets at the Single-Molecular Level (2003); DOI: 10.1021/ja029629n; 仅摘要; https://openalex.org/W1978239898
+- Relation between the Ion Size and Pore Size for an Electric Double-Layer Capacitor (2008); DOI: 10.1021/ja7106178; 仅摘要; https://openalex.org/W2075550639
+- Highly Efficient Visible-Light-Driven Photocatalytic Hydrogen Production of CdS-Cluster-Decorated Graphene Nanosheets (2011); DOI: 10.1021/ja2025454; 仅摘要; https://openalex.org/W2024276736
+- Synergetic Effect of MoS2 and Graphene as Cocatalysts for Enhanced Photocatalytic H2 Production Activity of TiO2 Nanoparticles (2012); DOI: 10.1021/ja302846n; 仅摘要; https://openalex.org/W1971008178
+- Dendrite-Free Lithium Deposition via Self-Healing Electrostatic Shield Mechanism (2013); DOI: 10.1021/ja312241y; 仅摘要; https://openalex.org/W1987452691
+- Ni(OH) 2 Nanoplates Grown on Graphene as Advanced Electrochemical Pseudocapacitor Materials (2010); DOI: 10.1021/ja102267j; 仅摘要; https://openalex.org/W2003616899
+- Mn3O4−Graphene Hybrid as a High-Capacity Anode Material for Lithium Ion Batteries (2010); DOI: 10.1021/ja105296a; 仅摘要; https://openalex.org/W2014971973
+- Cation-Deficient Spinel ZnMn 2 O 4 Cathode in Zn(CF 3 SO 3 ) 2 Electrolyte for Rechargeable Aqueous Zn-Ion Battery (2016); DOI: 10.1021/jacs.6b05958; 仅摘要; https://openalex.org/W2519218628
+- THE NATURE OF THE CHEMICAL BOND. IV. THE ENERGY OF SINGLE BONDS AND THE RELATIVE ELECTRONEGATIVITY OF ATOMS (1932); DOI: 10.1021/ja01348a011; 仅摘要; https://openalex.org/W2322354531
+- Metal–Organic Framework Derived Hybrid Co3O4-Carbon Porous Nanowire Arrays as Reversible Oxygen Evolution Electrodes (2014); DOI: 10.1021/ja5082553; 仅摘要; https://openalex.org/W2048407205
+- Dramatic Tuning of Carbon Dioxide Uptake via Metal Substitution in a Coordination Polymer with Cylindrical Pores (2008); DOI: 10.1021/ja8036096; 仅摘要; https://openalex.org/W1976408176
+- Polymer Semiconductors for Artificial Photosynthesis: Hydrogen Evolution by Mesoporous Graphitic Carbon Nitride with Visible Light (2009); DOI: 10.1021/ja809307s; 仅摘要; https://openalex.org/W2049078565
+- Efficient Visible Light Nitrogen Fixation with BiOBr Nanosheets of Oxygen Vacancies on the Exposed {001} Facets (2015); DOI: 10.1021/jacs.5b03105; 仅摘要; https://openalex.org/W2038851518
+- Failure of Time-Dependent Density Functional Theory for Long-Range Charge-Transfer Excited States: The Zincbacteriochlorin−Bacteriochlorin and Bacteriochlorophyll−Spheroidene Complexes (2004); DOI: 10.1021/ja039556n; 仅摘要; https://openalex.org/W1980197072
+- In situ Cobalt–Cobalt Oxide/N-Doped Carbon Hybrids As Superior Bifunctional Electrocatalysts for Hydrogen and Oxygen Evolution (2015); DOI: 10.1021/ja5127165; 仅摘要; https://openalex.org/W2035048508
+- Quantum Dot Solar Cells. Harvesting Light Energy with CdSe Nanocrystals Molecularly Linked to Mesoscopic TiO2 Films (2006); DOI: 10.1021/ja056494n; 仅摘要; https://openalex.org/W2077841486
+- Behavior of Ylides Containing N, O, and C Atoms as Hydrogen Bond Acceptors (2000); DOI: 10.1021/ja0017864; 仅摘要; https://openalex.org/W2089962804
+- Transition Metal Oxides as Electrocatalysts for the Oxygen Evolution Reaction in Alkaline Solutions: An Application-Inspired Renaissance (2018); DOI: 10.1021/jacs.8b04546; 仅摘要; https://openalex.org/W2804339411
+- Effect of Nature and Location of Defects on Bandgap Narrowing in Black TiO 2 Nanoparticles (2012); DOI: 10.1021/ja3012676; 仅摘要; https://openalex.org/W2333197797
+- Electrocatalytic Conversion of Carbon Dioxide to Methane and Methanol on Transition Metal Surfaces (2014); DOI: 10.1021/ja505791r; 仅摘要; https://openalex.org/W2318989366
+- Principles of Polymer Chemistry. (1954); DOI: 10.1021/ja01639a090; 仅摘要; https://openalex.org/W2314659927
+- The Temperature Dependence of Relaxation Mechanisms in Amorphous Polymers and Other Glass-forming Liquids (1955); DOI: 10.1021/ja01619a008; 仅摘要; https://openalex.org/W2156370397
+- Controlled/"living" radical polymerization. atom transfer radical polymerization in the presence of transition-metal complexes (1995); DOI: 10.1021/ja00125a035; 仅摘要; https://openalex.org/W2074554162
+- New Pd(II)- and Ni(II)-Based Catalysts for Polymerization of Ethylene and .alpha.-Olefins (1995); DOI: 10.1021/ja00128a054; 仅摘要; https://openalex.org/W1986119632
+- Preparation of polymers with controlled molecular architecture. A new convergent approach to dendritic macromolecules (1990); DOI: 10.1021/ja00177a027; 仅摘要; https://openalex.org/W2010542051
+- One-Pot Colorimetric Differentiation of Polynucleotides with Single Base Imperfections Using Gold Nanoparticle Probes (1998); DOI: 10.1021/ja972332i; 仅摘要; https://openalex.org/W1977125458
+- Synthesis and Applications of RuCl2(CHR‘)(PR3)2: The Influence of the Alkylidene Moiety on Metathesis Activity (1996); DOI: 10.1021/ja952676d; 仅摘要; https://openalex.org/W1981287002
+- Ultrasmall Reduced Graphene Oxide with High Near-Infrared Absorbance for Photothermal Therapy (2011); DOI: 10.1021/ja2010175; 仅摘要; https://openalex.org/W2326443463
+- Design and construction of a new class of scaffolding-like materials comprising infinite polymeric frameworks of 3D-linked molecular rods. A reappraisal of the zinc cyanide and cadmium cyanide structures and the synthesis and structure of the diamond-related frameworks [N(CH3)4][CuIZnII(CN)4] and CuI[4,4',4'',4'''-tetracyanotetraphenylmethane]BF4.xC6H5NO2 (1990); DOI: 10.1021/ja00160a038; 仅摘要; https://openalex.org/W2078588308
+- Molecular Size Distribution in Three Dimensional Polymers. I. Gelation 1 (1941); DOI: 10.1021/ja01856a061; 仅摘要; https://openalex.org/W2335127529
+- Novel Mesoporous Materials with a Uniform Distribution of Organic Groups and Inorganic Oxide in Their Frameworks (1999); DOI: 10.1021/ja9916658; 仅摘要; https://openalex.org/W1975493559
+- Polyaniline Nanofibers: Facile Synthesis and Chemical Sensors (2002); DOI: 10.1021/ja028371y; 仅摘要; https://openalex.org/W2034734459
+- Glutathione-Protected Gold Clusters Revisited: Bridging the Gap between Gold(I)−Thiolate Complexes and Thiolate-Protected Gold Nanocrystals (2005); DOI: 10.1021/ja042218h; 仅摘要; https://openalex.org/W2054273170
+- Two-Dimensional Hybrid Halide Perovskites: Principles and Promises (2018); DOI: 10.1021/jacs.8b10851; 仅摘要; https://openalex.org/W2899631718
+- Unusual Stability of Acetonitrile-Based Superconcentrated Electrolytes for Fast-Charging Lithium-Ion Batteries (2014); DOI: 10.1021/ja412807w; 仅摘要; https://openalex.org/W2025010304
+- Fluorine Substituted Conjugated Polymer of Medium Band Gap Yields 7% Efficiency in Polymer−Fullerene Solar Cells (2011); DOI: 10.1021/ja1112595; 仅摘要; https://openalex.org/W2011678172
+- Highly Active Iron and Cobalt Catalysts for the Polymerization of Ethylene (1998); DOI: 10.1021/ja9802100; 仅摘要; https://openalex.org/W2069778813
+- Molecular Design and Ordering Effects in π-Functional Materials for Transistor and Solar Cell Applications (2011); DOI: 10.1021/ja2073643; 仅摘要; https://openalex.org/W2030782971
+- Solvation Structure Design for Aqueous Zn Metal Batteries (2020); DOI: 10.1021/jacs.0c09794; 仅摘要; https://openalex.org/W3111560045
+- Highly Efficient Solar Cell Polymers Developed via Fine-Tuning of Structural and Electronic Properties (2009); DOI: 10.1021/ja901545q; 仅摘要; https://openalex.org/W1988984118
+- Solubilization of Carbon Nanotubes by Nafion toward the Preparation of Amperometric Biosensors (2003); DOI: 10.1021/ja028951v; 仅摘要; https://openalex.org/W2026052512
+- A General Chemical Route to Polyaniline Nanofibers (2003); DOI: 10.1021/ja0371754; 仅摘要; https://openalex.org/W2071901227
+- Toward a Rational Design of Poly(2,7-Carbazole) Derivatives for Solar Cells (2007); DOI: 10.1021/ja0771989; 仅摘要; https://openalex.org/W2055331484
+- Copolymerization of Ethylene and Propylene with Functionalized Vinyl Monomers by Palladium(II) Catalysts (1996); DOI: 10.1021/ja953247i; 仅摘要; https://openalex.org/W2004182290
+- An Inorganic Hole Conductor for Organo-Lead Halide Perovskite Solar Cells. Improved Hole Conductivity with Copper Iodide (2013); DOI: 10.1021/ja411014k; 仅摘要; https://openalex.org/W1994663208
+- Synthesis, Anion Exchange, and Delamination of Co−Al Layered Double Hydroxide: Assembly of the Exfoliated Nanosheet/Polyanion Composite Films and Magneto-Optical Studies (2006); DOI: 10.1021/ja0584471; 仅摘要; https://openalex.org/W2047572502
+- Indene−C60Bisadduct: A New Acceptor for High-Performance Polymer Solar Cells (2010); DOI: 10.1021/ja908602j; 仅摘要; https://openalex.org/W1979470200
+- Design of Single-Atom Co–N5 Catalytic Site: A Robust Electrocatalyst for CO2 Reduction with Nearly 100% CO Selectivity and Remarkable Stability (2018); DOI: 10.1021/jacs.8b00814; 仅摘要; https://openalex.org/W2789860986
+- Point by Point Comparison of Two Thermosensitive Polymers Exhibiting a Similar LCST: Is the Age of Poly(NIPAM) Over? (2006); DOI: 10.1021/ja065324n; 仅摘要; https://openalex.org/W2036725443
+- Polymerization of Lactide with Zinc and Magnesium β-Diiminate Complexes: Stereocontrol and Mechanism (2001); DOI: 10.1021/ja003851f; 仅摘要; https://openalex.org/W2082264584
+- Mesoporous Metal–Nitrogen-Doped Carbon Electrocatalysts for Highly Efficient Oxygen Reduction Reaction (2013); DOI: 10.1021/ja407552k; 仅摘要; https://openalex.org/W1964442294
+- Metal-Catalyzed Transesterification for Healing and Assembling of Thermosets (2012); DOI: 10.1021/ja302894k; 仅摘要; https://openalex.org/W2328954302
+- Fluorescent Porous Polymer Films as TNT Chemosensors: Electronic and Structural Effects (1998); DOI: 10.1021/ja982293q; 仅摘要; https://openalex.org/W2070413963

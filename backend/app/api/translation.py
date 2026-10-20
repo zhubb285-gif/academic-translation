@@ -17,7 +17,7 @@ from app.services.quality_checker import quality_checker
 router = APIRouter(prefix="/translation", tags=["翻译"])
 
 
-def get_journal_style(db: Session, journal_id: Optional[int]) -> Optional[dict]:
+def get_journal_style(db: Session, journal_id: Optional[int], skill_enabled: bool = True) -> Optional[dict]:
     """获取期刊风格配置"""
     if not journal_id:
         return None
@@ -29,6 +29,7 @@ def get_journal_style(db: Session, journal_id: Optional[int]) -> Optional[dict]:
         "english_variant": journal.english_variant,
         "style_rules": journal.style_rules or {},
         "article_types": journal.article_types or [],
+        "style_skill_enabled": skill_enabled,
     }
 
 
@@ -120,7 +121,7 @@ async def translate_segment(
 
     project = db.query(Project).filter(Project.id == seg.project_id).first()
     journal_id = project.journal_id if project else None
-    journal_style = get_journal_style(db, journal_id)
+    journal_style = get_journal_style(db, journal_id, project.style_skill_enabled if project else True)
     terminology_map = get_terminology_map(db, seg.project_id)
     article_type = project.article_type or "研究论文" if project else "研究论文"
 
@@ -195,7 +196,7 @@ async def translate_project_task(
     segments = query.order_by(Segment.order_index).all()
 
     project = db.query(Project).filter(Project.id == project_id).first()
-    journal_style = get_journal_style(db, project.journal_id if project else None)
+    journal_style = get_journal_style(db, project.journal_id if project else None, project.style_skill_enabled if project else True)
     terminology_map = get_terminology_map(db, project_id)
     article_type = project.article_type or "研究论文" if project else "研究论文"
 

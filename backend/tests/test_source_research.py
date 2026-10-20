@@ -208,7 +208,8 @@ class ResearchTests(unittest.IsolatedAsyncioTestCase):
         entry = {"source_level": 1, "source_url": "https://www.termonline.cn/wordDetail?termName=word&subject=123&base=1", "candidate_translation": "marine gas hydrate", "evidence_text": "real original"}
         service._lookup_official = AsyncMock(return_value={"status": "found", "entries": [entry]})
         service.step2_semantic_decompose = AsyncMock()
-        result = await service.execute_progressive_research("海洋天然气水合物")
+        with patch("app.services.source_research.search_usage", return_value=[]):
+            result = await service.execute_progressive_research("海洋天然气水合物", candidates=["marine gas hydrate"])
         self.assertTrue(result["is_exact"])
         service.step2_semantic_decompose.assert_not_awaited()
         self.assertEqual(len(result["cards"]), 1)
@@ -218,11 +219,15 @@ class ResearchTests(unittest.IsolatedAsyncioTestCase):
         core = {"source_level": 1, "source_url": "https://www.termonline.cn/wordDetail?termName=core&subject=1&base=1", "candidate_translation": "gas hydrate", "evidence_text": "real core definition"}
         service._lookup_official = AsyncMock(side_effect=[{"status": "no_exact_match", "entries": []}, {"status": "found", "entries": [core]}])
         service.step2_semantic_decompose = AsyncMock(return_value={"core_term": "天然气水合物", "combined_translation": "deepwater gas hydrate", "components": []})
-        result = await service.execute_progressive_research("深水天然气水合物")
+        service._lookup_secondary = AsyncMock(return_value={"status": "no_exact_match", "entries": []})
+        with patch("app.services.source_research.search_usage", return_value=[]), patch("app.services.source_research.retrieve_level", AsyncMock(return_value=([], []))):
+            result = await service.execute_progressive_research("深水天然气水合物")
         self.assertFalse(result["is_exact"])
         self.assertEqual(result["cards"][0]["match_type"], "core_only")
-        self.assertFalse(result["cards"][1]["source_checked"])
-        self.assertEqual(result["cards"][1]["evidence_text"], "")
+        self.assertEqual(len(result["cards"]), 1)
+        self.assertEqual(result["recommended_translation"], "")
+        self.assertIn("deepwater gas hydrate", result["candidates"])
+        self.assertTrue(result["requires_human_decision"])
 
 
 class PersistenceTests(unittest.IsolatedAsyncioTestCase):

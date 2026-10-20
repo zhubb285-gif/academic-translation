@@ -70,6 +70,8 @@
         <el-progress :percentage="stats?.progress_percent || 0" :stroke-width="16" :format="() => ''" />
       </div>
 
+      <JournalSkillPicker :model-value="project.journal_id" :enabled="project.style_skill_enabled" :domain="project.domain || ''" :disabled="journalSaving" @change="saveJournalSkill" />
+
       <!-- 上传文档区域 -->
       <div class="card mb-24">
         <div class="flex-between mb-16">
@@ -91,7 +93,7 @@
             拖放文件到此处，或 <em>点击上传</em>
           </div>
           <template #tip>
-            <div class="el-upload__tip">上传后自动解析段落，生成编号 S001、S002...</div>
+            <div class="el-upload__tip">上传后自动分段 → AI 识别疑似专业术语 → 查期刊文章 → 查一级、二级信源。请使用已配置的真实 AI 模型。</div>
           </template>
         </el-upload>
 
@@ -113,97 +115,8 @@
         </div>
       </div>
 
-      <!-- 期刊选择 -->
-      <div class="card mb-24">
-        <div class="flex-between mb-16">
-          <div>
-            <strong style="font-size: 16px;">🎯 选择目标投稿期刊（注入风格规范）</strong>
-            <div style="font-size: 13px; color: #888; margin-top: 4px;">
-              选择后，期刊的英美拼写规范、篇幅限制与时态要求将直接作为硬性约束注入翻译大模型提示词中
-            </div>
-          </div>
-          <router-link to="/journals" style="font-size: 13px; color: #4096ff; text-decoration: none;">
-            管理期刊库 ↗
-          </router-link>
-        </div>
+      <TermDiscoveryPanel :project-id="id" @changed="refreshDocuments" />
 
-        <div>
-          <el-select
-            v-model="selectedJournalId"
-            placeholder="点击直接展开下拉列表滚动查找，或输入期刊名称/缩写快速筛选..."
-            filterable
-            clearable
-            size="large"
-            style="width: 100%"
-            @change="applyJournal"
-            :loading="journalLoading"
-          >
-            <el-option
-              v-for="j in journalOptions"
-              :key="j.id"
-              :label="`${j.name}${j.abbreviation ? ' (' + j.abbreviation + ')' : ''}`"
-              :value="j.id"
-            >
-              <div class="journal-option-row">
-                <div class="journal-option-title">
-                  <span class="j-name">{{ j.name }}</span>
-                  <span class="j-abbr" v-if="j.abbreviation">[{{ j.abbreviation }}]</span>
-                </div>
-                <div class="journal-option-tags">
-                  <el-tag size="small" type="info">{{ j.domain }}</el-tag>
-                  <el-tag size="small" :type="j.english_variant === 'British' ? 'warning' : 'success'">
-                    {{ j.english_variant }} English
-                  </el-tag>
-                  <el-tag size="small" type="danger" v-if="j.impact_factor">IF {{ j.impact_factor }}</el-tag>
-                </div>
-              </div>
-            </el-option>
-          </el-select>
-
-          <!-- 选中期刊的详细规范卡片 -->
-          <div v-if="currentJournal" class="journal-detail mt-16">
-            <el-descriptions :column="2" border size="small">
-              <el-descriptions-item label="出版商">{{ currentJournal.publisher }}</el-descriptions-item>
-              <el-descriptions-item label="学科领域">{{ currentJournal.domain }}</el-descriptions-item>
-              <el-descriptions-item label="英语规范">
-                <el-tag size="small" :type="currentJournal.english_variant === 'British' ? 'warning' : 'success'">
-                  {{ currentJournal.english_variant }} English
-                </el-tag>
-              </el-descriptions-item>
-              <el-descriptions-item label="引用格式">{{ currentJournal.citation_style }}</el-descriptions-item>
-              <el-descriptions-item label="摘要字数上限">{{ currentJournal.abstract_word_limit ? currentJournal.abstract_word_limit + ' 词' : '未设定' }}</el-descriptions-item>
-              <el-descriptions-item label="官方指南 URL">
-                <a v-if="currentJournal.author_guide_url" :href="currentJournal.author_guide_url" target="_blank" style="color: #4096ff;">
-                  查看官方投稿指南 ↗
-                </a>
-                <span v-else style="color: #aaa">未录入</span>
-              </el-descriptions-item>
-            </el-descriptions>
-
-            <div v-if="currentJournal.style_rules" class="style-rules-box mt-8">
-              <div style="font-size: 12px; font-weight: 600; color: #555; margin-bottom: 4px;">
-                📋 已加载的官方指南风格约束（将注入模型输入）：
-              </div>
-              <ul style="font-size: 12px; color: #666; padding-left: 20px; line-height: 1.8;">
-                <li v-if="currentJournal.style_rules.tense"><strong>时态规范：</strong>{{ currentJournal.style_rules.tense }}</li>
-                <li v-if="currentJournal.style_rules.voice"><strong>语态规范：</strong>{{ currentJournal.style_rules.voice }}</li>
-                <li v-if="currentJournal.style_rules.abbreviations"><strong>缩写规范：</strong>{{ currentJournal.style_rules.abbreviations }}</li>
-                <li v-for="(rule, idx) in (currentJournal.style_rules.other || [])" :key="idx">
-                  <strong>附加要求：</strong>{{ rule }}
-                </li>
-              </ul>
-            </div>
-
-            <el-alert
-              type="success"
-              :closable="false"
-              class="mt-8"
-              title="期刊语言风格与硬性约束已生效：后续翻译与校对将严格依照该期刊指南执行"
-              show-icon
-            />
-          </div>
-        </div>
-      </div>
     </template>
   </div>
 </template>
@@ -214,7 +127,9 @@ import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, EditPen, Checked, UploadFilled, Delete } from '@element-plus/icons-vue'
 import ProjectHeaderNav from '../components/ProjectHeaderNav.vue'
-import { projectsApi, documentsApi, journalsApi } from '../api'
+import { projectsApi, documentsApi } from '../api'
+import JournalSkillPicker from '../components/JournalSkillPicker.vue'
+import TermDiscoveryPanel from '../components/TermDiscoveryPanel.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -223,11 +138,7 @@ const project = ref<any>(null)
 const stats = ref<any>(null)
 const documents = ref<any[]>([])
 const loading = ref(false)
-const selectedJournalId = ref<number | null>(null)
-const currentJournal = ref<any>(null)
-const journalOptions = ref<any[]>([])
-const journalLoading = ref(false)
-
+const journalSaving = ref(false)
 const handleDeleteProject = async () => {
   if (!project.value) return
   await ElMessageBox.confirm(
@@ -258,10 +169,6 @@ const loadProject = async () => {
     project.value = p
     stats.value = s
     documents.value = docs
-    if (p.journal_id) {
-      selectedJournalId.value = p.journal_id
-      currentJournal.value = await journalsApi.get(p.journal_id)
-    }
   } catch (e: any) {
     ElMessage.error('加载失败: ' + e.message)
   } finally {
@@ -269,29 +176,16 @@ const loadProject = async () => {
   }
 }
 
-const loadAllJournals = async () => {
-  journalLoading.value = true
+const saveJournalSkill = async (values: { journal_id: number | null; style_skill_enabled: boolean }) => {
+  if (journalSaving.value) return
+  journalSaving.value = true
   try {
-    journalOptions.value = await journalsApi.list({ limit: 100 }) as any[]
-  } catch (e) {
-    console.error('加载期刊列表失败', e)
-  } finally {
-    journalLoading.value = false
-  }
-}
-
-const applyJournal = async (journalId: number | null) => {
-  try {
-    await projectsApi.update(id.value, { journal_id: journalId })
-    if (journalId) {
-      currentJournal.value = journalOptions.value.find(j => j.id === journalId) || await journalsApi.get(journalId)
-      ElMessage.success(`目标期刊「${currentJournal.value?.name}」语言规范已注入`)
-    } else {
-      currentJournal.value = null
-      ElMessage.info('已清除目标期刊设定')
-    }
+    project.value = await projectsApi.update(id.value, values)
+    ElMessage.success(values.journal_id && values.style_skill_enabled ? '期刊风格 Skill 已保存，后续翻译生效' : '期刊风格设置已保存')
   } catch (e: any) {
-    ElMessage.error(e.message)
+    ElMessage.error('期刊设置保存失败：' + e.message)
+  } finally {
+    journalSaving.value = false
   }
 }
 
@@ -306,8 +200,16 @@ const beforeUpload = (file: File) => {
 }
 
 const handleUploadSuccess = () => {
-  ElMessage.success('文件上传成功，正在后台解析...')
+  ElMessage.success('上传成功，解析后将自动识别术语并查证，可进入「术语查证」查看进度')
   setTimeout(() => loadProject(), 2000)
+}
+
+const refreshDocuments = async () => {
+  try {
+    const [docs, currentStats] = await Promise.all([documentsApi.listByProject(id.value), projectsApi.stats(id.value)])
+    documents.value = docs
+    stats.value = currentStats
+  } catch { /* The discovery panel displays connection failures. */ }
 }
 
 const handleUploadError = () => {
@@ -316,7 +218,6 @@ const handleUploadError = () => {
 
 onMounted(() => {
   loadProject()
-  loadAllJournals()
 })
 </script>
 

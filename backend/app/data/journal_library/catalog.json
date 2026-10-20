@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "journals": [
+    {"slug":"nature-communications","name":"Nature Communications","issn":"2041-1723","queries":["reservoir","geology","machine learning","materials"],"tone":"从具体科学问题切入，说明研究缺口，再呈现有边界的主要发现及跨学科意义。"},
+    {"slug":"ieee-tpami","name":"IEEE Transactions on Pattern Analysis and Machine Intelligence","issn":"0162-8828","queries":["deep learning","computer vision","pattern recognition"],"tone":"明确任务、现有方法的具体限制、方法机制和可复核的比较结果；避免泛泛的创新宣称。"},
+    {"slug":"jacs","name":"Journal of the American Chemical Society","issn":"0002-7863","queries":["catalysis","energy","polymer"],"tone":"以化学问题与反应或材料机制为主线，准确区分观察、机理解释与应用潜力。"},
+    {"slug":"science","name":"Science","issn":"0036-8075","queries":["energy","geology","artificial intelligence","climate"],"tone":"为跨学科读者先交代问题的重要性，以紧凑的逻辑连接主要发现与有限度的科学意义。"},
+    {"slug":"advanced-materials","name":"Advanced Materials","issn":"0935-9648","queries":["energy","nanomaterials","polymer"],"tone":"围绕材料设计、结构、性能及机制组织表达；应用优势必须对应原文数据和比较条件。"},
+    {"slug":"the-lancet","name":"The Lancet","issn":"0140-6736","queries":["environmental health","clinical trial","public health"],"tone":"清楚说明研究设计、人群、主要结局、效应估计和局限，严格区分关联与因果。"},
+    {"slug":"acm-computing-surveys","name":"ACM Computing Surveys","issn":"0360-0300","queries":["machine learning","software engineering","security"],"tone":"明确综述范围、分类维度、方法比较和未解决问题，保持概念体系和术语的一致性。"},
+    {"slug":"ieee-access","name":"IEEE Access","issn":"2169-3536","queries":["machine learning","energy","control"],"tone":"交代工程任务、系统或算法实现、实验条件和对照结果，突出可复现性并限制外推。"},
+    {"slug":"spe-journal","name":"SPE Journal","issn":"1086-055X","queries":["reservoir","hydraulic fracturing","drilling"],"tone":"交代储层或工况、工程难点、模型假设、验证方式及适用边界，量纲、缩写和参数保持精确。"},
+    {"slug":"marine-and-petroleum-geology","name":"Marine and Petroleum Geology","issn":"0264-8172","queries":["gas hydrate","basin","seismic"],"tone":"按地质背景、数据与方法、观测证据和地质解释组织表达，区分观测事实与推断并保持时空尺度。"},
+    {"slug":"energy-and-fuels","name":"Energy & Fuels","issn":"0887-0624","queries":["petroleum","combustion","carbon capture"],"tone":"围绕能源或燃料问题、实验条件、转化性能与机理讨论展开，明确基准、单位及实验不确定性。"}
+  ],
+  "domains": {
+    "石油与天然气工程":["petroleum","reservoir","hydraulic fracturing","drilling","shale gas","oil recovery","gas hydrate","oilfield"],
+    "计算机科学与技术":["machine learning","deep learning","neural network","computer vision","software","algorithm","computing","artificial intelligence"],
+    "地质资源与地质工程":["geology","geological","seismic","sediment","tectonic","basin","geophysical","stratigraph"],
+    "材料科学与工程":["material","polymer","nanomaterial","perovskite","alloy","composite","electrode"],
+    "化学与化学工程":["catalysis","catalyst","chemical","reaction","molecular","synthesis","adsorption"],
+    "能源动力与电气工程":["energy","fuel","combustion","battery","power","solar","hydrogen"],
+    "环境与安全工程":["environment","climate","carbon capture","emission","pollution","safety","wastewater"],
+    "机械与控制工程":["mechanical","control system","robot","fluid","mechanics","sensor","automation"],
+    "生物医学与公共卫生":["clinical","patient","health","medical","disease","trial","epidemiolog"],
+    "马克思主义理论":[],
+    "法学":[]
+  },
+  "coverage_note":"当前11刊以自然科学、工程和医学为主。马克思主义理论与法学未建立专业论文覆盖；涉及法律或政治理论的术语，不得用自然科学论文中的同名词证明专业译法。"
+}

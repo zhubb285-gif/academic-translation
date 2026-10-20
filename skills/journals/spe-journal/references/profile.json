@@ -1,0 +1,31 @@
+{
+  "article_count": 107,
+  "abstract_sample_count": 107,
+  "full_text_count": 0,
+  "abstract_median_words": 250,
+  "sentence_median_words": 22,
+  "abstract_first_person_fraction": 0.505,
+  "abstract_numeric_fraction": 0.636,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.2118/205365-pa",
+      "quote": "Summary Gas kicks occur frequently in deepwater drilling because of the extremely narrow mud-weight window [minimum 0.01 specific gravity (sg)]. The traditional …",
+      "source_url": "https://openalex.org/W3136700045",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.2118/204210-pa",
+      "quote": "Summary Hydraulic fracturing is an indispensable technology in developing tight oil and gas resources. However, the development of tight oil and gas …",
+      "source_url": "https://openalex.org/W3095475490",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.2118/204224-pa",
+      "quote": "Summary Knowing the location of sweet spots benefits the horizontal well drilling and the selection of perforation clusters. Generally, geoscientists determine sweet …",
+      "source_url": "https://openalex.org/W3094929171",
+      "section": "abstract"
+    }
+  ]
+}

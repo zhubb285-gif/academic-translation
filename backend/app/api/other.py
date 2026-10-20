@@ -28,6 +28,7 @@ from app.schemas.schemas import (
 )
 from app.services.mqm_review import mqm_review_service
 from app.services.quality_checker import quality_checker
+from app.services.journal_library import CATALOG, articles, public_article, journal_summary, style_skill
 
 logger = logging.getLogger(__name__)
 
@@ -36,6 +37,40 @@ logger = logging.getLogger(__name__)
 # ============================================================
 
 journals_router = APIRouter(prefix="/journals", tags=["期刊管理"])
+
+
+@journals_router.get("/library", summary="期刊语料覆盖与风格技能清单")
+def get_journal_library():
+    return {"journals": [journal_summary(j["name"]) for j in CATALOG["journals"]],
+            "coverage_note": CATALOG["coverage_note"], "total": len(articles())}
+
+
+@journals_router.get("/library/articles/{article_id}", summary="查阅实际收集的文章文本")
+def get_library_article(article_id: str):
+    article = next((a for a in articles() if a["id"] == article_id), None)
+    if not article:
+        raise HTTPException(status_code=404, detail="语料文章不存在")
+    return article
+
+
+@journals_router.get("/{journal_id}/articles", summary="期刊语料及出处")
+def get_journal_articles(journal_id: int, search: str = "", domain: str = "", skip: int = 0, limit: int = 20, db: Session = Depends(get_db)):
+    journal = db.get(Journal, journal_id)
+    if not journal:
+        raise HTTPException(status_code=404, detail="期刊不存在")
+    own = [a for a in articles() if a["journal"] == journal.name and (not domain or domain in a["domains"])
+           and (not search or search.casefold() in (a["title"] + " " + a["abstract"]).casefold())]
+    return {"summary": journal_summary(journal.name), "total": len(own),
+            "articles": [public_article(a) for a in own[max(0, skip):max(0, skip)+min(100, max(1, limit))]]}
+
+
+@journals_router.get("/{journal_id}/style-skill", summary="期刊风格 Skill 与可核查语料")
+def get_journal_skill(journal_id: int, db: Session = Depends(get_db)):
+    journal = db.get(Journal, journal_id)
+    if not journal:
+        raise HTTPException(status_code=404, detail="期刊不存在")
+    skill = style_skill(journal.name)
+    return skill or {**journal_summary(journal.name), "skill_available": False, "content": "", "references": []}
 
 
 @journals_router.post("", response_model=JournalResponse, summary="添加期刊")
@@ -262,6 +297,7 @@ async def _get_journal_style(db: Session, project_id: int) -> Optional[dict]:
         "name": journal.name,
         "english_variant": journal.english_variant,
         "style_rules": journal.style_rules or {},
+        "style_skill_enabled": project.style_skill_enabled,
     }
 
 

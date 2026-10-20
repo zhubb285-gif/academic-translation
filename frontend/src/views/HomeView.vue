@@ -1,7 +1,51 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref } from 'vue'
 import TechText from '../components/TechText.vue'
 const activePreview = ref<'source' | 'translation'>('translation')
+const page = ref<HTMLElement>()
+let revealObserver: IntersectionObserver | undefined
+let frame = 0
+let motionQuery: MediaQueryList
+function updateScroll() {
+  frame = 0
+  if (!page.value) return
+  const stage = page.value.querySelector<HTMLElement>('.hero-stage')
+  if (!stage) return
+  if (motionQuery.matches) {
+    stage.style.setProperty('--stage-progress', '1')
+    return
+  }
+  const rect = stage.getBoundingClientRect()
+  const progress = Math.max(0, Math.min(1, (innerHeight - rect.top) / (innerHeight * .85)))
+  stage.style.setProperty('--stage-progress', progress.toFixed(3))
+}
+function queueScroll() { if (!frame) frame = requestAnimationFrame(updateScroll) }
+onMounted(() => {
+  motionQuery = matchMedia('(prefers-reduced-motion: reduce)')
+  revealObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) if (entry.isIntersecting) {
+      entry.target.classList.add('is-revealed')
+      revealObserver?.unobserve(entry.target)
+    }
+  }, { threshold: .12 })
+  page.value?.querySelectorAll<HTMLElement>('.workflow-card, .feature-card, .section-heading, .closing-section').forEach((element, index) => {
+    element.style.setProperty('--reveal-delay', `${element.classList.contains('workflow-card') ? (index % 4) * 90 : 0}ms`)
+    element.classList.add('scroll-reveal')
+    revealObserver?.observe(element)
+  })
+  window.addEventListener('scroll', queueScroll, { passive: true })
+  window.addEventListener('resize', queueScroll)
+  motionQuery.addEventListener('change', queueScroll)
+  updateScroll()
+})
+onBeforeUnmount(() => {
+  revealObserver?.disconnect()
+  cancelAnimationFrame(frame)
+  window.removeEventListener('scroll', queueScroll)
+  window.removeEventListener('resize', queueScroll)
+  motionQuery?.removeEventListener('change', queueScroll)
+})
+
 const workflow = [
   { number: '01', title: '准备原文', text: '创建项目，上传中文文稿，确认段落与目标期刊。', icon: 'document' },
   { number: '02', title: '查证术语', text: '找到专业表达的依据，保留译名、信源与上下文。', icon: 'search' },
@@ -11,7 +55,7 @@ const workflow = [
 </script>
 
 <template>
-  <div class="home-view">
+  <div ref="page" class="home-view">
     <div class="intro-strip">专注学术中译英，让翻译过程更清晰。<router-link to="/workspace">打开工作台 <span aria-hidden="true">›</span></router-link></div>
     <section class="hero-section" aria-labelledby="hero-title">
       <div class="hero-copy">
@@ -39,7 +83,7 @@ const workflow = [
         <div class="hero-actions"><router-link :to="{path: '/workspace', query: {create: '1'}}" class="action-primary">开始一个新项目 <span aria-hidden="true">↗</span></router-link><a href="#workflow" class="action-link">了解工作流程 <span aria-hidden="true">›</span></a></div>
         <p class="hero-caption"><span class="interaction-hint">轻触字母，发现细节。</span>为研究者、译者与课堂实践设计</p>
       </div>
-      <div class="hero-stage">
+      <div class="hero-stage"><div class="stage-halo" aria-hidden="true"></div>
         <div class="manuscript-window" aria-label="中英对照界面示意，非实际模型输出">
           <div class="window-toolbar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>一篇论文的翻译旅程</span><span class="sample-label">界面示意</span></div>
           <div class="manuscript-body">
@@ -75,4 +119,38 @@ const workflow = [
 .section-wrap { max-width: 1200px; padding: 90px 32px; margin: 0 auto; }.section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 45px; }.section-heading .eyebrow { margin-bottom: 18px; }.section-heading h2 { font-size: clamp(30px,3.3vw,44px); font-weight: 600; line-height: 1.3; letter-spacing: -.04em; margin: 0; }.section-description { color: #86868b; line-height: 1.8; font-size: 14px; margin: 0 0 4px; }.workflow-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; }.workflow-card { border-top: 1px solid #d2d2d7; padding-top: 20px; }.workflow-number { font-size: 11px; color: #86868b; font-variant-numeric: tabular-nums; }.workflow-card h3 { font-size: 19px; font-weight: 550; letter-spacing: -.4px; margin: 23px 0 12px; }.workflow-card p { font-size: 13px; line-height: 1.8; color: #6e6e73; margin: 0; }.workflow-link { margin-top: 32px; }.features-section { padding-top: 30px; }.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }.feature-card { border-radius: 25px; padding: 40px; background: #f5f5f7; display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }.journal-feature { background: #f0f4f9; }.feature-label { font-size: 11px; color: #6e6e73; margin-bottom: 26px; }.feature-card h3 { font-size: 31px; font-weight: 600; line-height: 1.35; letter-spacing: -.04em; margin: 0 0 18px; }.feature-card p { font-size: 13px; line-height: 1.8; color: #6e6e73; margin: 0; }.term-illustration { align-self: stretch; background: white; border: 1px solid #eaeaec; border-radius: 12px; padding: 24px; margin: 35px 0 30px; font-size: 12px; box-shadow: 0 6px 16px #00000003; }.term-connector { color: #adb2ba; margin: 0 13px; }.term-illustration strong { font: 15px Georgia; color: #0066cc; }.term-source { font-size: 9px; color: #a1a1a6; padding-top: 17px; margin-top: 17px; border-top: 1px solid #f0f0f2; }.journal-illustration { align-self: stretch; display: flex; gap: 24px; align-items: center; justify-content: center; font-family: Georgia,serif; margin: auto 0; padding: 45px 0; color: #2e3c50; font-size: clamp(18px,2.3vw,32px); letter-spacing: -1px; }.science-wordmark { font-style: italic; }.cell-wordmark { font-weight: 700; }.feature-card>.action-link { margin-top: auto; }.closing-section { background: #f5f5f7; text-align: center; padding: 80px 24px; }.closing-section .eyebrow { font-size: 10px; }.closing-section h2 { font-size: clamp(32px,4vw,48px); letter-spacing: -.05em; font-weight: 600; margin: 0 0 18px; }.closing-section p:not(.eyebrow) { color: #86868b; font-size: 14px; margin: 0 0 28px; }.closing-note { display: block; font-size: 11px; color: #86868b; margin-top: 22px; }
 @media(max-width: 900px) { .hero-section { padding-top: 62px; }.floating-term { left: 0; bottom: 44px; }.workflow-grid { gap: 22px; }.feature-card { padding: 28px; }.journal-illustration { gap: 15px; }.term-illustration { padding: 20px 15px; } }
 @media(max-width: 700px) { .intro-strip { font-size: 10px; padding: 12px 16px; }.intro-strip a { margin-left: 8px; }.hero-section { padding: 49px 20px 45px; }.hero-description { font-size: 15px; }.hero-actions { gap: 20px; }.action-primary { font-size: 12px; padding: 12px 18px; }.action-link { font-size: 12px; }.hero-stage { margin-top: 42px; padding: 0; }.window-toolbar { padding: 0 12px; gap: 8px; }.window-toolbar>span:not(.sample-label) { font-size: 9px; }.manuscript-body { grid-template-columns: 1fr; min-height: 0; }.preview-sidebar { display: none; }.preview-editor { padding: 0 17px; }.editor-paper { padding: 23px 0 18px; }.editor-paper h2 { font-size: 23px; }.paper-paragraph { font-size: 12px; }.floating-term { display: none; }.section-wrap { padding: 56px 20px; }.section-heading { flex-direction: column; align-items: flex-start; gap: 22px; margin-bottom: 32px; }.section-heading .eyebrow { font-size: 9px; }.workflow-grid { grid-template-columns: 1fr 1fr; gap: 30px 24px; }.workflow-card h3 { font-size: 18px; margin-top: 15px; }.workflow-card p { font-size: 12px; }.feature-grid { grid-template-columns: 1fr; }.feature-card { padding: 30px; }.feature-card h3 { font-size: 30px; }.features-section { padding-top: 12px; }.journal-illustration { justify-content: flex-start; gap: 25px; font-size: 29px; }.closing-section { padding: 60px 24px; }.closing-note { font-size: 10px; line-height: 1.7; } }
+</style>
+
+<style scoped>
+.hero-stage { perspective: 1400px; --stage-progress: 0; }
+.stage-halo { position: absolute; inset: 12% -8% -10%; background: radial-gradient(ellipse, #0071e31a, transparent 68%); filter: blur(24px); pointer-events: none; transform: scale(calc(.8 + var(--stage-progress) * .2)); }
+.manuscript-window { position: relative; transform-origin: 50% 65%; transform: translateY(calc((1 - var(--stage-progress)) * 52px)) rotateX(calc((1 - var(--stage-progress)) * 13deg)) rotateZ(calc((1 - var(--stage-progress)) * -1.5deg)) scale(calc(.93 + var(--stage-progress) * .07)); }
+.floating-term { transform: translate3d(calc((1 - var(--stage-progress)) * -34px), calc((1 - var(--stage-progress)) * 80px), 30px) rotate(calc((1 - var(--stage-progress)) * -7deg)); }
+.scroll-reveal { opacity: 0; transform: translate3d(0, 42px, 0); transition: opacity .8s ease var(--reveal-delay, 0ms), transform 1s cubic-bezier(.2,.75,.2,1) var(--reveal-delay, 0ms); }
+.scroll-reveal.is-revealed { opacity: 1; transform: none; }
+.workflow-grid { gap: 18px; }
+.workflow-card { position: relative; padding: 26px 22px 30px; border: 1px solid #e8e8ed; border-radius: 20px; background: linear-gradient(145deg, #fff, #f7f9fc); box-shadow: 0 8px 25px #1d1d1f04; }
+.workflow-card::before { content: ''; position: absolute; top: -1px; left: 22px; width: 32px; height: 2px; background: #0071e3; transform: scaleX(0); transform-origin: left; transition: transform .7s ease .35s; }
+.workflow-card.is-revealed::before { transform: scaleX(1); }
+.workflow-number { display: inline-grid; place-items: center; width: 35px; height: 35px; border: 1px solid #dbe7f7; border-radius: 50%; color: #0066cc; background: #eff5ff; }
+.workflow-card:hover { box-shadow: 0 16px 36px #15335a12; border-color: #c4d8f0; }
+.feature-grid { perspective: 1200px; }
+.terms-feature.scroll-reveal:not(.is-revealed) { transform: translate3d(-36px,48px,0) rotateY(7deg) rotateZ(-2deg) scale(.96); }
+.journal-feature.scroll-reveal:not(.is-revealed) { transform: translate3d(36px,48px,0) rotateY(-7deg) rotateZ(2deg) scale(.96); }
+.feature-card { overflow: hidden; position: relative; }
+.term-illustration, .journal-illustration { transition: transform .65s cubic-bezier(.2,.75,.2,1); }
+.feature-card:hover .term-illustration, .feature-card:hover .journal-illustration { transform: translateY(-7px); }
+.action-primary:focus-visible, .action-link:focus-visible, .preview-switch button:focus-visible { outline: 2px solid #0066cc; outline-offset: 5px; }
+@media(max-width:700px) {
+  .workflow-grid { gap: 14px; }
+  .workflow-card { padding: 20px 16px 24px; }
+  .scroll-reveal { transform: translateY(24px); }
+  .terms-feature.scroll-reveal:not(.is-revealed), .journal-feature.scroll-reveal:not(.is-revealed) { transform: translateY(28px); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .scroll-reveal, .terms-feature.scroll-reveal, .journal-feature.scroll-reveal { opacity: 1; transform: none; transition: none; }
+  .manuscript-window, .floating-term, .stage-halo { transform: none; }
+  .workflow-card::before { transform: scaleX(1); transition: none; }
+  .feature-card:hover .term-illustration, .feature-card:hover .journal-illustration { transform: none; }
+}
 </style>

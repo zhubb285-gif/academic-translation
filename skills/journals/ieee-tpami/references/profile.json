@@ -1,0 +1,31 @@
+{
+  "article_count": 80,
+  "abstract_sample_count": 80,
+  "full_text_count": 0,
+  "abstract_median_words": 178,
+  "sentence_median_words": 21,
+  "abstract_first_person_fraction": 0.8,
+  "abstract_numeric_fraction": 0.6,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1109/tpami.2024.3435571",
+      "quote": "Automatic medical image segmentation is a crucial topic in the medical domain and successively a critical counterpart in the computer-aided diagnosis paradigm. …",
+      "source_url": "https://openalex.org/W4401725766",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1109/tpami.2024.3367329",
+      "quote": "To cope with real-world dynamics, an intelligent system needs to incrementally acquire, update, accumulate, and exploit knowledge throughout its lifetime. This ability, …",
+      "source_url": "https://openalex.org/W4392173735",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1109/tpami.2024.3369699",
+      "quote": "Most visual recognition studies rely heavily on crowd-labelled data in deep neural networks (DNNs) training, and they usually train a DNN for …",
+      "source_url": "https://openalex.org/W4392172801",
+      "section": "abstract"
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+# Nature Communications — 实际语料清单
+
+- Calcium-tolerant electrode strategy for efficient hydrogen peroxide electrosynthesis in natural water. (2026); DOI: 10.1038/s41467-026-77022-0; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623961/fullTextXML
+- Electronic and solvent reorganization in proton-coupled electron transfer captured by ultrafast X-rays. (2026); DOI: 10.1038/s41467-026-75943-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13518934/fullTextXML
+- Hydrogen-helium immiscibility boundary in gas-giant planetary interiors from machine-learning molecular dynamics. (2026); DOI: 10.1038/s41467-026-77117-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627725/fullTextXML
+- Diagnostic yield of cancer predisposition in a nationwide prospective childhood acute leukemia cohort. (2026); DOI: 10.1038/s41467-026-78170-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13619629/fullTextXML
+- Structures of the volume-regulated anion channel LRRC8A/D in activating and inhibiting conditions. (2026); DOI: 10.1038/s41467-026-77508-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586245/fullTextXML
+- Predicting ionic conductivity of sulfide glass solid-state electrolytes using max-flow methodology. (2026); DOI: 10.1038/s41467-026-77363-w; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623887/fullTextXML
+- Cell type-selective targeting by heterobifunctional protein binders via in-cell enrichment. (2026); DOI: 10.1038/s41467-026-77460-w; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586308/fullTextXML
+- Common alleles associated with connectivity within and across the brain's main functional networks. (2026); DOI: 10.1038/s41467-026-77476-2; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631237/fullTextXML
+- RAGE mediates LPS-induced inflammatory pain in human skin - a double-blind, randomised, placebo-controlled full crossover study. (2026); DOI: 10.1038/s41467-026-76771-2; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635236/fullTextXML
+- Dual effect of α-synuclein disease variants on condensate formation. (2026); DOI: 10.1038/s41467-026-77002-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631337/fullTextXML
+- DNA methylation either antagonizes or promotes Polycomb recruitment at transposable elements in Arabidopsis. (2026); DOI: 10.1038/s41467-026-77108-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631316/fullTextXML
+- Barcoded Rabies In Situ Connectomics for high-throughput reconstruction of neural circuits. (2026); DOI: 10.1038/s41467-026-77105-y; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635221/fullTextXML
+- Prefrontal-thalamic goal states organize spatially aligned hippocampal maps. (2026); DOI: 10.1038/s41467-026-77240-6; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13526029/fullTextXML
+- Programmable hydrodynamics of active particles. (2026); DOI: 10.1038/s41467-026-77281-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13538562/fullTextXML
+- Photon trapping in a time cavity flying at the speed of light. (2026); DOI: 10.1038/s41467-026-77059-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13526024/fullTextXML
+- Six-fold reduction in ocean heat content estimate uncertainty since 1960. (2026); DOI: 10.1038/s41467-026-76436-0; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13620135/fullTextXML
+- Associations between diet quality, epigenetic aging and epigenome in two population-based cohorts. (2026); DOI: 10.1038/s41467-026-77064-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13526023/fullTextXML
+- Network science reveals the structure and lasting impact of the Roman road system. (2026); DOI: 10.1038/s41467-026-75453-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13578412/fullTextXML
+- A Hadean timeline for the emergence of the RNA World. (2026); DOI: 10.1038/s41467-026-76978-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13597498/fullTextXML
+- Zipper polydefluorination-monoborylation of perfluoroalkyl chains. (2026); DOI: 10.1038/s41467-026-77437-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13545076/fullTextXML
+- A dual A-to-Y and G-to-Y base editor and a four-base concurrent hypermutator in mammalian cells. (2026); DOI: 10.1038/s41467-026-77241-5; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13619609/fullTextXML
+- Model-free pattern separation of two-color ultrafast X-ray diffraction. (2026); DOI: 10.1038/s41467-026-77085-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635185/fullTextXML
+- De novo E-cadherin/catenin complex formation controls basal epithelial mechanics and force transmission for apoptotic cell clearance. (2026); DOI: 10.1038/s41467-026-76710-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13522565/fullTextXML
+- Recoding by N<sup>1</sup>-methylpseudouridine guides rational mRNA vaccine design. (2026); DOI: 10.1038/s41467-026-77796-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13620113/fullTextXML
+- Multiband topological heterojunctions on the surface nanoscale axial photonics platform. (2026); DOI: 10.1038/s41467-026-76041-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623952/fullTextXML
+- Automated transition state generation for mechanistic exploration in organic synthesis. (2026); DOI: 10.1038/s41467-026-77230-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13616924/fullTextXML
+- Chromosome-scale assembly of yeast genomes using enzyme-free, dense optical genome mapping. (2026); DOI: 10.1038/s41467-026-78211-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631253/fullTextXML
+- GRAF1-dependent endocytotic processes and the Golgi apparatus contribute to previously unrecognized intermediate stages of early ciliogenesis. (2026); DOI: 10.1038/s41467-026-76992-5; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13526030/fullTextXML
+- Cenozoic losses of tree diversity constrain climatic adaptation of Western and Central European forests. (2026); DOI: 10.1038/s41467-026-77806-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13582922/fullTextXML
+- Disentangling cation-polyanion coupling reveals which anion motion dominates cation transport in solid electrolytes. (2026); DOI: 10.1038/s41467-026-77273-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635178/fullTextXML
+- Dual apical methyltransferases orchestrate motility initiation in apicomplexan parasites. (2026); DOI: 10.1038/s41467-026-77078-y; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13518913/fullTextXML
+- An AI-powered self-driving microscope for low-cost acute leukemia detection. (2026); DOI: 10.1038/s41467-026-77130-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13619560/fullTextXML
+- Stacking faults from a different angle - Overcoming the edge-on limit in high-resolution defect analysis. (2026); DOI: 10.1038/s41467-026-77584-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13569835/fullTextXML
+- Multilayer MEG source modelling enables depth-resolved laminar inference in humans. (2026); DOI: 10.1038/s41467-026-77782-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627721/fullTextXML
+- Programmable mesoporous carbon architectures from liquefied wood via reactive-emulsion-mediated self-assembly. (2026); DOI: 10.1038/s41467-026-77269-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13619605/fullTextXML
+- Regulation of mRNA poly(A) tail length governs mammalian body plan formation in gastruloids. (2026); DOI: 10.1038/s41467-026-76897-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627704/fullTextXML
+- Ionic gel-mediated synthesis of nanostructured chiral 2D halide perovskites with amplified chiroptical response. (2026); DOI: 10.1038/s41467-026-77274-w; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13620143/fullTextXML
+- Probing Bethe strings in an attractive one-dimensional Bose gas. (2026); DOI: 10.1038/s41467-026-76018-0; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623881/fullTextXML
+- ConvexGating infers gating strategies from clusters in single cell cytometry data. (2026); DOI: 10.1038/s41467-026-77360-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13588814/fullTextXML
+- What one sees depends on how far the eye has moved. (2026); DOI: 10.1038/s41467-026-76503-6; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623842/fullTextXML
+- Dynamic states of an MHC class I molecule during peptide exchange. (2026); DOI: 10.1038/s41467-026-77731-6; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13562589/fullTextXML
+- Cavity-enhanced optical readout and control of nuclear spin qubits. (2026); DOI: 10.1038/s41467-026-77060-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13526025/fullTextXML
+- Active inference and artificial reasoning. (2026); DOI: 10.1038/s41467-026-77209-5; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13601584/fullTextXML
+- NASA's ECOSTRESS satellite reveals widespread midday depression in ecosystem evapotranspiration. (2026); DOI: 10.1038/s41467-026-76873-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13507112/fullTextXML
+- Proteasome inhibition alleviates proteinuria in Lmx1b knock-in mice with dysfunctional LIM domains. (2026); DOI: 10.1038/s41467-026-77485-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13562594/fullTextXML
+- Stabilization of charged domains in ferroelectric BiFeO<sub>3</sub> nanoneedles. (2026); DOI: 10.1038/s41467-026-76259-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13612826/fullTextXML
+- Identification and validation of central amygdala FGFR1 as a therapeutic target for alcohol use disorder using single-nucleus sequencing in rats. (2026); DOI: 10.1038/s41467-026-77302-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13538410/fullTextXML
+- Yellow protein co-opted to sustain obligate symbiosis in leaf beetles. (2026); DOI: 10.1038/s41467-026-76942-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13538373/fullTextXML
+- High-resolution structures of human NHE6 and NHE9 elucidate endosomal ion and lipid interactions. (2026); DOI: 10.1038/s41467-026-77254-0; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635234/fullTextXML
+- The effects of intracrystalline chain diffusion on the non-linear mechanics of semicrystalline polymers. (2026); DOI: 10.1038/s41467-026-78014-w; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13615967/fullTextXML
+- Molecular basis of nick ligation in the nucleosome by DNA Ligase IIIα. (2026); DOI: 10.1038/s41467-026-77207-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635136/fullTextXML
+- Largest eigenvalue statistics of wavefront shaping in complex scattering media. (2026); DOI: 10.1038/s41467-026-77933-y; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627650/fullTextXML
+- Listeria promotes systemic infection by targeting the host deubiquitinase CYLD. (2026); DOI: 10.1038/s41467-026-77063-5; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623971/fullTextXML
+- A small molecule inhibits Ebola virus entry through glycoprotein stabilization. (2026); DOI: 10.1038/s41467-026-77332-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627709/fullTextXML
+- The intracellular subdomain of the volume-regulated anion channel subunit LRRC8A is a hotspot of channel activation. (2026); DOI: 10.1038/s41467-026-77507-y; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586329/fullTextXML
+- Polar and subpolar shelf seas dominate enhanced coastal CO<sub>2</sub> uptake during marine heatwaves. (2026); DOI: 10.1038/s41467-026-77165-0; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13534472/fullTextXML
+- Multidisciplinary intervention in frail elderly patients with cardiovascular diseases: a multicentre, single-blinded, randomised controlled trial. (2026); DOI: 10.1038/s41467-026-77277-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623951/fullTextXML
+- Sustained formation movement and destruction of coacervates in a waste-free system driven by electricity. (2026); DOI: 10.1038/s41467-026-77229-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13616953/fullTextXML
+- Heritable transgenic schistosomes as a living platform for SARS-CoV-2 neutralizing antibody secretion. (2026); DOI: 10.1038/s41467-026-76465-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13518888/fullTextXML
+- The dimensionality of plant-plant competition. (2026); DOI: 10.1038/s41467-026-76980-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13518944/fullTextXML
+- Single-device in-sensor computing for multi-channel multiply-accumulate operations. (2026); DOI: 10.1038/s41467-026-76950-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13612407/fullTextXML
+- Socio-economic value of data-driven eruption forecasts to balance false alarms against catastrophic loss. (2026); DOI: 10.1038/s41467-026-77242-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13534426/fullTextXML
+- Skull morphology of the extinct Tasmanian tiger suggests unique biting style. (2026); DOI: 10.1038/s41467-026-76614-0; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13530167/fullTextXML
+- Structural framework for the assembly of the human tRNA ligase complex. (2026); DOI: 10.1038/s41467-026-77450-y; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586351/fullTextXML
+- Cell-autonomous restoration of splicing homeostasis and RP11 phenotype in patient-derived RPE and retinal organoids by PRPF31.AAV gene therapy. (2026); DOI: 10.1038/s41467-026-78065-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627695/fullTextXML
+- Time-dependent bistability leads to critical slowing down during floral transition in Arabidopsis. (2026); DOI: 10.1038/s41467-026-76210-2; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13507123/fullTextXML
+- Macrocyclic molecular engineering enables high-energy and durable organic electrode for lithium-ion batteries. (2026); DOI: 10.1038/s41467-026-76984-5; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13620139/fullTextXML
+- Waned mantle upwelling contributes to a heavily deformed northern smooth plains on Mercury. (2026); DOI: 10.1038/s41467-026-74975-0; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13519025/fullTextXML
+- Hybrid exosomal nanomotors convert pathological ROS into transport-driving cues to enhance cartilage accumulation in osteoarthritis. (2026); DOI: 10.1038/s41467-026-76949-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13619634/fullTextXML
+- Modeling nonlinear and interaction effects of spatiotemporal and nongenetic factors improves prediction for complex traits. (2026); DOI: 10.1038/s41467-026-76154-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623873/fullTextXML
+- Graphite lubricates Mercury's global contraction. (2026); DOI: 10.1038/s41467-026-75459-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13518970/fullTextXML
+- Carbon neutrality strategies modulate air quality effects on solar power generation. (2026); DOI: 10.1038/s41467-026-77344-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631228/fullTextXML
+- Cell-derived lactate triggers local hydrogelation and phenotype remodelling. (2026); DOI: 10.1038/s41467-026-77702-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13619628/fullTextXML
+- SpaCEy links spatial tissue patterns to clinical outcomes using explainable graph neural networks. (2026); DOI: 10.1038/s41467-026-77924-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13615965/fullTextXML
+- Paleogeographic controls on Phanerozoic weathering rates and implications for climate regulation. (2026); DOI: 10.1038/s41467-026-77289-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635242/fullTextXML
+- Integrative structural modelling reveals the human Mic60-Mic19 subcomplex as a diffusion barrier in mitochondria. (2026); DOI: 10.1038/s41467-026-77869-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13615979/fullTextXML
+- Molecular mechanism of calcium inhibition in viral channelrhodopsins. (2026); DOI: 10.1038/s41467-026-77716-5; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13582892/fullTextXML
+- Helicobacter pylori triggers gastric mucosal remodeling toward a fetal-like transcriptional program via stromal IL-1β signaling. (2026); DOI: 10.1038/s41467-026-77520-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13546300/fullTextXML
+- A machine learning method for calculating highly localized protein stabilities. (2026); DOI: 10.1038/s41467-026-75590-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631364/fullTextXML
+- Efficacy of everolimus and letrozole with or without ribociclib in recurrent endometrial cancer: a phase 2 randomized clinical trial. (2026); DOI: 10.1038/s41467-026-77049-3; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631232/fullTextXML
+- Structure and mechanism of HDV ribozymes revealing Lewis acid catalysis by a metal ion. (2026); DOI: 10.1038/s41467-026-77452-w; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13635239/fullTextXML
+- Cardiopulmonary hospitalization risks from wildfire-specific and non-wildfire PM<sub>2.5</sub> in 20 US states. (2026); DOI: 10.1038/s41467-026-76974-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586224/fullTextXML
+- Tough, thermal insulating and scalable puff pastry-inspired architected cementitious material via simple rolling-folding. (2026); DOI: 10.1038/s41467-026-77120-z; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13616957/fullTextXML
+- The Caenorhabditis elegans microbiome impacts microsporidia infection through nutrient limitation and spore inactivation. (2026); DOI: 10.1038/s41467-026-77106-x; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13612480/fullTextXML
+- The mPFC-reuniens-hippocampus pathway links brain circuitry and neural plasticity in antidepressant response. (2026); DOI: 10.1038/s41467-026-77248-y; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13534506/fullTextXML
+- Quantum nonlinearity for optical neural computing. (2026); DOI: 10.1038/s41467-026-77202-y; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13616904/fullTextXML
+- Canonical Notch2 signaling regulates development and maintenance of iron-recycling macrophages and iron homeostasis. (2026); DOI: 10.1038/s41467-026-77938-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13601512/fullTextXML
+- Efficient differential expression analysis of large-scale single-cell transcriptomics data using Dreamlet. (2026); DOI: 10.1038/s41467-026-75680-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13601538/fullTextXML
+- Ternary Neurexin-T178-PTPR complexes represent a pre-synaptic core-module of neuronal synapse organization. (2026); DOI: 10.1038/s41467-026-77377-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13546301/fullTextXML
+- Steric Gating Contributes to the Preferential Ubiquitin Charging of BIRC6 by UBA6 versus UBA1. (2026); DOI: 10.1038/s41467-026-75898-6; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623948/fullTextXML
+- Quinone-heme π-π interactions bridge the biotic-abiotic interface for enhanced methanogenesis. (2026); DOI: 10.1038/s41467-026-77276-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627723/fullTextXML
+- Whole-brain, all-optical interrogation of neuronal dynamics underlying gut and vascular interoception in zebrafish. (2026); DOI: 10.1038/s41467-026-76242-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13583002/fullTextXML
+- The changing surface of the world's roads. (2026); DOI: 10.1038/s41467-026-76234-8; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13530190/fullTextXML
+- Barrier island geomorphic complexity drives storm and post-storm response. (2026); DOI: 10.1038/s41467-026-77143-6; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13612595/fullTextXML
+- Secreted filarial acetylcholine analogs modulate parasite reproduction and host physiology. (2026); DOI: 10.1038/s41467-026-77090-2; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13623875/fullTextXML
+- Robust biexciton preparation for entangled photon-pair generation by single-shot Floquet driving. (2026); DOI: 10.1038/s41467-026-77221-9; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13570888/fullTextXML
+- Effect of liposome rigidity on corona formation and its implications for uptake by cells. (2026); DOI: 10.1038/s41467-026-77231-7; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627682/fullTextXML
+- Cholesterol maintains the degradative capacity of lysosomes during clearance and recycling of dysfunctional mitochondria. (2026); DOI: 10.1038/s41467-026-77423-1; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13582898/fullTextXML
+- A dual-host regulatory hub integrating biofilm formation and innate immunity resistance. (2026); DOI: 10.1038/s41467-026-77307-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13627719/fullTextXML
+- Regulatory mechanisms of maternal imprinting at the murine Dlk1-Dio3 domain. (2026); DOI: 10.1038/s41467-026-77129-4; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13538571/fullTextXML
+- River plastic emissions to the world’s oceans (2017); DOI: 10.1038/ncomms15611; 仅摘要; https://openalex.org/W2604316091
+- Characterization of spike glycoprotein of SARS-CoV-2 on virus entry and its immune cross-reactivity with SARS-CoV (2020); DOI: 10.1038/s41467-020-15562-9; 仅摘要; https://openalex.org/W3013093478
+- A highly efficient polysulfide mediator for lithium–sulfur batteries (2015); DOI: 10.1038/ncomms6682; 仅摘要; https://openalex.org/W1989121075
+- Future global urban water scarcity and potential solutions (2021); DOI: 10.1038/s41467-021-25026-3; 仅摘要; https://openalex.org/W3192714106
+- Estimating the volume and age of water stored in global lakes using a geo-statistical approach (2016); DOI: 10.1038/ncomms13603; 仅摘要; https://openalex.org/W2564545777
+- Comparative therapeutic efficacy of remdesivir and combination lopinavir, ritonavir, and interferon beta against MERS-CoV (2020); DOI: 10.1038/s41467-019-13940-6; 仅摘要; https://openalex.org/W3000413850
+- Information processing using a single dynamical node as complex system (2011); DOI: 10.1038/ncomms1476; 仅摘要; https://openalex.org/W1977664984
+- Exploring atomic defects in molybdenum disulphide monolayers (2015); DOI: 10.1038/ncomms7293; 仅摘要; https://openalex.org/W2072312985
+- Tumor-selective catalytic nanomedicine by nanocatalyst delivery (2017); DOI: 10.1038/s41467-017-00424-8; 仅摘要; https://openalex.org/W2747423355
+- Ganoderma lucidum reduces obesity in mice by modulating the composition of the gut microbiota (2015); DOI: 10.1038/ncomms8489; 仅摘要; https://openalex.org/W1919048856
+- Highly selective plasma-activated copper catalysts for carbon dioxide reduction to ethylene (2016); DOI: 10.1038/ncomms12123; 仅摘要; https://openalex.org/W2470552650
+- Climate change will affect global water availability through compounding changes in seasonal precipitation and evaporation (2020); DOI: 10.1038/s41467-020-16757-w; 仅摘要; https://openalex.org/W3036708439
+- Global monitoring of antimicrobial resistance based on metagenomics analyses of urban sewage (2019); DOI: 10.1038/s41467-019-08853-3; 仅摘要; https://openalex.org/W2921342657
+- Rhizosphere bacteriome structure and functions (2022); DOI: 10.1038/s41467-022-28448-9; 仅摘要; https://openalex.org/W4211017947
+- Australian vegetated coastal ecosystems as global hotspots for climate change mitigation (2019); DOI: 10.1038/s41467-019-12176-8; 仅摘要; https://openalex.org/W2978107983
+- Thousands of microbial genomes shed light on interconnected biogeochemical processes in an aquifer system (2016); DOI: 10.1038/ncomms13219; 仅摘要; https://openalex.org/W2533015169
+- A human monoclonal antibody blocking SARS-CoV-2 infection (2020); DOI: 10.1038/s41467-020-16256-y; 仅摘要; https://openalex.org/W3023698680
+- Global hotspots and correlates of emerging zoonotic diseases (2017); DOI: 10.1038/s41467-017-00923-8; 仅摘要; https://openalex.org/W2765563228
+- A genomic surveillance framework and genotyping tool for Klebsiella pneumoniae and its related species complex (2021); DOI: 10.1038/s41467-021-24448-3; 仅摘要; https://openalex.org/W3181261361
+- Long-life Li/polysulphide batteries with high sulphur loading enabled by lightweight three-dimensional nitrogen/sulphur-codoped graphene sponge (2015); DOI: 10.1038/ncomms8760; 仅摘要; https://openalex.org/W1158182481
+- Reservoir computing using dynamic memristors for temporal information processing (2017); DOI: 10.1038/s41467-017-02337-y; 仅摘要; https://openalex.org/W2772397789
+- The future of Blue Carbon science (2019); DOI: 10.1038/s41467-019-11693-w; 仅摘要; https://openalex.org/W2971982243
+- Solar water splitting by photovoltaic-electrolysis with a solar-to-hydrogen efficiency over 30% (2016); DOI: 10.1038/ncomms13237; 仅摘要; https://openalex.org/W2543058446
+- Zinc anode-compatible in-situ solid electrolyte interphase via cation solvation modulation (2019); DOI: 10.1038/s41467-019-13436-3; 仅摘要; https://openalex.org/W2989628316
+- An omics-based framework for assessing the health risk of antimicrobial resistance genes (2021); DOI: 10.1038/s41467-021-25096-3; 仅摘要; https://openalex.org/W3187959711
+- Parallel photonic information processing at gigabyte per second data rates using transient states (2013); DOI: 10.1038/ncomms2368; 仅摘要; https://openalex.org/W1965702053
+- Global stocks and capacity of mineral-associated soil organic carbon (2022); DOI: 10.1038/s41467-022-31540-9; 仅摘要; https://openalex.org/W4283743401
+- Mechanisms of muscle atrophy and hypertrophy: implications in health and disease (2021); DOI: 10.1038/s41467-020-20123-1; 仅摘要; https://openalex.org/W3121032204
+- Face classification using electronic synapses (2017); DOI: 10.1038/ncomms15199; 仅摘要; https://openalex.org/W2613205562
+- Structure of the SARS-CoV nsp12 polymerase bound to nsp7 and nsp8 co-factors (2019); DOI: 10.1038/s41467-019-10280-3; 仅摘要; https://openalex.org/W2914796231
+- Experimental demonstration of reservoir computing on a silicon photonics chip (2014); DOI: 10.1038/ncomms4541; 仅摘要; https://openalex.org/W2029939668
+- A GPX4-dependent cancer cell state underlies the clear-cell morphology and confers sensitivity to ferroptosis (2019); DOI: 10.1038/s41467-019-09277-9; 仅摘要; https://openalex.org/W2932111434
+- Heterogeneity of genomic evolution and mutational profiles in multiple myeloma (2014); DOI: 10.1038/ncomms3997; 仅摘要; https://openalex.org/W2104195581
+- A highly abundant bacteriophage discovered in the unknown sequences of human faecal metagenomes (2014); DOI: 10.1038/ncomms5498; 仅摘要; https://openalex.org/W1966912927
+- Structural insight into molecular mechanism of poly(ethylene terephthalate) degradation (2018); DOI: 10.1038/s41467-018-02881-1; 仅摘要; https://openalex.org/W2786189709
+- Single-site trinuclear copper oxygen clusters in mordenite for selective conversion of methane to methanol (2015); DOI: 10.1038/ncomms8546; 仅摘要; https://openalex.org/W2162783646
+- Capture and conversion of CO2 at ambient conditions by a conjugated microporous polymer (2013); DOI: 10.1038/ncomms2960; 仅摘要; https://openalex.org/W2141980865
+- Cryo-EM structures of MERS-CoV and SARS-CoV spike glycoproteins reveal the dynamic receptor binding domains (2017); DOI: 10.1038/ncomms15092; 仅摘要; https://openalex.org/W2606148195
+- SARS-CoV-2 structure and replication characterized by in situ cryo-electron tomography (2020); DOI: 10.1038/s41467-020-19619-7; 仅摘要; https://openalex.org/W3103021984
+- Adsorption-based atmospheric water harvesting device for arid climates (2018); DOI: 10.1038/s41467-018-03162-7; 仅摘要; https://openalex.org/W2789253641
+- An assessment of the global impact of 21st century land use change on soil erosion (2017); DOI: 10.1038/s41467-017-02142-7; 仅摘要; https://openalex.org/W2772366318
+- Lunar impact crater identification and age estimation with Chang’E data by deep and transfer learning (2020); DOI: 10.1038/s41467-020-20215-y; 仅摘要; https://openalex.org/W2993800129
+- Global predictions of primary soil salinization under changing climate in the 21st century (2021); DOI: 10.1038/s41467-021-26907-3; 仅摘要; https://openalex.org/W3212566395
+- An efficient molybdenum disulfide/cobalt diselenide hybrid catalyst for electrochemical hydrogen generation (2015); DOI: 10.1038/ncomms6982; 仅摘要; https://openalex.org/W2087207013
+- The effectiveness of coral reefs for coastal hazard risk reduction and adaptation (2014); DOI: 10.1038/ncomms4794; 仅摘要; https://openalex.org/W2107960291
+- Meta-analysis of the impacts of global change factors on soil microbial diversity and functionality (2020); DOI: 10.1038/s41467-020-16881-7; 仅摘要; https://openalex.org/W3035992111
+- The operational environment and rotational acceleration of asteroid (101955) Bennu from OSIRIS-REx observations (2019); DOI: 10.1038/s41467-019-09213-x; 仅摘要; https://openalex.org/W2924217050
+- Future climate forcing potentially without precedent in the last 420 million years (2017); DOI: 10.1038/ncomms14845; 仅摘要; https://openalex.org/W2605120720
+- The underappreciated potential of peatlands in global climate change mitigation strategies (2018); DOI: 10.1038/s41467-018-03406-6; 仅摘要; https://openalex.org/W2791781577
+- Local biodiversity is higher inside than outside terrestrial protected areas worldwide (2016); DOI: 10.1038/ncomms12306; 仅摘要; https://openalex.org/W2403092385
+- Global phosphorus shortage will be aggravated by soil erosion (2020); DOI: 10.1038/s41467-020-18326-7; 仅摘要; https://openalex.org/W3086888323
+- Estimating the success of re-identifications in incomplete datasets using generative models (2019); DOI: 10.1038/s41467-019-10933-3; 仅摘要; https://openalex.org/W2963693643
+- Ambient ammonia synthesis via palladium-catalyzed electrohydrogenation of dinitrogen at low overpotential (2018); DOI: 10.1038/s41467-018-04213-9; 仅摘要; https://openalex.org/W2804705815
+- Near-real-time monitoring of global CO2 emissions reveals the effects of the COVID-19 pandemic (2020); DOI: 10.1038/s41467-020-18922-7; 仅摘要; https://openalex.org/W3093475346
+- Global meta-analysis shows pervasive phosphorus limitation of aboveground plant production in natural terrestrial ecosystems (2020); DOI: 10.1038/s41467-020-14492-w; 仅摘要; https://openalex.org/W3003821312
+- Ancient hybridization fuels rapid cichlid fish adaptive radiations (2017); DOI: 10.1038/ncomms14363; 仅摘要; https://openalex.org/W2587197905
+- Perspectives in machine learning for wildlife conservation (2022); DOI: 10.1038/s41467-022-27980-y; 仅摘要; https://openalex.org/W4210883322
+- Biological impact of lead from halide perovskites reveals the risk of introducing a safe threshold (2020); DOI: 10.1038/s41467-019-13910-y; 仅摘要; https://openalex.org/W3001076034
+- Global field observations of tree die-off reveal hotter-drought fingerprint for Earth’s forests (2022); DOI: 10.1038/s41467-022-29289-2; 仅摘要; https://openalex.org/W4224309885
+- Mining drives extensive deforestation in the Brazilian Amazon (2017); DOI: 10.1038/s41467-017-00557-w; 仅摘要; https://openalex.org/W2760911225
+- Organic carbon burial in global lakes and reservoirs (2017); DOI: 10.1038/s41467-017-01789-6; 仅摘要; https://openalex.org/W2768742734
+- Dynamic strain determination using fibre-optic cables allows imaging of seismological and structural features (2018); DOI: 10.1038/s41467-018-04860-y; 仅摘要; https://openalex.org/W2809685438
+- Organic coating on biochar explains its nutrient retention and stimulation of soil fertility (2017); DOI: 10.1038/s41467-017-01123-0; 仅摘要; https://openalex.org/W2766130505
+- Forest stand growth dynamics in Central Europe have accelerated since 1870 (2014); DOI: 10.1038/ncomms5967; 仅摘要; https://openalex.org/W2060960912
+- South-to-North Water Diversion stabilizing Beijing’s groundwater levels (2020); DOI: 10.1038/s41467-020-17428-6; 仅摘要; https://openalex.org/W3045398433
+- Circumpolar distribution and carbon storage of thermokarst landscapes (2016); DOI: 10.1038/ncomms13043; 仅摘要; https://openalex.org/W2531341442
+- Microbial diversity drives carbon use efficiency in a model soil (2020); DOI: 10.1038/s41467-020-17502-z; 仅摘要; https://openalex.org/W3044067219
+- Stable prenucleation mineral clusters are liquid-like ionic polymers (2011); DOI: 10.1038/ncomms1604; 仅摘要; https://openalex.org/W2126161752
+- The configuration of Northern Hemisphere ice sheets through the Quaternary (2019); DOI: 10.1038/s41467-019-11601-2; 仅摘要; https://openalex.org/W2967322835
+- Anthropogenic climate change has driven over 5 million km2 of drylands towards desertification (2020); DOI: 10.1038/s41467-020-17710-7; 仅摘要; https://openalex.org/W3046906781
+- Carbon storage in US wetlands (2016); DOI: 10.1038/ncomms13835; 仅摘要; https://openalex.org/W2567022633
+- Nucleation-controlled growth of superior lead-free perovskite Cs3Bi2I9 single-crystals for high-performance X-ray detection (2020); DOI: 10.1038/s41467-020-16034-w; 仅摘要; https://openalex.org/W3022329226
+- Assessment of lithium criticality in the global energy transition and addressing policy gaps in transportation (2020); DOI: 10.1038/s41467-020-18402-y; 仅摘要; https://openalex.org/W3085486830
+- An inter-model assessment of the role of direct air capture in deep mitigation pathways (2019); DOI: 10.1038/s41467-019-10842-5; 仅摘要; https://openalex.org/W2964314984
+- Divergent accumulation of microbial necromass and plant lignin components in grassland soils (2018); DOI: 10.1038/s41467-018-05891-1; 仅摘要; https://openalex.org/W2888409984
+- Energy use and life cycle greenhouse gas emissions of drones for commercial package delivery (2018); DOI: 10.1038/s41467-017-02411-5; 仅摘要; https://openalex.org/W2800687011
+- Large-scale genome sequencing of mycorrhizal fungi provides insights into the early evolution of symbiotic traits (2020); DOI: 10.1038/s41467-020-18795-w; 仅摘要; https://openalex.org/W3091842322
+- The role of artificial intelligence in achieving the Sustainable Development Goals (2020); DOI: 10.1038/s41467-019-14108-y; 仅摘要; https://openalex.org/W3000603264
+- Segment anything in medical images (2024); DOI: 10.1038/s41467-024-44824-z; 仅摘要; https://openalex.org/W4391109864
+- Microbial diversity drives multifunctionality in terrestrial ecosystems (2016); DOI: 10.1038/ncomms10541; 仅摘要; https://openalex.org/W2253902135
+- Barren plateaus in quantum neural network training landscapes (2018); DOI: 10.1038/s41467-018-07090-4; 仅摘要; https://openalex.org/W2794444783
+- E(3)-equivariant graph neural networks for data-efficient and accurate interatomic potentials (2022); DOI: 10.1038/s41467-022-29939-5; 仅摘要; https://openalex.org/W4225405705
+- Polygenic prediction via Bayesian regression and continuous shrinkage priors (2019); DOI: 10.1038/s41467-019-09718-5; 仅摘要; https://openalex.org/W2951553270
+- Deep learning for universal linear embeddings of nonlinear dynamics (2018); DOI: 10.1038/s41467-018-07210-0; 仅摘要; https://openalex.org/W2777417212
+- Quantum-chemical insights from deep tensor neural networks (2017); DOI: 10.1038/ncomms13890; 仅摘要; https://openalex.org/W2527189750
+- The Medical Segmentation Decathlon (2022); DOI: 10.1038/s41467-022-30695-9; 仅摘要; https://openalex.org/W3172681723
+- The challenge of mapping the human connectome based on diffusion tractography (2017); DOI: 10.1038/s41467-017-01285-x; 仅摘要; https://openalex.org/W2766639217
+- Psychological characteristics associated with COVID-19 vaccine hesitancy and resistance in Ireland and the United Kingdom (2021); DOI: 10.1038/s41467-020-20226-9; 仅摘要; https://openalex.org/W3119977046
+- Harnessing protein folding neural networks for peptide–protein docking (2022); DOI: 10.1038/s41467-021-27838-9; 仅摘要; https://openalex.org/W4220887281
+- CO2 hydrogenation to high-value products via heterogeneous catalysis (2019); DOI: 10.1038/s41467-019-13638-9; 仅摘要; https://openalex.org/W2995656838
+- A rapid and robust method for single cell chromatin accessibility profiling (2018); DOI: 10.1038/s41467-018-07771-0; 仅摘要; https://openalex.org/W2951054376
+- The art of using t-SNE for single-cell transcriptomics (2019); DOI: 10.1038/s41467-019-13056-x; 仅摘要; https://openalex.org/W2989747508
+- Earthquake transformer—an attentive deep-learning model for simultaneous earthquake detection and phase picking (2020); DOI: 10.1038/s41467-020-17591-w; 仅摘要; https://openalex.org/W3047855151
+- The misuse of colour in science communication (2020); DOI: 10.1038/s41467-020-19160-7; 仅摘要; https://openalex.org/W3095402549
+- The spread of low-credibility content by social bots (2018); DOI: 10.1038/s41467-018-06930-7; 仅摘要; https://openalex.org/W2804365752
+- Circular non-coding RNA ANRIL modulates ribosomal RNA maturation and atherosclerosis in humans (2016); DOI: 10.1038/ncomms12429; 仅摘要; https://openalex.org/W2511152819
+- Single-cell RNA-seq denoising using a deep count autoencoder (2019); DOI: 10.1038/s41467-018-07931-2; 仅摘要; https://openalex.org/W2951381561
+- Unmasking Clever Hans predictors and assessing what machines really learn (2019); DOI: 10.1038/s41467-019-08987-4; 仅摘要; https://openalex.org/W2921802966
+- Analysis of polygenic risk score usage and performance in diverse human populations (2019); DOI: 10.1038/s41467-019-11112-0; 仅摘要; https://openalex.org/W2963160524
+- Cost function dependent barren plateaus in shallow parametrized quantum circuits (2021); DOI: 10.1038/s41467-021-21728-w; 仅摘要; https://openalex.org/W3136233239
+- An adaptive variational algorithm for exact molecular simulations on a quantum computer (2019); DOI: 10.1038/s41467-019-10988-2; 仅摘要; https://openalex.org/W2954369586
+- Improved prediction of protein-protein interactions using AlphaFold2 (2022); DOI: 10.1038/s41467-022-28865-w; 仅摘要; https://openalex.org/W4220824576
+- Inferring causation from time series in Earth system sciences (2019); DOI: 10.1038/s41467-019-10105-3; 仅摘要; https://openalex.org/W2949505632
+- Meta-analysis of gut microbiome studies identifies disease-specific and shared responses (2017); DOI: 10.1038/s41467-017-01973-8; 仅摘要; https://openalex.org/W2771045365
+- Intestinal microbiome analyses identify melanoma patients at risk for checkpoint-blockade-induced colitis (2016); DOI: 10.1038/ncomms10391; 仅摘要; https://openalex.org/W2275606382
+- Assessment of global health risk of antibiotic resistance genes (2022); DOI: 10.1038/s41467-022-29283-8; 仅摘要; https://openalex.org/W4220927247
+- Predicting non-small cell lung cancer prognosis by fully automated microscopic pathology image features (2016); DOI: 10.1038/ncomms12474; 仅摘要; https://openalex.org/W2514628397
+- Soil moisture dominates dryness stress on ecosystem production globally (2020); DOI: 10.1038/s41467-020-18631-1; 仅摘要; https://openalex.org/W3091303025
+- Expanding frontiers in materials chemistry and physics with multiple anions (2018); DOI: 10.1038/s41467-018-02838-4; 仅摘要; https://openalex.org/W2791003600
+- Inferring tumour purity and stromal and immune cell admixture from expression data (2013); DOI: 10.1038/ncomms3612; 仅摘要; https://openalex.org/W2130430382
+- Inference and analysis of cell-cell communication using CellChat (2021); DOI: 10.1038/s41467-021-21246-9; 仅摘要; https://openalex.org/W3132661792
+- In situ click chemistry generation of cyclooxygenase-2 inhibitors (2017); DOI: 10.1038/s41467-016-0009-6; 仅摘要; https://openalex.org/W2586637063
+- Structural absorption by barbule microstructures of super black bird of paradise feathers (2017); DOI: 10.1038/s41467-017-02088-w; 仅摘要; https://openalex.org/W2777639606
+- U1 snRNP regulates cancer cell migration and invasion in vitro (2020); DOI: 10.1038/s41467-019-13993-7; 仅摘要; https://openalex.org/W2998840182
+- High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries (2018); DOI: 10.1038/s41467-018-07641-9; 仅摘要; https://openalex.org/W2951254987
+- Anomalous collapses of Nares Strait ice arches leads to enhanced export of Arctic sea ice (2021); DOI: 10.1038/s41467-020-20314-w; 仅摘要; https://openalex.org/W3119774682
+- A variational eigenvalue solver on a photonic quantum processor (2014); DOI: 10.1038/ncomms5213; 仅摘要; https://openalex.org/W2161685427
+- High-mobility transport anisotropy and linear dichroism in few-layer black phosphorus (2014); DOI: 10.1038/ncomms5475; 仅摘要; https://openalex.org/W2029281675
+- Entropy-stabilized oxides (2015); DOI: 10.1038/ncomms9485; 仅摘要; https://openalex.org/W2261135145
+- TYGS is an automated high-throughput platform for state-of-the-art genome-based taxonomy (2019); DOI: 10.1038/s41467-019-10210-3; 仅摘要; https://openalex.org/W2946204549
+- Aggregation and morphology control enables multiple cases of high-efficiency polymer solar cells (2014); DOI: 10.1038/ncomms6293; 仅摘要; https://openalex.org/W2039618794
+- Ionic transport in hybrid lead iodide perovskite solar cells (2015); DOI: 10.1038/ncomms8497; 仅摘要; https://openalex.org/W1026348989
+- A reflection on lithium-ion battery cathode chemistry (2020); DOI: 10.1038/s41467-020-15355-0; 仅摘要; https://openalex.org/W3013252775
+- Mitochondrial TCA cycle metabolites control physiology and disease (2020); DOI: 10.1038/s41467-019-13668-3; 仅摘要; https://openalex.org/W2997046468
+- A polymer tandem solar cell with 10.6% power conversion efficiency (2013); DOI: 10.1038/ncomms2411; 仅摘要; https://openalex.org/W2096320304
+- GenomeScope 2.0 and Smudgeplot for reference-free profiling of polyploid genomes (2020); DOI: 10.1038/s41467-020-14998-3; 仅摘要; https://openalex.org/W3012094285
+- Recommendations for myeloid-derived suppressor cell nomenclature and characterization standards (2016); DOI: 10.1038/ncomms12150; 仅摘要; https://openalex.org/W2471500324
+- Valley-selective circular dichroism of monolayer molybdenum disulphide (2012); DOI: 10.1038/ncomms1882; 仅摘要; https://openalex.org/W2122195656
+- High rate and stable cycling of lithium metal anode (2015); DOI: 10.1038/ncomms7362; 仅摘要; https://openalex.org/W2047775546
+- No saturation in the accumulation of alien species worldwide (2017); DOI: 10.1038/ncomms14435; 仅摘要; https://openalex.org/W2589100885
+- SMARCAD1 ATPase activity is required to silence endogenous retroviruses in embryonic stem cells (2019); DOI: 10.1038/s41467-019-09078-0; 仅摘要; https://openalex.org/W2924530200
+- PHD1 controls muscle mTORC1 in a hydroxylation-independent manner by stabilizing leucyl tRNA synthetase (2020); DOI: 10.1038/s41467-019-13889-6; 仅摘要; https://openalex.org/W2999304916
+- Evaluation of 16S rRNA gene sequencing for species and strain-level microbiome analysis (2019); DOI: 10.1038/s41467-019-13036-1; 仅摘要; https://openalex.org/W2985711816
+- Progress and challenges towards targeted delivery of cancer therapeutics (2018); DOI: 10.1038/s41467-018-03705-y; 仅摘要; https://openalex.org/W2796781998
+- Climate-induced variations in global wildfire danger from 1979 to 2013 (2015); DOI: 10.1038/ncomms8537; 仅摘要; https://openalex.org/W1955806497
+- CUT&Tag for efficient epigenomic profiling of small samples and single cells (2019); DOI: 10.1038/s41467-019-09982-5; 仅摘要; https://openalex.org/W2920191405
+- Using carbon dioxide as a building block in organic synthesis (2015); DOI: 10.1038/ncomms6933; 仅摘要; https://openalex.org/W2094413778
+- Fast and sensitive taxonomic classification for metagenomics with Kaiju (2016); DOI: 10.1038/ncomms11257; 仅摘要; https://openalex.org/W2337747100
+- Permafrost is warming at a global scale (2019); DOI: 10.1038/s41467-018-08240-4; 仅摘要; https://openalex.org/W2908898337
+- One-Year stable perovskite solar cells by 2D/3D interface engineering (2017); DOI: 10.1038/ncomms15684; 仅摘要; https://openalex.org/W2621222172
+- Platinum single-atom and cluster catalysis of the hydrogen evolution reaction (2016); DOI: 10.1038/ncomms13638; 仅摘要; https://openalex.org/W2557321703

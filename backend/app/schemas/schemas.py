@@ -33,6 +33,7 @@ class ProjectCreate(BaseModel):
     description: Optional[str] = None
     domain: Optional[str] = None
     journal_id: Optional[int] = None
+    style_skill_enabled: bool = True
     article_type: Optional[str] = None
     translation_provider: Optional[str] = "openai"
     translation_model: Optional[str] = "gpt-4o"
@@ -43,6 +44,7 @@ class ProjectUpdate(BaseModel):
     description: Optional[str] = None
     domain: Optional[str] = None
     journal_id: Optional[int] = None
+    style_skill_enabled: Optional[bool] = None
     article_type: Optional[str] = None
     translation_provider: Optional[str] = None
     translation_model: Optional[str] = None
@@ -56,6 +58,7 @@ class ProjectResponse(BaseModel):
     domain: Optional[str]
     status: str
     journal_id: Optional[int]
+    style_skill_enabled: bool = True
     article_type: Optional[str]
     translation_provider: Optional[str]
     translation_model: Optional[str]
@@ -140,6 +143,8 @@ class TermResponse(BaseModel):
     cards: Optional[List[Any]] = []
     decomposition: Optional[List[Any]] = None
     research_summary: Optional[Dict[str, Any]] = None
+    journal_cards: List[Any] = []
+    authority_cards: List[Any] = []
 
     class Config:
         from_attributes = True
@@ -173,6 +178,8 @@ class EvidenceResponse(BaseModel):
     link_kind: str = "unavailable"
     link_label: str = ""
     source_checked: bool = False
+    source_blocked: bool = False
+    evidence_group: str = "authority"
 
     class Config:
         from_attributes = True

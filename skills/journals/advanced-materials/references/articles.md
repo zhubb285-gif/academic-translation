@@ -1,0 +1,94 @@
+# Advanced Materials — 实际语料清单
+
+- 25th Anniversary Article: MXenes: A New Family of Two‐Dimensional Materials (2013); DOI: 10.1002/adma.201304138; 仅摘要; https://openalex.org/W2155175869
+- 30 Years of Lithium‐Ion Batteries (2018); DOI: 10.1002/adma.201800561; 仅摘要; https://openalex.org/W2808025896
+- Design Rules for Donors in Bulk‐Heterojunction Solar Cells—Towards 10 % Energy‐Conversion Efficiency (2006); DOI: 10.1002/adma.200501717; 仅摘要; https://openalex.org/W2047951832
+- Heterojunction Photocatalysts (2017); DOI: 10.1002/adma.201601694; 仅摘要; https://openalex.org/W4211152862
+- Advanced Materials for Energy Storage (2010); DOI: 10.1002/adma.200903328; 仅摘要; https://openalex.org/W2139921601
+- Nano‐photocatalytic Materials: Possibilities and Challenges (2011); DOI: 10.1002/adma.201102752; 仅摘要; https://openalex.org/W1973373124
+- Magnetic Materials and Devices for the 21st Century: Stronger, Lighter, and More Energy Efficient (2010); DOI: 10.1002/adma.201002180; 仅摘要; https://openalex.org/W2026572419
+- Polymeric Photocatalysts Based on Graphitic Carbon Nitride (2015); DOI: 10.1002/adma.201500033; 仅摘要; https://openalex.org/W2078107904
+- Energy Level Alignment and Interfacial Electronic Structures at Organic/Metal and Organic/Organic Interfaces (1999); DOI: 10.1002/(sici)1521-4095(199906)11:8<605::aid-adma605>3.0.co;2-q; 仅摘要; https://openalex.org/W1969849763
+- Polymer‐Fullerene Bulk‐Heterojunction Solar Cells (2009); DOI: 10.1002/adma.200801283; 仅摘要; https://openalex.org/W4211160986
+- Carbon Materials for Chemical Capacitive Energy Storage (2011); DOI: 10.1002/adma.201100984; 仅摘要; https://openalex.org/W2081870623
+- Growth of Arrayed Nanorods and Nanowires of ZnO from Aqueous Solutions (2003); DOI: 10.1002/adma.200390108; 仅摘要; https://openalex.org/W1985827703
+- Carbons and Electrolytes for Advanced Supercapacitors (2014); DOI: 10.1002/adma.201304137; 仅摘要; https://openalex.org/W1978126078
+- Recent Advances in Metal Oxide‐based Electrode Architecture Design for Electrochemical Energy Storage (2012); DOI: 10.1002/adma.201202146; 仅摘要; https://openalex.org/W2081738501
+- Recent Progress in Cobalt‐Based Heterogeneous Catalysts for Electrochemical Water Splitting (2015); DOI: 10.1002/adma.201502696; 仅摘要; https://openalex.org/W2171034745
+- Beyond Intercalation‐Based Li‐Ion Batteries: The State of the Art and Challenges of Electrode Materials Reacting Through Conversion Reactions (2010); DOI: 10.1002/adma.201000717; 仅摘要; https://openalex.org/W2138285500
+- Unique Properties of Halide Perovskites as Possible Origins of the Superior Solar Cell Performance (2014); DOI: 10.1002/adma.201306281; 仅摘要; https://openalex.org/W2098911987
+- All‐Solid‐State Z‐Scheme Photocatalytic Systems (2014); DOI: 10.1002/adma.201400288; 仅摘要; https://openalex.org/W2159789432
+- Device Physics of Polymer:Fullerene Bulk Heterojunction Solar Cells (2007); DOI: 10.1002/adma.200601093; 仅摘要; https://openalex.org/W2127676067
+- Nanostructured Materials for Electrochemical Energy Conversion and Storage Devices (2008); DOI: 10.1002/adma.200800627; 仅摘要; https://openalex.org/W2020609369
+- Electrochemical Considerations for Determining Absolute Frontier Orbital Energy Levels of Conjugated Polymers for Solar Cell Applications (2011); DOI: 10.1002/adma.201004554; 仅摘要; https://openalex.org/W2092024458
+- Purely Organic Thermally Activated Delayed Fluorescence Materials for Organic Light‐Emitting Diodes (2017); DOI: 10.1002/adma.201605444; 仅摘要; https://openalex.org/W2592007998
+- Soft Robotic Grippers (2018); DOI: 10.1002/adma.201707035; 仅摘要; https://openalex.org/W2784648116
+- Clean and Affordable Hydrogen Fuel from Alkaline Water Splitting: Past, Recent Progress, and Future Prospects (2021); DOI: 10.1002/adma.202007100; 仅摘要; https://openalex.org/W3171647639
+- Emerging S‐Scheme Photocatalyst (2021); DOI: 10.1002/adma.202107668; 仅摘要; https://openalex.org/W4200426529
+- Gold Nanorods: From Synthesis and Properties to Biological and Biomedical Applications (2009); DOI: 10.1002/adma.200802789; 仅摘要; https://openalex.org/W1964564038
+- Flexible Nanogenerators for Energy Harvesting and Self‐Powered Electronics (2016); DOI: 10.1002/adma.201504299; 仅摘要; https://openalex.org/W2223998303
+- Fundamentals of TiO 2 Photocatalysis: Concepts, Mechanisms, and Challenges (2019); DOI: 10.1002/adma.201901997; 仅摘要; https://openalex.org/W2969329578
+- Applications of Ultrasound to the Synthesis of Nanostructured Materials (2010); DOI: 10.1002/adma.200904093; 仅摘要; https://openalex.org/W2140726406
+- Nanoimprint Lithography: Methods and Material Requirements (2007); DOI: 10.1002/adma.200600882; 仅摘要; https://openalex.org/W2143287675
+- Research on Advanced Materials for Li‐ion Batteries (2009); DOI: 10.1002/adma.200901710; 仅摘要; https://openalex.org/W2004361354
+- Synthesis, Structure, and Properties of Boron‐ and Nitrogen‐Doped Graphene (2009); DOI: 10.1002/adma.200901285; 仅摘要; https://openalex.org/W1981061654
+- Band Engineering of Thermoelectric Materials (2012); DOI: 10.1002/adma.201202919; 仅摘要; https://openalex.org/W2130164120
+- More Reliable Lithium‐Sulfur Batteries: Status, Solutions and Prospects (2017); DOI: 10.1002/adma.201606823; 仅摘要; https://openalex.org/W2604862259
+- Stretchable and Soft Electronics using Liquid Metals (2017); DOI: 10.1002/adma.201606425; 仅摘要; https://openalex.org/W2606370452
+- Transition‐Metal (Co, Ni, and Fe)‐Based Electrocatalysts for the Water Oxidation Reaction (2016); DOI: 10.1002/adma.201602270; 仅摘要; https://openalex.org/W2510136453
+- Non‐Noble Metal‐based Carbon Composites in Hydrogen Evolution Reaction: Fundamentals to Applications (2017); DOI: 10.1002/adma.201605838; 仅摘要; https://openalex.org/W2589587002
+- Engineering Carbon Materials from the Hydrothermal Carbonization Process of Biomass (2010); DOI: 10.1002/adma.200902812; 仅摘要; https://openalex.org/W2127999757
+- Antifouling Coatings: Recent Developments in the Design of Surfaces That Prevent Fouling by Proteins, Bacteria, and Marine Organisms (2010); DOI: 10.1002/adma.201001215; 仅摘要; https://openalex.org/W2002025851
+- Cell Membrane Coating Nanotechnology (2018); DOI: 10.1002/adma.201706759; 仅摘要; https://openalex.org/W2794683780
+- Nanostructured Materials for Room‐Temperature Gas Sensors (2015); DOI: 10.1002/adma.201503825; 仅摘要; https://openalex.org/W2292259588
+- Recent Progress in Ferroptosis Inducers for Cancer Therapy (2019); DOI: 10.1002/adma.201904197; 仅摘要; https://openalex.org/W2979937337
+- 2D Transition‐Metal‐Dichalcogenide‐Nanosheet‐Based Composites for Photocatalytic and Electrocatalytic Hydrogen Evolution Reactions (2015); DOI: 10.1002/adma.201503270; 仅摘要; https://openalex.org/W2214476518
+- Nanoarchitectonics for Transition‐Metal‐Sulfide‐Based Electrocatalysts for Water Splitting (2019); DOI: 10.1002/adma.201807134; 仅摘要; https://openalex.org/W2915561739
+- Electronic and Optical Properties of 2D Transition Metal Carbides and Nitrides (MXenes) (2018); DOI: 10.1002/adma.201804779; 仅摘要; https://openalex.org/W2900567006
+- Biomedical Applications of Layer‐by‐Layer Assembly: From Biomimetics to Tissue Engineering (2006); DOI: 10.1002/adma.200600113; 仅摘要; https://openalex.org/W2004786617
+- Ten Years of Progress in the Synthesis and Development of MXenes (2021); DOI: 10.1002/adma.202103393; 仅摘要; https://openalex.org/W3193369452
+- Circularly Polarized Luminescence in Nanoassemblies: Generation, Amplification, and Application (2019); DOI: 10.1002/adma.201900110; 仅摘要; https://openalex.org/W2968298408
+- Recent Advances and Prospects of Cathode Materials for Sodium‐Ion Batteries (2015); DOI: 10.1002/adma.201501527; 仅摘要; https://openalex.org/W1819431993
+- Two‐Dimensional Dielectric Nanosheets: Novel Nanoelectronics From Nanocrystal Building Blocks (2011); DOI: 10.1002/adma.201103241; 仅摘要; https://openalex.org/W2067802660
+- Developments in Nanostructured Cathode Materials for High‐Performance Lithium‐Ion Batteries (2008); DOI: 10.1002/adma.200702242; 仅摘要; https://openalex.org/W1992379425
+- Recent Advances in Flexible and Stretchable Bio‐Electronic Devices Integrated with Nanomaterials (2016); DOI: 10.1002/adma.201504150; 仅摘要; https://openalex.org/W2276037417
+- Nitrogen‐Coordinated Single Cobalt Atom Catalysts for Oxygen Reduction in Proton Exchange Membrane Fuel Cells (2018); DOI: 10.1002/adma.201706758; 仅摘要; https://openalex.org/W2792063676
+- Functional Composite Materials Based on Chemically Converted Graphene (2011); DOI: 10.1002/adma.201003753; 仅摘要; https://openalex.org/W1992418018
+- Artificial Muscles: Mechanisms, Applications, and Challenges (2017); DOI: 10.1002/adma.201704407; 仅摘要; https://openalex.org/W2775854755
+- Mutual Insight on Ferroelectrics and Hybrid Halide Perovskites: A Platform for Future Multifunctional Energy Conversion (2019); DOI: 10.1002/adma.201807376; 仅摘要; https://openalex.org/W2969861869
+- Dimensional Design and Core–Shell Engineering of Nanomaterials for Electromagnetic Wave Absorption (2021); DOI: 10.1002/adma.202107538; 仅摘要; https://openalex.org/W3212534526
+- Machine Learning Interatomic Potentials as Emerging Tools for Materials Science (2019); DOI: 10.1002/adma.201902765; 仅摘要; https://openalex.org/W2971894235
+- 25th Anniversary Article: Galvanic Replacement: A Simple and Versatile Route to Hollow Nanostructures with Tunable and Well‐Controlled Properties (2013); DOI: 10.1002/adma.201302820; 仅摘要; https://openalex.org/W2098864517
+- Halloysite Clay Nanotubes for Loading and Sustained Release of Functional Compounds (2015); DOI: 10.1002/adma.201502341; 仅摘要; https://openalex.org/W2144205081
+- Recent Advances in Nanozyme Research (2018); DOI: 10.1002/adma.201805368; 仅摘要; https://openalex.org/W2907279092
+- Disposable Sensors in Diagnostics, Food, and Environmental Monitoring (2019); DOI: 10.1002/adma.201806739; 仅摘要; https://openalex.org/W2945247767
+- Laser‐Induced Graphene: From Discovery to Translation (2018); DOI: 10.1002/adma.201803621; 仅摘要; https://openalex.org/W2895565070
+- Transfer Printing Techniques for Materials Assembly and Micro/Nanodevice Fabrication (2012); DOI: 10.1002/adma.201201386; 仅摘要; https://openalex.org/W2146538427
+- Nanomaterials: Applications in Cancer Imaging and Therapy (2011); DOI: 10.1002/adma.201100140; 仅摘要; https://openalex.org/W2145688027
+- Recent Advances on Graphene Quantum Dots: From Chemistry and Physics to Applications (2019); DOI: 10.1002/adma.201808283; 仅摘要; https://openalex.org/W2918954160
+- Synthesis and Surface Engineering of Complex Nanostructures by Atomic Layer Deposition (2007); DOI: 10.1002/adma.200700079; 仅摘要; https://openalex.org/W2122271644
+- Nanoarchitectured Design of Porous Materials and Nanocomposites from Metal‐Organic Frameworks (2016); DOI: 10.1002/adma.201604898; 仅摘要; https://openalex.org/W2563463421
+- Two‐Dimensional Nanomaterials for Biomedical Applications: Emerging Trends and Future Prospects (2015); DOI: 10.1002/adma.201502422; 仅摘要; https://openalex.org/W1919158486
+- 25th Anniversary Article: Semiconductor Nanowires – Synthesis, Characterization, and Applications (2014); DOI: 10.1002/adma.201305929; 仅摘要; https://openalex.org/W2077266128
+- Freeze Casting: From Low‐Dimensional Building Blocks to Aligned Porous Structures—A Review of Novel Materials, Methods, and Applications (2020); DOI: 10.1002/adma.201907176; 仅摘要; https://openalex.org/W3011724868
+- New Frontiers in Materials Science Opened by Ionic Liquids (2009); DOI: 10.1002/adma.200902184; 仅摘要; https://openalex.org/W1975765217
+- Electrospinning of Nanofibers: Reinventing the Wheel? (2004); DOI: 10.1002/adma.200400719; 仅摘要; https://openalex.org/W2032195777
+- Super‐Hydrophobic Surfaces: From Natural to Artificial (2002); DOI: 10.1002/adma.200290020; 仅摘要; https://openalex.org/W2042254650
+- Hydrogels in Biology and Medicine: From Molecular Principles to Bionanotechnology (2006); DOI: 10.1002/adma.200501612; 仅摘要; https://openalex.org/W2132551021
+- Polymer Layered Silicate Nanocomposites (1996); DOI: 10.1002/adma.19960080104; 仅摘要; https://openalex.org/W2042626809
+- Poly(3,4-ethylenedioxythiophene) and Its Derivatives: Past, Present, and Future (2000); DOI: 10.1002/(sici)1521-4095(200004)12:7<481::aid-adma481>3.0.co;2-c; 仅摘要; https://openalex.org/W1968425946
+- Hydrogels in Regenerative Medicine (2009); DOI: 10.1002/adma.200802106; 仅摘要; https://openalex.org/W2171311487
+- Polymer–Fullerene Bulk‐Heterojunction Solar Cells (2010); DOI: 10.1002/adma.200903697; 仅摘要; https://openalex.org/W2084868936
+- 25th Anniversary Article: Organic Field‐Effect Transistors: The Path Beyond Amorphous Silicon (2014); DOI: 10.1002/adma.201304346; 仅摘要; https://openalex.org/W2020051588
+- Emerging Transparent Electrodes Based on Thin Films of Carbon Nanotubes, Graphene, and Metallic Nanostructures (2011); DOI: 10.1002/adma.201003188; 仅摘要; https://openalex.org/W2013739204
+- Hyaluronic Acid Hydrogels for Biomedical Applications (2011); DOI: 10.1002/adma.201003963; 仅摘要; https://openalex.org/W1977784832
+- Simultaneous Enhancement of Open‐Circuit Voltage, Short‐Circuit Current Density, and Fill Factor in Polymer Solar Cells (2011); DOI: 10.1002/adma.201103006; 仅摘要; https://openalex.org/W2074657946
+- Recent Progress in the Synthesis of Porous Carbon Materials (2006); DOI: 10.1002/adma.200501576; 仅摘要; https://openalex.org/W1981164146
+- An improved experimental determination of external photoluminescence quantum efficiency (1997); DOI: 10.1002/adma.19970090308; 仅摘要; https://openalex.org/W2095915347
+- Inkjet Printing of Polymers: State of the Art and Future Developments (2004); DOI: 10.1002/adma.200300385; 仅摘要; https://openalex.org/W2108064844
+- Rylene and Related Diimides for Organic Electronics (2010); DOI: 10.1002/adma.201001402; 仅摘要; https://openalex.org/W2038015897
+- Metal–Organic Frameworks as Platforms for Catalytic Applications (2017); DOI: 10.1002/adma.201703663; 仅摘要; https://openalex.org/W2770720622
+- Semiconducting Polyfluorenes—Towards Reliable Structure-Property Relationships (2002); DOI: 10.1002/1521-4095(20020404)14:7<477::aid-adma477>3.0.co;2-9; 仅摘要; https://openalex.org/W2030099439
+- New Architecture for High‐Efficiency Polymer Photovoltaic Cells Using Solution‐Based Titanium Oxide as an Optical Spacer (2006); DOI: 10.1002/adma.200501825; 仅摘要; https://openalex.org/W2105097003
+- Efficient two layer leds on a polymer blend basis (1995); DOI: 10.1002/adma.19950070608; 仅摘要; https://openalex.org/W1993940760
+- Electronic Skin: Recent Progress and Future Prospects for Skin‐Attachable Devices for Health Monitoring, Robotics, and Prosthetics (2019); DOI: 10.1002/adma.201904765; 仅摘要; https://openalex.org/W2973569033

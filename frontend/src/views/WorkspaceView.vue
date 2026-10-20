@@ -59,73 +59,7 @@
       </button>
     </div>
 
-    <!-- Projects Grid -->
-    <div v-else class="apple-projects-grid">
-      <div
-        v-for="project in filteredProjects"
-        :key="project.id"
-        class="apple-project-card"
-        tabindex="0"
-        :aria-label="`打开项目：${project.name}`"
-        @keydown.enter.self="openProject(project.id)"
-        @keydown.space.prevent.self="openProject(project.id)"
-        @click="openProject(project.id)"
-      >
-        <!-- Card Header -->
-        <div class="card-header-row">
-          <div class="flex gap-8" style="align-items: center;">
-            <span :class="`status-badge status-${project.status}`">
-              {{ statusLabel(project.status) }}
-            </span>
-            <span v-if="project.article_type" class="article-type-tag">
-              {{ project.article_type }}
-            </span>
-          </div>
-          <button
-            class="card-delete-btn"
-            title="删除此项目"
-            @click.stop="deleteProject(project)"
-          >
-            <el-icon><Delete /></el-icon>
-          </button>
-        </div>
-
-        <!-- Project Title & Domain -->
-        <h3 class="card-project-title" :title="project.name">
-          {{ project.name }}
-        </h3>
-        <p class="card-project-domain">
-          {{ project.domain || '通用学术领域' }}
-        </p>
-
-        <!-- Progress Row -->
-        <div class="card-progress-wrap">
-          <div class="progress-labels">
-            <span class="label-text">译文覆盖进度</span>
-            <span class="label-val">{{ project.translated_segments || 0 }} / {{ project.total_segments || 0 }} 句段</span>
-          </div>
-          <div class="apple-progress-bar">
-            <div
-              class="progress-fill"
-              :style="{ width: `${progress(project)}%` }"
-              :class="{ completed: progress(project) === 100 }"
-            ></div>
-          </div>
-        </div>
-
-        <!-- Card Footer -->
-        <div class="card-footer-row">
-          <div class="footer-meta">
-            <span class="model-pill">{{ project.translation_model || '尚未选择模型' }}</span>
-            <span class="date-text">{{ formatDate(project.updated_at) }}</span>
-          </div>
-          <div class="enter-pill">
-            <span>打开项目</span>
-            <span class="arrow">↗</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ProjectAccordion v-else-if="filteredProjects.length" :projects="filteredProjects" :status-label="statusLabel" :progress="progress" :format-date="formatDate" @open="openProject" @delete="deleteProject" />
 
     <el-empty v-if="!loading && projects.length && !filteredProjects.length" description="没有找到匹配的项目"><el-button @click="searchQuery = ''">清除搜索</el-button></el-empty>
 
@@ -144,6 +78,7 @@
         <el-form-item label="学科领域" prop="domain">
           <el-input v-model="createForm.domain" placeholder="如：石油与天然气工程 / 计算机视觉 / 医学" />
         </el-form-item>
+        <JournalSkillPicker v-model="createForm.journal_id" v-model:enabled="createForm.style_skill_enabled" :domain="createForm.domain" />
         <el-collapse class="create-options"><el-collapse-item title="更多设置（文章类型、翻译模型与背景）" name="options">
         <el-form-item label="文章类型">
           <el-select v-model="createForm.article_type" style="width: 100%">
@@ -195,10 +130,12 @@
 
 <script setup lang="ts">
 import TextType from '../components/TextType.vue'
+import ProjectAccordion from '../components/ProjectAccordion.vue'
+import JournalSkillPicker from '../components/JournalSkillPicker.vue'
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Plus, Delete, Search } from '@element-plus/icons-vue'
+import { Plus, Search } from '@element-plus/icons-vue'
 import { projectsApi } from '../api'
 
 const router = useRouter()
@@ -217,6 +154,8 @@ const createFormRef = ref()
 const createForm = ref({
   name: '',
   domain: '',
+  journal_id: null as number | null,
+  style_skill_enabled: true,
   article_type: 'Research Article',
   translation_provider: 'deepseek',
   translation_model: 'deepseek-chat',

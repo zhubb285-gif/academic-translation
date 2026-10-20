@@ -1,0 +1,107 @@
+# Energy & Fuels — 实际语料清单
+
+- Historical Developments in Hydroprocessing Bio-oils (2007); DOI: 10.1021/ef070044u; 仅摘要; https://openalex.org/W1980495684
+- The Modified Yen Model (2010); DOI: 10.1021/ef900975e; 仅摘要; https://openalex.org/W2017333141
+- Advances in Asphaltene Science and the Yen–Mullins Model (2012); DOI: 10.1021/ef300185p; 仅摘要; https://openalex.org/W2334386657
+- Review on Ammonia as a Potential Fuel: From Synthesis to Economics (2021); DOI: 10.1021/acs.energyfuels.0c03685; 仅摘要; https://openalex.org/W3134967399
+- Sequestration of Carbon Dioxide in Coal with Enhanced Coalbed Methane RecoveryA Review (2005); DOI: 10.1021/ef040047w; 仅摘要; https://openalex.org/W2049457092
+- Molecular Size and Structure of Asphaltenes from Various Sources (2000); DOI: 10.1021/ef990225z; 仅摘要; https://openalex.org/W2053718838
+- Heterogeneous Catalysts for Biodiesel Production (2007); DOI: 10.1021/ef700250g; 仅摘要; https://openalex.org/W1965787870
+- Hydrothermal Liquefaction and Gasification of Nannochloropsis sp. (2010); DOI: 10.1021/ef100203u; 仅摘要; https://openalex.org/W2019845764
+- A Review of Recent Literature to Search for an Efficient Catalytic Process for the Conversion of Syngas to Ethanol (2008); DOI: 10.1021/ef700411x; 仅摘要; https://openalex.org/W2044287746
+- Biorefineries: Current Status, Challenges, and Future Direction (2006); DOI: 10.1021/ef060097w; 仅摘要; https://openalex.org/W2038339427
+- Global Kinetic Analysis of Complex Materials (1998); DOI: 10.1021/ef9800765; 仅摘要; https://openalex.org/W1970807979
+- Asphaltene Adsorption, a Literature Review (2014); DOI: 10.1021/ef500282p; 仅摘要; https://openalex.org/W2313003846
+- The Role of Additives for Diesel and Diesel Blended (Ethanol or Biodiesel) Fuels: A Review (2007); DOI: 10.1021/ef070060r; 仅摘要; https://openalex.org/W2081488360
+- Production of Biodiesel Fuel from the MicroalgaSchizochytrium limacinumby Direct Transesterification of Algal Biomass (2009); DOI: 10.1021/ef900704h; 仅摘要; https://openalex.org/W2030851417
+- Supramolecular Assembly Model for Aggregation of Petroleum Asphaltenes (2011); DOI: 10.1021/ef200654p; 仅摘要; https://openalex.org/W2064636048
+- Hydrothermal Treatment (HTT) of Microalgae: Evaluation of the Process As Conversion Method in an Algae Biorefinery Concept (2011); DOI: 10.1021/ef201415s; 仅摘要; https://openalex.org/W1987649656
+- Water-in-Crude Oil Emulsion Stabilization: Review and Unanswered Questions (2012); DOI: 10.1021/ef3003262; 仅摘要; https://openalex.org/W2327526850
+- Methane Adsorption on Shale under Simulated Geological Temperature and Pressure Conditions (2013); DOI: 10.1021/ef400381v; 仅摘要; https://openalex.org/W2090582737
+- Lubricity of Components of Biodiesel and Petrodiesel. The Origin of Biodiesel Lubricity (2005); DOI: 10.1021/ef049684c; 仅摘要; https://openalex.org/W2089952574
+- Resolution and Identification of Elemental Compositions for More than 3000 Crude Acids in Heavy Petroleum by Negative-Ion Microelectrospray High-Field Fourier Transform Ion Cyclotron Resonance Mass Spectrometry (2001); DOI: 10.1021/ef010111z; 仅摘要; https://openalex.org/W2075737410
+- Polymer Gel Systems for Water Management in High-Temperature Petroleum Reservoirs: A Chemical Review (2017); DOI: 10.1021/acs.energyfuels.7b02897; 仅摘要; https://openalex.org/W2767327529
+- Wax precipitation from North Sea crude oils: 1. Crystallization and dissolution temperatures, and Newtonian and non-Newtonian flow properties (1991); DOI: 10.1021/ef00030a019; 仅摘要; https://openalex.org/W2093456692
+- Characterization of Heteroatom Compounds in a Crude Oil and Its Saturates, Aromatics, Resins, and Asphaltenes (SARA) and Non-basic Nitrogen Fractions Analyzed by Negative-Ion Electrospray Ionization Fourier Transform Ion Cyclotron Resonance Mass Spectrometry (2010); DOI: 10.1021/ef901564e; 仅摘要; https://openalex.org/W2027793366
+- Determination of Saturate, Aromatic, Resin, and Asphaltenic (SARA) Components in Crude Oils by Means of Infrared and Near-Infrared Spectroscopy (2001); DOI: 10.1021/ef010088h; 仅摘要; https://openalex.org/W1967918455
+- Role of nickel and vanadium in petroleum classification (1990); DOI: 10.1021/ef00024a005; 仅摘要; https://openalex.org/W2003927281
+- Reading Chemical Fine Print: Resolution and Identification of 3000 Nitrogen-Containing Aromatic Compounds from a Single Electrospray Ionization Fourier Transform Ion Cyclotron Resonance Mass Spectrum of Heavy Petroleum Crude Oil (2001); DOI: 10.1021/ef000255y; 仅摘要; https://openalex.org/W1985434890
+- Advances in Asphaltene Petroleomics. Part 1: Asphaltenes Are Composed of Abundant Island and Archipelago Structural Motifs (2017); DOI: 10.1021/acs.energyfuels.7b02873; 仅摘要; https://openalex.org/W2767562802
+- Optimization of Alkali-Catalyzed Transesterification of Brassica Carinata Oil for Biodiesel Production (2003); DOI: 10.1021/ef0340110; 仅摘要; https://openalex.org/W2058212994
+- NO x Reduction from Biodiesel Fuels (2005); DOI: 10.1021/ef050202m; 仅摘要; https://openalex.org/W2325577364
+- Combustion and Emissions of 2,5-Dimethylfuran in a Direct-Injection Spark-Ignition Engine (2010); DOI: 10.1021/ef901575a; 仅摘要; https://openalex.org/W2052189202
+- Changes in Type II Kerogen Density as a Function of Maturity: Evidence from the Kimmeridge Clay Formation (2005); DOI: 10.1021/ef050194+; 仅摘要; https://openalex.org/W2077784674
+- Evidence for Island Structures as the Dominant Architecture of Asphaltenes (2011); DOI: 10.1021/ef101522w; 仅摘要; https://openalex.org/W2328611203
+- Engine Performance of Biodiesel Fuel Prepared from Soybean Soapstock: A High Quality Renewable Fuel Produced from a Waste Feedstock (2001); DOI: 10.1021/ef010051x; 仅摘要; https://openalex.org/W1994784465
+- Molecular Recognition in Aggregates Formed by Asphaltene and Resin Molecules from the Athabasca Oil Sand (1999); DOI: 10.1021/ef980228w; 仅摘要; https://openalex.org/W2000234636
+- Structural Characterization of Asphaltenes of Different Origins (1995); DOI: 10.1021/ef00050a004; 仅摘要; https://openalex.org/W1998499144
+- Composition of heavy petroleums. 2. Molecular characterization (1988); DOI: 10.1021/ef00011a001; 仅摘要; https://openalex.org/W2075005172
+- Composition of heavy petroleums. 1. Molecular weight, hydrogen deficiency, and heteroatom concentration as a function of atmospheric equivalent boiling point up to 1400.degree.F (760.degree.C) (1987); DOI: 10.1021/ef00001a001; 仅摘要; https://openalex.org/W2021539068
+- Thermochemical Recycling of Waste Plastics by Pyrolysis: A Review (2021); DOI: 10.1021/acs.energyfuels.1c01292; 仅摘要; https://openalex.org/W3190627669
+- Characterization of Middle-Temperature Gasification Coal Tar. Part 3: Molecular Composition of Acidic Compounds (2012); DOI: 10.1021/ef301431y; 仅摘要; https://openalex.org/W2313945768
+- Combustion and Co-combustion of Biomass: Fundamentals, Technologies, and Primary Measures for Emission Reduction (2003); DOI: 10.1021/ef030031q; 仅摘要; https://openalex.org/W2025754756
+- Fuel Oil Quality of Biomass Pyrolysis OilsState of the Art for the End Users (1999); DOI: 10.1021/ef980272b; 仅摘要; https://openalex.org/W2013737506
+- Selection of Oxygen Carriers for Chemical-Looping Combustion (2004); DOI: 10.1021/ef0301452; 仅摘要; https://openalex.org/W1980854042
+- Adsorption of Carbon Dioxide for Post-combustion Capture: A Review (2021); DOI: 10.1021/acs.energyfuels.1c01618; 仅摘要; https://openalex.org/W3191648510
+- Transformation and Release to the Gas Phase of Cl, K, and S during Combustion of Annual Biomass (2004); DOI: 10.1021/ef049944q; 仅摘要; https://openalex.org/W2007103119
+- Adsorption of CO 2 on Zeolites at Moderate Temperatures (2005); DOI: 10.1021/ef040059h; 仅摘要; https://openalex.org/W2042683505
+- Biodiesel Fuels from Vegetable Oils: Transesterification of Cynara cardunculus L. Oils with Ethanol (2002); DOI: 10.1021/ef010174h; 仅摘要; https://openalex.org/W2056776511
+- Detailed Kinetic Mechanism for the Oxidation of Ammonia Including the Formation and Reduction of Nitrogen Oxides (2018); DOI: 10.1021/acs.energyfuels.8b01056; 仅摘要; https://openalex.org/W2821414876
+- Ash Transformation Chemistry during Combustion of Biomass (2011); DOI: 10.1021/ef201205b; 仅摘要; https://openalex.org/W2065712024
+- Demonstration of Compression-Ignition Engine Combustion Using Ammonia in Reducing Greenhouse Gas Emissions (2008); DOI: 10.1021/ef800140f; 仅摘要; https://openalex.org/W1983495838
+- Torrefaction of Agriculture Residue To Enhance Combustible Properties (2010); DOI: 10.1021/ef901168f; 仅摘要; https://openalex.org/W2040439750
+- Chemical Effects of a High CO 2 Concentration in Oxy-Fuel Combustion of Methane (2007); DOI: 10.1021/ef7005854; 仅摘要; https://openalex.org/W1988307159
+- Fast Pyrolysis of Forestry Residue. 2. Physicochemical Composition of Product Liquid (2003); DOI: 10.1021/ef020206g; 仅摘要; https://openalex.org/W2046566268
+- Release of K, Cl, and S during Pyrolysis and Combustion of High-Chlorine Biomass (2011); DOI: 10.1021/ef201098n; 仅摘要; https://openalex.org/W2313275148
+- Enhancement on a Skeletal Kinetic Model for Primary Reference Fuel Oxidation by Using a Semidecoupling Methodology (2012); DOI: 10.1021/ef301242b; 仅摘要; https://openalex.org/W2324986918
+- An Experimental Study on the Atomization and Combustion Characteristics of Biodiesel-Blended Fuels (2005); DOI: 10.1021/ef050026h; 仅摘要; https://openalex.org/W2079002767
+- Advanced Hydrodesulfurization Catalysts: A Review of Design and Synthesis (2019); DOI: 10.1021/acs.energyfuels.9b00354; 仅摘要; https://openalex.org/W2930108136
+- Reactivity of Some Metal Oxides Supported on Alumina with Alternating Methane and OxygenApplication for Chemical-Looping Combustion (2003); DOI: 10.1021/ef020151i; 仅摘要; https://openalex.org/W1974720175
+- Ilmenite Activation during Consecutive Redox Cycles in Chemical-Looping Combustion (2010); DOI: 10.1021/ef900856d; 仅摘要; https://openalex.org/W2054933338
+- Carbon Dioxide Capture Using Ionic Liquid 1-Butyl-3-methylimidazolium Acetate (2010); DOI: 10.1021/ef100868a; 仅摘要; https://openalex.org/W2323073093
+- Chemical, Thermal Stability, Seal Swell, and Emissions Studies of Alternative Jet Fuels (2011); DOI: 10.1021/ef101520v; 仅摘要; https://openalex.org/W2335603089
+- Impact of Biodiesel Blending on Diesel Soot and the Regeneration of Particulate Filters (2005); DOI: 10.1021/ef0500585; 仅摘要; https://openalex.org/W2013565440
+- Release to the Gas Phase of Inorganic Elements during Wood Combustion. Part 2: Influence of Fuel Composition (2008); DOI: 10.1021/ef060613i; 仅摘要; https://openalex.org/W2091657851
+- CO 2 Post-combustion Capture: A Critical Review of Current Technologies and Future Directions (2024); DOI: 10.1021/acs.energyfuels.4c02513; 仅摘要; https://openalex.org/W4400646404
+- A Shock Tube Study of the Ignition of n-Heptane, n-Decane, n-Dodecane, and n-Tetradecane at Elevated Pressures (2009); DOI: 10.1021/ef8011036; 仅摘要; https://openalex.org/W2034860155
+- Surface Functionality and Carbon Structures in Lignocellulosic-Derived Biochars Produced by Fast Pyrolysis (2011); DOI: 10.1021/ef200915s; 仅摘要; https://openalex.org/W2042539856
+- Multicycle Reduction and Oxidation of Different Types of Iron Oxide ParticlesApplication to Chemical-Looping Combustion (2004); DOI: 10.1021/ef0301405; 仅摘要; https://openalex.org/W1977664034
+- Bed Agglomeration Characteristics during Fluidized Bed Combustion of Biomass Fuels (2000); DOI: 10.1021/ef990107b; 仅摘要; https://openalex.org/W2004368084
+- TG-FTIR Study of the Influence of Potassium Chloride on Wheat Straw Pyrolysis (1998); DOI: 10.1021/ef980008i; 仅摘要; https://openalex.org/W2048880360
+- An Approach for Formulating Surrogates for Gasoline with Application toward a Reduced Surrogate Mechanism for CFD Engine Modeling (2011); DOI: 10.1021/ef201099y; 仅摘要; https://openalex.org/W2345569020
+- Global Combustion Mechanisms for Use in CFD Modeling under Oxy-Fuel Conditions (2009); DOI: 10.1021/ef8003619; 仅摘要; https://openalex.org/W1990787959
+- Methodology for Formulating Diesel Surrogate Fuels with Accurate Compositional, Ignition-Quality, and Volatility Characteristics (2012); DOI: 10.1021/ef300303e; 仅摘要; https://openalex.org/W2116821045
+- Oxidation of C1−C5 Alkane Quinternary Natural Gas Mixtures at High Pressures (2010); DOI: 10.1021/ef9011005; 仅摘要; https://openalex.org/W2076145943
+- Redox Investigation of Some Oxides of Transition-State Metals Ni, Cu, Fe, and Mn Supported on SiO 2 and MgAl 2 O 4 (2005); DOI: 10.1021/ef0501389; 仅摘要; https://openalex.org/W2077438722
+- Fuel Indexes: A Novel Method for the Evaluation of Relevant Combustion Properties of New Biomass Fuels (2011); DOI: 10.1021/ef201282y; 仅摘要; https://openalex.org/W2330544120
+- Review of PM2.5 and PM10 Apportionment for Fossil Fuel Combustion and Other Sources by the Chemical Mass Balance Receptor Model (2002); DOI: 10.1021/ef0101715; 仅摘要; https://openalex.org/W1987051884
+- Deep Eutectic Solvents: Physicochemical Properties and Gas Separation Applications (2015); DOI: 10.1021/ef5028873; 仅摘要; https://openalex.org/W2329989147
+- Novel Polyethylenimine-Modified Mesoporous Molecular Sieve of MCM-41 Type as High-Capacity Adsorbent for CO 2 Capture (2002); DOI: 10.1021/ef020058u; 仅摘要; https://openalex.org/W1986223744
+- Conversion Limits in the Reaction of CO2with Lime (2003); DOI: 10.1021/ef020152a; 仅摘要; https://openalex.org/W1969347521
+- Review on the Use of Ionic Liquids (ILs) as Alternative Fluids for CO2Capture and Natural Gas Sweetening (2010); DOI: 10.1021/ef1011337; 仅摘要; https://openalex.org/W1966814961
+- Carbon Dioxide Sequestration via Gas Hydrates: A Potential Pathway toward Decarbonization (2020); DOI: 10.1021/acs.energyfuels.0c02309; 仅摘要; https://openalex.org/W3047774990
+- Recent Advancements, Fundamental Challenges, and Opportunities in Catalytic Methanation of CO 2 (2016); DOI: 10.1021/acs.energyfuels.6b01723; 仅摘要; https://openalex.org/W2536059179
+- Comparative Study of CO 2 Capture by Carbon Nanotubes, Activated Carbons, and Zeolites (2008); DOI: 10.1021/ef8000086; 仅摘要; https://openalex.org/W2089126807
+- Thermal and Chemical Stability of Regenerable Solid Amine Sorbent for CO2 Capture (2006); DOI: 10.1021/ef050402y; 仅摘要; https://openalex.org/W1997292086
+- In-Situ Infrared Study of CO2 Adsorption on SBA-15 Grafted with γ-(Aminopropyl)triethoxysilane (2003); DOI: 10.1021/ef020176h; 仅摘要; https://openalex.org/W2007489056
+- Review of Catalytic Conditioning of Biomass-Derived Syngas (2009); DOI: 10.1021/ef800830n; 仅摘要; https://openalex.org/W2011735785
+- Degradation Pathways for Monoethanolamine in a CO 2 Capture Facility (2003); DOI: 10.1021/ef020272i; 仅摘要; https://openalex.org/W2145009485
+- Synthesis, Experimental Studies, and Analysis of a New Calcium-Based Carbon Dioxide Absorbent (2005); DOI: 10.1021/ef0496799; 仅摘要; https://openalex.org/W1977728553
+- Adsorption of CO 2 on Amine-Functionalized Y-Type Zeolites (2010); DOI: 10.1021/ef901077k; 仅摘要; https://openalex.org/W2019521528
+- The Role of Carbon Capture and Storage in the Energy Transition (2021); DOI: 10.1021/acs.energyfuels.1c00032; 仅摘要; https://openalex.org/W3142831270
+- Performance Enhancement of Calcium Oxide Sorbents for Cyclic CO2 Capture—A Review (2012); DOI: 10.1021/ef300220x; 仅摘要; https://openalex.org/W2068196512
+- Mesoporous Alumina-Supported Amines as Potential Steam-Stable Adsorbents for Capturing CO 2 from Simulated Flue Gas and Ambient Air (2011); DOI: 10.1021/ef201224v; 仅摘要; https://openalex.org/W1970095940
+- High-Pressure Adsorption of Methane and Carbon Dioxide on Coal (2006); DOI: 10.1021/ef060318y; 仅摘要; https://openalex.org/W2001542052
+- The Effects of Repeated Cycles of Calcination and Carbonation on a Variety of Different Limestones, as Measured in a Hot Fluidized Bed of Sand (2007); DOI: 10.1021/ef060506o; 仅摘要; https://openalex.org/W2018644110
+- CO 2 -Free Production of Hydrogen by Catalytic Pyrolysis of Hydrocarbon Fuel (1998); DOI: 10.1021/ef9701145; 仅摘要; https://openalex.org/W2004198409
+- Chemical Looping Combustion: Status and Development Challenges (2020); DOI: 10.1021/acs.energyfuels.0c01454; 仅摘要; https://openalex.org/W3037802995
+- Making Fischer−Tropsch Fuels and Electricity from Coal and Biomass: Performance and Cost Analysis (2010); DOI: 10.1021/ef101184e; 仅摘要; https://openalex.org/W2043994691
+- Effect of Pressure on the Behavior of Copper-, Iron-, and Nickel-Based Oxygen Carriers for Chemical-Looping Combustion (2005); DOI: 10.1021/ef050238e; 仅摘要; https://openalex.org/W2001471972
+- Impregnated CuO/Al2O3 Oxygen Carriers for Chemical-Looping Combustion: Avoiding Fluidized Bed Agglomeration (2005); DOI: 10.1021/ef050052f; 仅摘要; https://openalex.org/W2084309919
+- Efficient Capture of CO2from Simulated Flue Gas by Formation of TBAB or TBAF Semiclathrate Hydrates (2009); DOI: 10.1021/ef9003329; 仅摘要; https://openalex.org/W2050624584
+- Flame-Made Durable Doped-CaO Nanosorbents for CO 2 Capture (2008); DOI: 10.1021/ef8007882; 仅摘要; https://openalex.org/W2028800119
+- Enhancement of CO2 Capture on Biomass-Based Carbon from Black Locust by KOH Activation and Ammonia Modification (2016); DOI: 10.1021/acs.energyfuels.5b02764; 仅摘要; https://openalex.org/W2328876275
+- Progress on Catalyst Development for the Steam Reforming of Biomass and Waste Plastics Pyrolysis Volatiles: A Review (2021); DOI: 10.1021/acs.energyfuels.1c01666; 仅摘要; https://openalex.org/W3188507440
+- Review on the Development of Sorbents for Calcium Looping (2020); DOI: 10.1021/acs.energyfuels.0c00682; 仅摘要; https://openalex.org/W3022590929
+- Amino Acids as Kinetic Promoters for Gas Hydrate Applications: A Mini Review (2021); DOI: 10.1021/acs.energyfuels.1c00502; 仅摘要; https://openalex.org/W3158233961
+- Screening of CO2 Adsorbing Materials for Zero Emission Power Generation Systems (2007); DOI: 10.1021/ef0604036; 仅摘要; https://openalex.org/W1966707543

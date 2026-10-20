@@ -20,6 +20,7 @@ from app.api.other import (
     reports_router,
 )
 from app.api.export import router as export_router
+from app.api.term_discovery import router as discovery_router
 
 # ============================================================
 # 应用初始化
@@ -67,6 +68,7 @@ app.include_router(projects_router, prefix=PREFIX)
 app.include_router(documents_router, prefix=PREFIX)
 app.include_router(translation_router, prefix=PREFIX)
 app.include_router(terminology_router, prefix=PREFIX)
+app.include_router(discovery_router, prefix=PREFIX)
 app.include_router(journals_router, prefix=PREFIX)
 app.include_router(models_router, prefix=PREFIX)
 app.include_router(proofreading_router, prefix=PREFIX)
@@ -83,6 +85,8 @@ async def startup_event():
     os.makedirs(settings.upload_dir, exist_ok=True)
     os.makedirs(settings.projects_dir, exist_ok=True)
     create_tables()
+    from app.services.term_discovery import interrupt_stale_jobs
+    interrupt_stale_jobs()
     print(f"✅ {settings.app_name} v{settings.app_version} 启动成功")
     print(f"📖 API 文档: http://127.0.0.1:8000/docs")
 

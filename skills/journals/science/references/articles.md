@@ -1,0 +1,227 @@
+# Science — 实际语料清单
+
+- Avian-origin influenza A viruses tolerate elevated pyrexic temperatures in mammals. (2025); DOI: 10.1126/science.adq4691; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618609/fullTextXML
+- Organizing the coactivity structure of the hippocampus from robust to flexible memory. (2024); DOI: 10.1126/science.adk9611; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7616439/fullTextXML
+- Deploying synthetic coevolution and machine learning to engineer protein-protein interactions. (2023); DOI: 10.1126/science.adh1720; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10403280/fullTextXML
+- Structural basis for potent antibody neutralization of SARS-CoV-2 variants including B.1.1.529. (2022); DOI: 10.1126/science.abn8897; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9580340/fullTextXML
+- Structural basis of mismatch recognition by a SARS-CoV-2 proofreading enzyme. (2021); DOI: 10.1126/science.abi9310; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9836006/fullTextXML
+- Silencing mitochondrial gene expression in living cells. (2025); DOI: 10.1126/science.adr3498; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618265/fullTextXML
+- Circadian alignment of early onset caloric restriction promotes longevity in male C57BL/6J mice. (2022); DOI: 10.1126/science.abk0297; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9262309/fullTextXML
+- Household COVID-19 risk and in-person schooling. (2021); DOI: 10.1126/science.abh2939; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8168618/fullTextXML
+- Broadly neutralizing antibodies target the coronavirus fusion peptide. (2022); DOI: 10.1126/science.abq3773; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9348754/fullTextXML
+- Timing the SARS-CoV-2 index case in Hubei province. (2021); DOI: 10.1126/science.abf8003; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8139421/fullTextXML
+- Structural mechanism of LINE-1 target-primed reverse transcription. (2025); DOI: 10.1126/science.ads8412; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7617806/fullTextXML
+- Mosaic RBD nanoparticles protect against challenge by diverse sarbecoviruses in animal models. (2022); DOI: 10.1126/science.abq0839; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9273039/fullTextXML
+- NUDT5 regulates purine metabolism and thiopurine sensitivity by interacting with PPAT. (2025); DOI: 10.1126/science.adx9717; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12853130/fullTextXML
+- Microglia Rank signaling regulates GnRH neuronal function and the hypothalamic-pituitary-gonadal axis. (2026); DOI: 10.1126/science.aeb6999; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7619046/fullTextXML
+- Open science discovery of potent noncovalent SARS-CoV-2 main protease inhibitors. (2023); DOI: 10.1126/science.abo7201; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615835/fullTextXML
+- Direct observation of glycans bonded to proteins and lipids at the single-molecule level. (2023); DOI: 10.1126/science.adh3856; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615228/fullTextXML
+- Termination of the integrated stress response. (2026); DOI: 10.1126/science.adw5137; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618491/fullTextXML
+- Structural mechanism of outer kinetochore Dam1-Ndc80 complex assembly on microtubules. (2023); DOI: 10.1126/science.adj8736; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615550/fullTextXML
+- Cortical wiring by synapse type-specific control of local protein synthesis. (2022); DOI: 10.1126/science.abm7466; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618116/fullTextXML
+- Structure and organization of AMPA receptor-TARP complexes in the mammalian cerebellum. (2026); DOI: 10.1126/science.aeb3577; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7619101/fullTextXML
+- Diverse phage communities are maintained stably on a clonal bacterial host. (2024); DOI: 10.1126/science.adk1183; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7617280/fullTextXML
+- ILC2s regulate a fibroblast progenitor niche in the pancreas. (2026); DOI: 10.1126/science.aea5113; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7619465/fullTextXML
+- Introgression dynamics of sex-linked chromosomal inversions shape the Malawi cichlid radiation. (2025); DOI: 10.1126/science.adr9961; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7617772/fullTextXML
+- The history of Coast Salish "woolly dogs" revealed by ancient genomics and Indigenous Knowledge. (2023); DOI: 10.1126/science.adi6549; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615573/fullTextXML
+- CD4<sup>+</sup> T cells contribute to neurodegeneration in Lewy body dementia. (2021); DOI: 10.1126/science.abf7266; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9122025/fullTextXML
+- A cellular basis for the mammalian nocturnal-diurnal switch. (2026); DOI: 10.1126/science.ady2822; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618833/fullTextXML
+- Morphine-responsive neurons that regulate mechanical antinociception. (2024); DOI: 10.1126/science.ado6593; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7616448/fullTextXML
+- MEG3 activates necroptosis in human neuron xenografts modeling Alzheimer's disease. (2023); DOI: 10.1126/science.abp9556; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615236/fullTextXML
+- Protein import into peroxisomes occurs through a nuclear pore-like phase. (2022); DOI: 10.1126/science.adf3971; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9795577/fullTextXML
+- Structural ontogeny of protein-protein interactions. (2026); DOI: 10.1126/science.adx6931; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12904254/fullTextXML
+- Vaccination with mRNA-encoded nanoparticles drives early maturation of HIV bnAb precursors in humans. (2025); DOI: 10.1126/science.adr8382; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13164876/fullTextXML
+- An unexpected role for a glutamate receptor. (2023); DOI: 10.1126/science.adm6771; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615777/fullTextXML
+- Noncanonical crRNAs derived from host transcripts enable multiplexable RNA detection by Cas9. (2021); DOI: 10.1126/science.abe7106; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8224270/fullTextXML
+- Lifelong behavioral screen reveals an architecture of vertebrate aging. (2026); DOI: 10.1126/science.aea9795; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13165398/fullTextXML
+- SPL13 controls a root apical meristem phase change by triggering oriented cell divisions. (2024); DOI: 10.1126/science.ado4298; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7616863/fullTextXML
+- Cytosolic antibody receptor TRIM21 is required for effective tau immunotherapy in mouse models. (2023); DOI: 10.1126/science.abn1366; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7614512/fullTextXML
+- Structures of a mobile intron retroelement poised to attack its structured DNA target. (2022); DOI: 10.1126/science.abq2844; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10190682/fullTextXML
+- Maternal trans-vaccenic acid shapes neonatal T cell development and early-life immune imprinting. (2026); DOI: 10.1126/science.aea4041; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13621437/fullTextXML
+- Systematic identification of Y-chromosome gene functions in mouse spermatogenesis. (2025); DOI: 10.1126/science.ads6495; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7617377/fullTextXML
+- Molecular determinants of ligand efficacy and potency in GPCR signaling. (2023); DOI: 10.1126/science.adh1859; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615523/fullTextXML
+- Increased risk of SARS-CoV-2 reinfection associated with emergence of Omicron in South Africa. (2022); DOI: 10.1126/science.abn4947; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8995029/fullTextXML
+- Myelin sheaths in the central nervous system can withstand damage and dynamically remodel. (2026); DOI: 10.1126/science.adr4661; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618902/fullTextXML
+- In silico protein interaction screening uncovers DONSON's role in replication initiation. (2023); DOI: 10.1126/science.adi3448; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10801813/fullTextXML
+- Twin peaks: The Omicron SARS-CoV-2 BA.1 and BA.2 epidemics in England. (2022); DOI: 10.1126/science.abq4411; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9161371/fullTextXML
+- PIEZO channels link mechanical forces to uterine contractions in parturition. (2025); DOI: 10.1126/science.ady3045; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12807505/fullTextXML
+- Inborn errors of OAS-RNase L in SARS-CoV-2-related multisystem inflammatory syndrome in children. (2023); DOI: 10.1126/science.abo3627; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10451000/fullTextXML
+- Structures of the Omicron spike trimer with ACE2 and an anti-Omicron antibody. (2022); DOI: 10.1126/science.abn8863; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8939775/fullTextXML
+- Genomic characterization and epidemiology of an emerging SARS-CoV-2 variant in Delhi, India. (2021); DOI: 10.1126/science.abj9932; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7612010/fullTextXML
+- Platelet-derived integrin- and tetraspanin-enriched tethers exacerbate severe inflammation. (2026); DOI: 10.1126/science.adu2825; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13385270/fullTextXML
+- Covalent inhibitors of the PI3Kα RAS binding domain impair tumor growth driven by RAS and HER2. (2025); DOI: 10.1126/science.adv2684; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618302/fullTextXML
+- Systematic in vitro evolution in <i>Plasmodium falciparum</i> reveals key determinants of drug resistance. (2024); DOI: 10.1126/science.adk9893; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11809290/fullTextXML
+- Meiotic DNA breaks drive multifaceted mutagenesis in the human germ line. (2023); DOI: 10.1126/science.adh2531; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615360/fullTextXML
+- A molecular switch for coordinating kinesin and dynein transport of mitochondrial cargo. (2026); DOI: 10.1126/science.aeh1475; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13545989/fullTextXML
+- Comparative connectomics of two distantly related nematode species reveals patterns of nervous system evolution. (2025); DOI: 10.1126/science.adx2143; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12330220/fullTextXML
+- The transcription factor ZEB2 drives the formation of age-associated B cells. (2024); DOI: 10.1126/science.adf8531; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7616037/fullTextXML
+- The genetic legacy of African Americans from Catoctin Furnace. (2023); DOI: 10.1126/science.ade4995; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10958645/fullTextXML
+- A specific circuit in the midbrain detects stress and induces restorative sleep. (2022); DOI: 10.1126/science.abn0853; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7612951/fullTextXML
+- Molecular basis of FIGNL1 in dissociating RAD51 from DNA and chromatin. (2025); DOI: 10.1126/science.adr7920; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7617353/fullTextXML
+- Hematopoietic aging promotes cancer by fueling IL-1⍺-driven emergency myelopoiesis. (2024); DOI: 10.1126/science.adn0327; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7616710/fullTextXML
+- Recurrent acquisition of nuclease-protease pairs in antiviral immunity. (2026); DOI: 10.1126/science.aea8769; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12799240/fullTextXML
+- Evolution and host-specific adaptation of <i>Pseudomonas aeruginosa</i>. (2024); DOI: 10.1126/science.adi0908; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618370/fullTextXML
+- The dawn of spatial omics. (2023); DOI: 10.1126/science.abq4964; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7614974/fullTextXML
+- DNSN-1 recruits GINS for CMG helicase assembly during DNA replication initiation in <i>Caenorhabditis elegans</i>. (2023); DOI: 10.1126/science.adi4932; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615117/fullTextXML
+- Investigate the origins of COVID-19. (2021); DOI: 10.1126/science.abj0016; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9520851/fullTextXML
+- Moisture-responsive root-branching pathways identified in diverse maize breeding germplasm. (2025); DOI: 10.1126/science.ads5999; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11956805/fullTextXML
+- The <i>-KTS</i> splice variant of WT1 is essential for ovarian determination in mice. (2023); DOI: 10.1126/science.add8831; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615308/fullTextXML
+- Omicron spike function and neutralizing activity elicited by a comprehensive panel of vaccines. (2022); DOI: 10.1126/science.abq0203; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9348749/fullTextXML
+- Clonal analysis of immunodominance and cross-reactivity of the CD4 T cell response to SARS-CoV-2. (2021); DOI: 10.1126/science.abg8985; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8168615/fullTextXML
+- RAD51 stabilizes neutrophil extracellular traps to compartmentalize inflammation. (2026); DOI: 10.1126/science.aed9286; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7619443/fullTextXML
+- Cryo-EM structure of human telomerase dimer reveals H/ACA RNP-mediated dimerization. (2025); DOI: 10.1126/science.adr5817; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618144/fullTextXML
+- Elucidating the cellular determinants of targeted membrane protein degradation by lysosome-targeting chimeras. (2023); DOI: 10.1126/science.adf6249; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10766146/fullTextXML
+- SARS-CoV-2 vaccine protection and deaths among US veterans during 2021. (2022); DOI: 10.1126/science.abm0620; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9836205/fullTextXML
+- Spatiotemporal invasion dynamics of SARS-CoV-2 lineage B.1.1.7 emergence. (2021); DOI: 10.1126/science.abj0113; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9269003/fullTextXML
+- The oncogenome of the domestic cat. (2026); DOI: 10.1126/science.ady6651; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618901/fullTextXML
+- Structural basis of T-loop-independent recognition and activation of CDKs by the CDK-activating kinase. (2025); DOI: 10.1126/science.adw0053; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7618291/fullTextXML
+- Deep-time paleogenomics and the limits of DNA survival. (2023); DOI: 10.1126/science.adh7943; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10586222/fullTextXML
+- On-demand cell-autonomous gene therapy for brain circuit disorders. (2022); DOI: 10.1126/science.abq6656; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7613996/fullTextXML
+- Broad and potent activity against SARS-like viruses by an engineered human monoclonal antibody. (2021); DOI: 10.1126/science.abf4830; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7963221/fullTextXML
+- Multiscale structure of chromatin condensates explains phase separation and material properties. (2025); DOI: 10.1126/science.adv6588; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12929043/fullTextXML
+- Immune boosting by B.1.1.529 ( Omicron) depends on previous SARS-CoV-2 exposure. (2022); DOI: 10.1126/science.abq1841; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9210451/fullTextXML
+- Symmetry breaking in the female germline cyst. (2021); DOI: 10.1126/science.abj3125; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7612008/fullTextXML
+- Distinctive DNA sequence features define epigenetic longevity of inflammatory memory. (2026); DOI: 10.1126/science.adz6830; 全文; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13295011/fullTextXML
+- Understanding the Warburg Effect: The Metabolic Requirements of Cell Proliferation (2009); DOI: 10.1126/science.1160809; 仅摘要; https://openalex.org/W2097259163
+- Electrical Energy Storage for the Grid: A Battery of Choices (2011); DOI: 10.1126/science.1212741; 仅摘要; https://openalex.org/W2089525884
+- Global Consequences of Land Use (2005); DOI: 10.1126/science.1111772; 仅摘要; https://openalex.org/W2153820558
+- Combining theory and experiment in electrocatalysis: Insights into materials design (2017); DOI: 10.1126/science.aad4998; 仅摘要; https://openalex.org/W2573377826
+- Food Security: The Challenge of Feeding 9 Billion People (2010); DOI: 10.1126/science.1185383; 仅摘要; https://openalex.org/W2148333466
+- Efficient Hybrid Solar Cells Based on Meso-Superstructured Organometal Halide Perovskites (2012); DOI: 10.1126/science.1228604; 仅摘要; https://openalex.org/W1965464747
+- Polymer Photovoltaic Cells: Enhanced Efficiencies via a Network of Internal Donor-Acceptor Heterojunctions (1995); DOI: 10.1126/science.270.5243.1789; 仅摘要; https://openalex.org/W2071134066
+- Carbon Nanotubes--the Route Toward Applications (2002); DOI: 10.1126/science.1060928; 仅摘要; https://openalex.org/W2094963548
+- A General Framework for Analyzing Sustainability of Social-Ecological Systems (2009); DOI: 10.1126/science.1172133; 仅摘要; https://openalex.org/W2034994370
+- Soil Carbon Sequestration Impacts on Global Climate Change and Food Security (2004); DOI: 10.1126/science.1097396; 仅摘要; https://openalex.org/W2144189317
+- Piezoelectric Nanogenerators Based on Zinc Oxide Nanowire Arrays (2006); DOI: 10.1126/science.1124005; 仅摘要; https://openalex.org/W1993378267
+- Observation of Bose-Einstein Condensation in a Dilute Atomic Vapor (1995); DOI: 10.1126/science.269.5221.198; 仅摘要; https://openalex.org/W1991602497
+- Two-Dimensional Nanosheets Produced by Liquid Exfoliation of Layered Materials (2011); DOI: 10.1126/science.1194975; 仅摘要; https://openalex.org/W1975192769
+- Global Change and the Ecology of Cities (2008); DOI: 10.1126/science.1150195; 仅摘要; https://openalex.org/W2097467169
+- Transformation of the Nitrogen Cycle: Recent Trends, Questions, and Potential Solutions (2008); DOI: 10.1126/science.1136674; 仅摘要; https://openalex.org/W2146323422
+- The Future of Seawater Desalination: Energy, Technology, and the Environment (2011); DOI: 10.1126/science.1200488; 仅摘要; https://openalex.org/W2055638681
+- Sustainable Hydrogen Production (2004); DOI: 10.1126/science.1103197; 仅摘要; https://openalex.org/W1972673502
+- Epitaxial BiFeO 3 Multiferroic Thin Film Heterostructures (2003); DOI: 10.1126/science.1080615; 仅摘要; https://openalex.org/W2130156865
+- Carbon-Based Supercapacitors Produced by Activation of Graphene (2011); DOI: 10.1126/science.1200770; 仅摘要; https://openalex.org/W2052319966
+- Cooling, Heating, Generating Power, and Recovering Waste Heat with Thermoelectric Systems (2008); DOI: 10.1126/science.1158899; 仅摘要; https://openalex.org/W2041532378
+- Coral Reefs Under Rapid Climate Change and Ocean Acidification (2007); DOI: 10.1126/science.1152509; 仅摘要; https://openalex.org/W2123920115
+- A fracture-resistant high-entropy alloy for cryogenic applications (2014); DOI: 10.1126/science.1254581; 仅摘要; https://openalex.org/W1968985108
+- Electron-hole diffusion lengths > 175 μm in solution-grown CH 3 NH 3 PbI 3 single crystals (2015); DOI: 10.1126/science.aaa5760; 仅摘要; https://openalex.org/W2006619554
+- Crystalline Ropes of Metallic Carbon Nanotubes (1996); DOI: 10.1126/science.273.5274.483; 仅摘要; https://openalex.org/W2008302913
+- Accurate prediction of protein structures and interactions using a three-track neural network (2021); DOI: 10.1126/science.abj8754; 仅摘要; https://openalex.org/W3186179742
+- A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles (2011); DOI: 10.1126/science.1212858; 仅摘要; https://openalex.org/W2076968595
+- A General Model for the Origin of Allometric Scaling Laws in Biology (1997); DOI: 10.1126/science.276.5309.122; 仅摘要; https://openalex.org/W2080843536
+- Thermal Barrier Coatings for Gas-Turbine Engine Applications (2002); DOI: 10.1126/science.1068609; 仅摘要; https://openalex.org/W2064458873
+- Epidermal Electronics (2011); DOI: 10.1126/science.1206157; 仅摘要; https://openalex.org/W4213360791
+- Nanobeam Mechanics: Elasticity, Strength, and Toughness of Nanorods and Nanotubes (1997); DOI: 10.1126/science.277.5334.1971; 仅摘要; https://openalex.org/W2064248772
+- Plasmonics: Merging Photonics and Electronics at Nanoscale Dimensions (2006); DOI: 10.1126/science.1114849; 仅摘要; https://openalex.org/W2142269155
+- Biomass Recalcitrance: Engineering Plants and Enzymes for Biofuels Production (2007); DOI: 10.1126/science.1137016; 仅摘要; https://openalex.org/W2005291574
+- Metal-free efficient photocatalyst for stable visible water splitting via a two-electron pathway (2015); DOI: 10.1126/science.aaa3145; 仅摘要; https://openalex.org/W1969929163
+- Amine Scrubbing for CO 2 Capture (2009); DOI: 10.1126/science.1176731; 仅摘要; https://openalex.org/W2076949647
+- Weight-Reducing Effects of the Plasma Protein Encoded by the obese Gene (1995); DOI: 10.1126/science.7624777; 仅摘要; https://openalex.org/W2014093920
+- The Genome of Black Cottonwood, Populus trichocarpa (Torr. & Gray) (2006); DOI: 10.1126/science.1128691; 仅摘要; https://openalex.org/W2125346198
+- Cation Intercalation and High Volumetric Capacitance of Two-Dimensional Titanium Carbide (2013); DOI: 10.1126/science.1241488; 仅摘要; https://openalex.org/W2035206741
+- Photoinduced Electron Transfer from a Conducting Polymer to Buckminsterfullerene (1992); DOI: 10.1126/science.258.5087.1474; 仅摘要; https://openalex.org/W2052005018
+- Defaunation in the Anthropocene (2014); DOI: 10.1126/science.1251817; 仅摘要; https://openalex.org/W2100135944
+- Biodiversity redistribution under climate change: Impacts on ecosystems and human well-being (2017); DOI: 10.1126/science.aai9214; 仅摘要; https://openalex.org/W2598701004
+- Fire in the Earth System (2009); DOI: 10.1126/science.1163886; 仅摘要; https://openalex.org/W2171210136
+- Declining oxygen in the global ocean and coastal waters (2018); DOI: 10.1126/science.aam7240; 仅摘要; https://openalex.org/W2781567654
+- Biogeochemical Controls and Feedbacks on Ocean Primary Production (1998); DOI: 10.1126/science.281.5374.200; 仅摘要; https://openalex.org/W2105796581
+- The Evolution and Future of Earth’s Nitrogen Cycle (2010); DOI: 10.1126/science.1186120; 仅摘要; https://openalex.org/W1987490818
+- Amazonia Through Time: Andean Uplift, Climate Change, Landscape Evolution, and Biodiversity (2010); DOI: 10.1126/science.1194585; 仅摘要; https://openalex.org/W2112184907
+- Net-zero emissions energy systems (2018); DOI: 10.1126/science.aas9793; 仅摘要; https://openalex.org/W2811133697
+- The Anthropocene is functionally and stratigraphically distinct from the Holocene (2016); DOI: 10.1126/science.aad2622; 仅摘要; https://openalex.org/W2235208287
+- High-Resolution Surface-Wave Tomography from Ambient Seismic Noise (2005); DOI: 10.1126/science.1108339; 仅摘要; https://openalex.org/W2065126285
+- Spatial and temporal patterns of mass bleaching of corals in the Anthropocene (2018); DOI: 10.1126/science.aan8048; 仅摘要; https://openalex.org/W2782456798
+- Crystallization by particle attachment in synthetic, biogenic, and geologic environments (2015); DOI: 10.1126/science.aaa6760; 仅摘要; https://openalex.org/W1801166380
+- The Genome of the Diatom Thalassiosira Pseudonana : Ecology, Evolution, and Metabolism (2004); DOI: 10.1126/science.1101156; 仅摘要; https://openalex.org/W2145573696
+- Eukaryotic plankton diversity in the sunlit ocean (2015); DOI: 10.1126/science.1261605; 仅摘要; https://openalex.org/W1881066983
+- The Geological Evolution of the Tibetan Plateau (2008); DOI: 10.1126/science.1155371; 仅摘要; https://openalex.org/W1528695685
+- Rheology of the Upper Mantle: A Synthesis (1993); DOI: 10.1126/science.260.5109.771; 仅摘要; https://openalex.org/W2083935149
+- The Paleozoic Origin of Enzymatic Lignin Decomposition Reconstructed from 31 Fungal Genomes (2012); DOI: 10.1126/science.1221748; 仅摘要; https://openalex.org/W2165876708
+- Did the Breakout of Laurentia Turn Gondwanaland Inside-Out? (1991); DOI: 10.1126/science.252.5011.1409; 仅摘要; https://openalex.org/W1978488084
+- Global Mineralogical and Aqueous Mars History Derived from OMEGA/Mars Express Data (2006); DOI: 10.1126/science.1122659; 仅摘要; https://openalex.org/W2146376665
+- Stable Prenucleation Calcium Carbonate Clusters (2008); DOI: 10.1126/science.1164271; 仅摘要; https://openalex.org/W2140524010
+- Worldwide Occurrences of Arsenic in Ground Water (2002); DOI: 10.1126/science.1072375; 仅摘要; https://openalex.org/W1777939053
+- The Evolution of Modern Eukaryotic Phytoplankton (2004); DOI: 10.1126/science.1095964; 仅摘要; https://openalex.org/W2136668140
+- The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary (2010); DOI: 10.1126/science.1177265; 仅摘要; https://openalex.org/W2160490562
+- Formation of a Matter-Wave Bright Soliton (2002); DOI: 10.1126/science.1071021; 仅摘要; https://openalex.org/W2036733217
+- Synchronizing Rock Clocks of Earth History (2008); DOI: 10.1126/science.1154339; 仅摘要; https://openalex.org/W2063091092
+- Global threat of arsenic in groundwater (2020); DOI: 10.1126/science.aba1510; 仅摘要; https://openalex.org/W3028066085
+- Soil and human security in the 21st century (2015); DOI: 10.1126/science.1261071; 仅摘要; https://openalex.org/W1523078206
+- Positive biodiversity-productivity relationship predominant in global forests (2016); DOI: 10.1126/science.aaf8957; 仅摘要; https://openalex.org/W2519343095
+- Raising Tibet (1992); DOI: 10.1126/science.255.5052.1663; 仅摘要; https://openalex.org/W4211087191
+- A Serpentinite-Hosted Ecosystem: The Lost City Hydrothermal Field (2005); DOI: 10.1126/science.1102556; 仅摘要; https://openalex.org/W2107710538
+- Archean Molecular Fossils and the Early Rise of Eukaryotes (1999); DOI: 10.1126/science.285.5430.1033; 仅摘要; https://openalex.org/W2032247127
+- A Systematic Survey of Loss-of-Function Variants in Human Protein-Coding Genes (2012); DOI: 10.1126/science.1215040; 仅摘要; https://openalex.org/W2143602768
+- Vertically extensive and unstable magmatic systems: A unified view of igneous processes (2017); DOI: 10.1126/science.aag3055; 仅摘要; https://openalex.org/W2603981417
+- Partially Molten Middle Crust Beneath Southern Tibet: Synthesis of Project INDEPTH Results (1996); DOI: 10.1126/science.274.5293.1684; 仅摘要; https://openalex.org/W2144583290
+- Cassini Observes the Active South Pole of Enceladus (2006); DOI: 10.1126/science.1123013; 仅摘要; https://openalex.org/W2159423849
+- Detection of Perchlorate and the Soluble Chemistry of Martian Soil at the Phoenix Lander Site (2009); DOI: 10.1126/science.1172466; 仅摘要; https://openalex.org/W1661939691
+- The Spreading of Disorder (2008); DOI: 10.1126/science.1161405; 仅摘要; https://openalex.org/W2163587156
+- Machine learning: Trends, perspectives, and prospects (2015); DOI: 10.1126/science.aaa8415; 仅摘要; https://openalex.org/W1901616594
+- Evolutionary-scale prediction of atomic-level protein structure with a language model (2023); DOI: 10.1126/science.ade2574; 仅摘要; https://openalex.org/W4327550249
+- The Genotype-Tissue Expression (GTEx) pilot analysis: Multitissue gene regulation in humans (2015); DOI: 10.1126/science.1262110; 仅摘要; https://openalex.org/W1533942137
+- A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play (2018); DOI: 10.1126/science.aar6404; 仅摘要; https://openalex.org/W2902907165
+- Intelligent Tutoring Systems (1985); DOI: 10.1126/science.228.4698.456; 仅摘要; https://openalex.org/W2136208491
+- What would it take for renewably powered electrosynthesis to displace petrochemical processes? (2019); DOI: 10.1126/science.aav3506; 仅摘要; https://openalex.org/W2941803205
+- Semantics derived automatically from language corpora contain human-like biases (2017); DOI: 10.1126/science.aal4230; 仅摘要; https://openalex.org/W2893425640
+- Experimental evidence on the productivity effects of generative artificial intelligence (2023); DOI: 10.1126/science.adh2586; 仅摘要; https://openalex.org/W4384154918
+- Inverse molecular design using machine learning: Generative models for matter engineering (2018); DOI: 10.1126/science.aat2663; 仅摘要; https://openalex.org/W2883583109
+- Science of science (2018); DOI: 10.1126/science.aao0185; 仅摘要; https://openalex.org/W2793071066
+- ChatGPT is fun, but not an author (2023); DOI: 10.1126/science.adg7879; 仅摘要; https://openalex.org/W4318263917
+- The Genome Sequence of Taurine Cattle: A Window to Ruminant Biology and Evolution (2009); DOI: 10.1126/science.1169588; 仅摘要; https://openalex.org/W2154380613
+- Predicting Human Brain Activity Associated with the Meanings of Nouns (2008); DOI: 10.1126/science.1152876; 仅摘要; https://openalex.org/W2168217710
+- The Neurobiology of Learning and Memory (1986); DOI: 10.1126/science.3738519; 仅摘要; https://openalex.org/W2083217812
+- Memory engrams: Recalling the past and imagining the future (2020); DOI: 10.1126/science.aaw4325; 仅摘要; https://openalex.org/W2998470023
+- Inferring the effectiveness of government interventions against COVID-19 (2020); DOI: 10.1126/science.abd9338; 仅摘要; https://openalex.org/W3111564425
+- A robotic platform for flow synthesis of organic compounds informed by AI planning (2019); DOI: 10.1126/science.aax1566; 仅摘要; https://openalex.org/W2968071222
+- Competition-level code generation with AlphaCode (2022); DOI: 10.1126/science.abq1158; 仅摘要; https://openalex.org/W4226287673
+- Single-cell reconstruction of developmental trajectories during zebrafish embryogenesis (2018); DOI: 10.1126/science.aar3131; 仅摘要; https://openalex.org/W2800912249
+- What is consciousness, and could machines have it? (2017); DOI: 10.1126/science.aan8871; 仅摘要; https://openalex.org/W2765831433
+- GWAS of 126,559 Individuals Identifies Genetic Variants Associated with Educational Attainment (2013); DOI: 10.1126/science.1235488; 仅摘要; https://openalex.org/W2142161268
+- DeepStack: Expert-level artificial intelligence in heads-up no-limit poker (2017); DOI: 10.1126/science.aam6960; 仅摘要; https://openalex.org/W2574978968
+- New Approaches to Robotics (1991); DOI: 10.1126/science.253.5025.1227; 仅摘要; https://openalex.org/W2012187514
+- Memristive technologies for data storage, computation, encryption, and radio-frequency communication (2022); DOI: 10.1126/science.abj9979; 仅摘要; https://openalex.org/W4281874271
+- The impact of sex on gene expression across human tissues (2020); DOI: 10.1126/science.aba3066; 仅摘要; https://openalex.org/W3084331777
+- Computational rationality: A converging paradigm for intelligence in brains, minds, and machines (2015); DOI: 10.1126/science.aac6076; 仅摘要; https://openalex.org/W1892018222
+- Lithium niobate photonics: Unlocking the electromagnetic spectrum (2023); DOI: 10.1126/science.abj4396; 仅摘要; https://openalex.org/W4313555657
+- Autonomous Mental Development by Robots and Animals (2001); DOI: 10.1126/science.291.5504.599; 仅摘要; https://openalex.org/W1562462135
+- Critical Behavior in the Satisfiability of Random Boolean Expressions (1994); DOI: 10.1126/science.264.5163.1297; 仅摘要; https://openalex.org/W1968198053
+- Superhuman AI for multiplayer poker (2019); DOI: 10.1126/science.aay2400; 仅摘要; https://openalex.org/W2960876848
+- Superhuman AI for heads-up no-limit poker: Libratus beats top professionals (2017); DOI: 10.1126/science.aao1733; 仅摘要; https://openalex.org/W2773381986
+- Checkers Is Solved (2007); DOI: 10.1126/science.1144079; 仅摘要; https://openalex.org/W1995987707
+- Grazing and ecosystem service delivery in global drylands (2022); DOI: 10.1126/science.abq4062; 仅摘要; https://openalex.org/W4310251770
+- Phase-change heterostructure enables ultralow noise and drift for memory operation (2019); DOI: 10.1126/science.aay0291; 仅摘要; https://openalex.org/W2969246650
+- Expert Systems Research (1983); DOI: 10.1126/science.6340198; 仅摘要; https://openalex.org/W2031184266
+- Architectures of neuronal circuits (2021); DOI: 10.1126/science.abg7285; 仅摘要; https://openalex.org/W3197839114
+- AI-based structure prediction empowers integrative structural analysis of human nuclear pores (2022); DOI: 10.1126/science.abm9506; 仅摘要; https://openalex.org/W4282936228
+- A Global Geometric Framework for Nonlinear Dimensionality Reduction (2000); DOI: 10.1126/science.290.5500.2319; 仅摘要; https://openalex.org/W2001141328
+- Planetary boundaries: Guiding human development on a changing planet (2015); DOI: 10.1126/science.1259855; 仅摘要; https://openalex.org/W1999167944
+- High-Resolution Global Maps of 21st-Century Forest Cover Change (2013); DOI: 10.1126/science.1244693; 仅摘要; https://openalex.org/W1981213426
+- Trends, Rhythms, and Aberrations in Global Climate 65 Ma to Present (2001); DOI: 10.1126/science.1059412; 仅摘要; https://openalex.org/W2115575384
+- Diversity in Tropical Rain Forests and Coral Reefs (1978); DOI: 10.1126/science.199.4335.1302; 仅摘要; https://openalex.org/W2166722801
+- Global Biodiversity Scenarios for the Year 2100 (2000); DOI: 10.1126/science.287.5459.1770; 仅摘要; https://openalex.org/W2098000995
+- Decadal Trends in the North Atlantic Oscillation: Regional Temperatures and Precipitation (1995); DOI: 10.1126/science.269.5224.676; 仅摘要; https://openalex.org/W2131477567
+- Historical Overfishing and the Recent Collapse of Coastal Ecosystems (2001); DOI: 10.1126/science.1059199; 仅摘要; https://openalex.org/W2147807123
+- Forests and Climate Change: Forcings, Feedbacks, and the Climate Benefits of Forests (2008); DOI: 10.1126/science.1155121; 仅摘要; https://openalex.org/W2022224360
+- Rapid Range Shifts of Species Associated with High Levels of Climate Warming (2011); DOI: 10.1126/science.1206432; 仅摘要; https://openalex.org/W1985936925
+- Warming and Earlier Spring Increase Western U.S. Forest Wildfire Activity (2006); DOI: 10.1126/science.1128834; 仅摘要; https://openalex.org/W2165977355
+- Global Water Resources: Vulnerability from Climate Change and Population Growth (2000); DOI: 10.1126/science.289.5477.284; 仅摘要; https://openalex.org/W2060680089
+- Global Biodiversity: Indicators of Recent Declines (2010); DOI: 10.1126/science.1187512; 仅摘要; https://openalex.org/W2170121306
+- Climate Extremes: Observations, Modeling, and Impacts (2000); DOI: 10.1126/science.289.5487.2068; 仅摘要; https://openalex.org/W1978815659
+- Nitrous Oxide (N 2 O): The Dominant Ozone-Depleting Substance Emitted in the 21st Century (2009); DOI: 10.1126/science.1176985; 仅摘要; https://openalex.org/W2154610441
+- Climate Trends and Global Crop Production Since 1980 (2011); DOI: 10.1126/science.1204531; 仅摘要; https://openalex.org/W2086710305
+- Global Hydrological Cycles and World Water Resources (2006); DOI: 10.1126/science.1128845; 仅摘要; https://openalex.org/W2166186402
+- More Intense, More Frequent, and Longer Lasting Heat Waves in the 21st Century (2004); DOI: 10.1126/science.1098704; 仅摘要; https://openalex.org/W2049377387
+- The Struggle to Govern the Commons (2003); DOI: 10.1126/science.1091015; 仅摘要; https://openalex.org/W2165702945
+- Evolution of Organic Aerosols in the Atmosphere (2009); DOI: 10.1126/science.1180353; 仅摘要; https://openalex.org/W2144923407
+- Climate Change Will Affect the Asian Water Towers (2010); DOI: 10.1126/science.1183188; 仅摘要; https://openalex.org/W2085585287
+- Bee declines driven by combined stress from parasites, pesticides, and lack of flowers (2015); DOI: 10.1126/science.1255957; 仅摘要; https://openalex.org/W2138832709
+- Climate Change, Human Impacts, and the Resilience of Coral Reefs (2003); DOI: 10.1126/science.1085046; 仅摘要; https://openalex.org/W2142598180
+- Land Clearing and the Biofuel Carbon Debt (2008); DOI: 10.1126/science.1152747; 仅摘要; https://openalex.org/W2130365445
+- Aerosols, Climate, and the Hydrological Cycle (2001); DOI: 10.1126/science.1064034; 仅摘要; https://openalex.org/W2119744638
+- Variations in the Earth's Orbit: Pacemaker of the Ice Ages (1976); DOI: 10.1126/science.194.4270.1121; 仅摘要; https://openalex.org/W2022545034
+- Global diversity and geography of soil fungi (2014); DOI: 10.1126/science.1256688; 仅摘要; https://openalex.org/W2145840889
+- Climate-Driven Increases in Global Terrestrial Net Primary Production from 1982 to 1999 (2003); DOI: 10.1126/science.1082750; 仅摘要; https://openalex.org/W2034672914
+- Climate Forcing by Anthropogenic Aerosols (1992); DOI: 10.1126/science.255.5043.423; 仅摘要; https://openalex.org/W1981719480
+- The Last Glacial Maximum (2009); DOI: 10.1126/science.1172873; 仅摘要; https://openalex.org/W2001072306
+- Fragmentation and Flow Regulation of the World's Large River Systems (2005); DOI: 10.1126/science.1107887; 仅摘要; https://openalex.org/W2008942529

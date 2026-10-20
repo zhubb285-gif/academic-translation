@@ -1,16 +1,6 @@
-"""
-权威信源查证服务 (Source Research Service)
-遵循《翻译质量保障流程总表》信源优先级：
-一级信源：官方词典、权威机构定义（如全国科学技术名词审定委员会、IUPAC等）
-二级信源：国际/国家行业标准（ISO、IEC、GB/T、ASTM）
-三级信源：权威专业期刊（Nature, Science, IEEE, ACM, Elsevier）
-四级信源：权威媒体、高校教材
-五级信源：专业参考资料
-
-提供：
-1. 术语学科领域自动识别
-2. 多级权威信源候选检索与证据提取
-3. 证据验证（区分"出现单词"与"证实译法"）
+"""期刊优先术语查证：实际文章用法 → 一级信源 → 二级信源 → 人工裁决。
+信源分级以项目 sources.json 为准；三级仅列出，不参与检索或采信。
+期刊英文表达与中文术语的含义对应由人工核定。
 """
 import json
 import re
@@ -20,6 +10,9 @@ import httpx
 import html
 from urllib.parse import urlencode
 from app.services.source_links import source_link
+from app.services.journal_library import search_usage, CATALOG
+from app.services.source_catalog import source_catalog, SOURCES
+from app.services.catalog_retriever import retrieve_level
 
 from app.core.config import settings
 
@@ -29,65 +22,13 @@ logger = logging.getLogger(__name__)
 # 专业领域预设权威信源库 (Source Repositories)
 # ============================================================
 
-AUTHORITY_SOURCES_REGISTRY = [
-    {
-        "id": "term_online",
-        "name": "全国科学技术名词审定委员会 (TermOnline)",
-        "source_level": 1,
-        "source_type": "国家权威机构名词库",
-        "domain": "通用科技",
-        "url": "https://www.termonline.cn",
-        "reliability": "最高（国家规范名词）"
-    },
-    {
-        "id": "iso_standards",
-        "name": "ISO 国际标准化组织术语库 (ISO OBP)",
-        "source_level": 2,
-        "source_type": "国际标准",
-        "domain": "工程技术/通用",
-        "url": "https://www.iso.org/obp",
-        "reliability": "高（国际标准定义）"
-    },
-    {
-        "id": "ieee_explore",
-        "name": "IEEE Xplore Standards Dictionary",
-        "source_level": 2,
-        "source_type": "行业权威标准",
-        "domain": "电子信息/计算机/通信",
-        "url": "https://ieeexplore.ieee.org",
-        "reliability": "高（行业权威定义）"
-    },
-    {
-        "id": "nature_terms",
-        "name": "Nature Research Subject Areas & Glossaries",
-        "source_level": 3,
-        "source_type": "顶级学术期刊",
-        "domain": "综合科学/生物医药/化学/物理",
-        "url": "https://www.nature.com",
-        "reliability": "高（同行评议顶级文献）"
-    },
-    {
-        "id": "acm_dl",
-        "name": "ACM Digital Library Computing Classification System",
-        "source_level": 3,
-        "source_type": "专业学会期刊与分类体系",
-        "domain": "计算机科学与技术",
-        "url": "https://dl.acm.org",
-        "reliability": "高（学术共同体共识）"
-    },
-    {
-        "id": "ncbi_mesh",
-        "name": "NCBI MeSH (Medical Subject Headings)",
-        "source_level": 1,
-        "source_type": "国家医学图书馆主题词表",
-        "domain": "生物医药/临床医学",
-        "url": "https://www.ncbi.nlm.nih.gov/mesh",
-        "reliability": "最高（医学国际通用标准）"
-    }
-]
+AUTHORITY_SOURCES_REGISTRY = SOURCES
 
 # 常见领域关键词映射
 DOMAIN_KEYWORDS = {
+    "地质资源与地质工程": ["地震", "地层", "勘探", "盆地", "断层", "沉积", "岩性", "构造", "测井"],
+    "马克思主义理论": ["马克思", "唯物", "辩证", "剩余价值", "生产关系", "历史唯物主义"],
+    "法学": ["法学", "法律", "侵权", "刑法", "民法", "行政法", "诉讼", "法治", "知识产权"],
     "计算机科学": ["神经网络", "深度学习", "注意力机制", "强化学习", "算法", "分类器", "大语言模型", "特征提取", "嵌入", "多模态"],
     "石油与天然气工程": ["水力压裂", "储层", "压裂液", "固井", "完井", "钻井", "渗透率", "孔隙度", "采收率", "页岩气"],
     "材料科学": ["晶粒", "晶相", "抗拉强度", "屈服极限", "退火", "淬火", "复合材料", "聚合物", "纳米管", "显微硬度"],
@@ -97,6 +38,13 @@ DOMAIN_KEYWORDS = {
 
 # 离线候选译法，仅用于检索提示，不作为官方出处或证据。
 TERM_TRANSLATION_HINTS = {'水力压裂': ['hydraulic fracturing'], '四川石油学院': ['Sichuan Petroleum Institute'], '西南石油学院': ['Southwest Petroleum Institute'], '西南石油大学': ['Southwest Petroleum University'], '三牙轮钻头': ['tri-cone bit'], '双一流': ['Double First-Class initiative'], '脱贫攻坚楷模': ['National Model for Poverty Alleviation'], '射流破碎钻头': ['jet breaking bit'], '天然气水合物固态流化试采': ['solid fluidized trial production of natural gas hydrate'], '注意力机制': ['attention mechanism'], '天然气水合物': ['natural gas hydrate'], '生命周期评价': ['Life Cycle Assessment (LCA)']}
+TERM_TRANSLATION_HINTS.update({
+    "深度学习": ["deep learning"], "神经网络": ["neural network"], "机器学习": ["machine learning"],
+    "储层": ["reservoir"], "渗透率": ["permeability"], "孔隙度": ["porosity"], "页岩气": ["shale gas"],
+    "采收率": ["oil recovery"], "钻井液": ["drilling fluid"], "固井": ["cementing"],
+    "地震反演": ["seismic inversion"], "地质勘探": ["geological exploration"], "沉积盆地": ["sedimentary basin"],
+    "碳捕集": ["carbon capture"], "催化剂": ["catalyst"], "纳米材料": ["nanomaterials"],
+})
 
 
 class SourceResearchService:
@@ -111,14 +59,25 @@ class SourceResearchService:
                     return domain
         return "通用学术"
 
+    def _scope_mismatch(self, entry: dict, domain: str) -> bool:
+        """Flag clearly different specialist dictionaries; do not equate spelling with meaning."""
+        name = entry.get("source_name", "")
+        scopes = [
+            (("石油", "天然气", "地质", "地球", "勘探"), ("石油", "天然气", "地质", "海洋", "地理", "化学", "化工", "矿业", "能源", "煤炭", "测绘")),
+            (("计算机", "人工智能", "软件"), ("计算机", "信息", "自动", "电子", "通信", "数学", "人工智能")),
+            (("法学", "法律", "法理"), ("法律", "法学", "法治")),
+            (("马克思", "政治理论"), ("马克思", "政治", "哲学", "社会科学")),
+        ]
+        known = ("石油", "地质", "海洋", "计算机", "信息", "生物", "医学", "冶金", "材料", "化学", "化工", "数学", "法律", "法学", "哲学", "政治", "生态", "农学", "动物", "植物", "物理", "机械")
+        for domain_words, compatible in scopes:
+            if any(word in domain for word in domain_words) and any(word in name for word in known):
+                return not any(word in name for word in compatible)
+        return False
+
     def get_registered_sources_for_domain(self, domain: str) -> List[Dict[str, Any]]:
         """按优先级升序返回适用于该领域的权威信源表"""
-        matched = []
-        for src in AUTHORITY_SOURCES_REGISTRY:
-            if domain in src["domain"] or "通用" in src["domain"]:
-                matched.append(src)
-        # 按照信源等级 1 级 -> 2 级 -> 3 级排序
-        return sorted(matched, key=lambda x: x["source_level"])
+        # Domain-specific availability is described by each source; no second six-source registry.
+        return sorted((dict(source) for source in AUTHORITY_SOURCES_REGISTRY if not source["blocked"]), key=lambda item: item["source_level"])
 
     # ============================================================
     # 4步渐进式查证流水线实现
@@ -312,73 +271,126 @@ class SourceResearchService:
 
         }
 
+    async def _lookup_secondary(self, candidates: List[str], domain: str) -> Dict[str, Any]:
+        """Retrieve actual OSTI abstracts, never infer a Chinese-English equivalence."""
+        if any(w in domain for w in ("马克思", "法学", "法律", "政治理论")):
+            return {"status": "not_applicable", "entries": []}
+        entries, failed = [], False
+        async with httpx.AsyncClient(timeout=15) as client:
+            for candidate in candidates[:2]:
+                if not candidate or re.search(r"[\u4e00-\u9fff]", candidate):
+                    continue
+                try:
+                    response = await client.get("https://www.osti.gov/api/v1/records", params={"search": '"' + candidate + '"', "rows": 5})
+                    response.raise_for_status()
+                    rows = response.json()
+                    if not isinstance(rows, list):
+                        raise ValueError("Invalid OSTI response")
+                    for row in rows:
+                        text = html.unescape(re.sub(r"<[^>]+>", " ", row.get("description") or ""))
+                        match = re.search(r"(?<!\w)" + re.escape(candidate) + r"(?!\w)", text, re.I)
+                        if not match or not str(row.get("osti_id", "")).isdigit():
+                            continue
+                        quote = text[max(0, match.start()-120):match.end()+230].strip()
+                        entries.append({"source_level": 2, "source_type": "secondary_usage", "source_name": "OSTI 美国能源部文献库",
+                                        "source_url": "https://www.osti.gov/biblio/" + str(row["osti_id"]),
+                                        "title": row.get("title"), "evidence_text": quote, "candidate_translation": candidate,
+                                        "source_checked": True, "is_valid": True, "match_type": "english_usage",
+                                        "published_date": row.get("publication_date"), "evidence_group": "authority",
+                                        "recommendation_reason": "已读取 OSTI 摘要中的完整英文用法，不能据此自动认定中英对应；同库多篇文章也不等于两个独立信源。"})
+                except (httpx.HTTPError, ValueError, TypeError):
+                    failed = True
+        return {"status": "found_usage" if entries else "unavailable" if failed else "no_exact_match", "entries": entries[:5]}
+
     async def execute_progressive_research(
-        self, source_term: str, domain: Optional[str] = None, context: Optional[str] = None
+        self, source_term: str, domain: Optional[str] = None, context: Optional[str] = None,
+        candidates: Optional[List[str]] = None, preferred_journal: str = "",
     ) -> Dict[str, Any]:
-        """Retrieve real official entries, then distinguish core evidence from full-term suggestions."""
+        """Journal-first usage retrieval, then tier 1 / tier 2 evidence and human comparison."""
         inferred_domain = domain or self.infer_domain(source_term, context)
-        lookup = await self._lookup_official(source_term)
-        exact = bool(lookup["entries"])
-        decomposition = []
-        core_term = source_term
-        candidates = []
-        evidences = lookup["entries"]
-        trace = [{"term": source_term, "source": "术语在线·审定公布名词库", "status": lookup["status"]}]
-        if not exact:
+        candidate_list = list(dict.fromkeys([*(candidates or []), *TERM_TRANSLATION_HINTS.get(source_term, [])]))
+        candidate_list = [c.strip() for c in candidate_list if c and not re.search(r"[\u4e00-\u9fff]", c)]
+        decomp = None
+        if not candidate_list and re.search(r"[\u4e00-\u9fff]", source_term):
             decomp = await self.step2_semantic_decompose(source_term, inferred_domain, context)
-            core_term = decomp.get("core_term") or source_term
-            decomposition = decomp.get("components") or []
-            for component in decomposition:
-                component["evidence"] = "语言分析建议，待查证"
             for value in (decomp.get("combined_translation"), decomp.get("alt_translation")):
-                if value and not re.search(r"[\u4e00-\u9fff]", value) and value not in candidates:
-                    candidates.append(value)
-            # A local demonstration dictionary supplies hints, never official evidence.
-            if source_term in TERM_TRANSLATION_HINTS and not candidates:
-                candidates = list(TERM_TRANSLATION_HINTS[source_term])
-            if core_term != source_term:
-                core_lookup = await self._lookup_official(core_term)
-                evidences = core_lookup["entries"]
-                trace.append({"term": core_term, "source": "术语在线·审定公布名词库", "status": core_lookup["status"]})
-        cards = []
-        for evidence in evidences:
-            en = evidence["candidate_translation"]
-            if exact and en not in candidates:
-                candidates.append(en)
-            cards.append({
-                **evidence, **source_link(evidence["source_url"], core_term, en),
-                "recommended_translation": en, "domain": inferred_domain,
-                "source_checked": True, "match_type": "exact" if exact else "core_only",
-                "status_tag": "完整官方词条" if exact else "仅核心词有出处",
-                "recommendation_reason": "已从术语在线审定公布名词库读取完整中英词条，可在信源检索结果中核对。" if exact else f"此原文仅证明核心词「{core_term}」的译法，不证明完整组合「{source_term}」。",
-            })
+                if value and not re.search(r"[\u4e00-\u9fff]", value) and value not in candidate_list:
+                    candidate_list.append(value)
+        # Candidate generation is language analysis; the first source searched is the journal library.
+        journal_cards = search_usage(source_term, candidate_list, inferred_domain, preferred_journal)
+        trace = [{"stage": "journal", "source": "11刊实际文本库", "term": source_term,
+                  "status": "found_usage" if journal_cards else "no_usage_match", "count": len(journal_cards)}]
+        # Run tier 1 even after journal hits, so both sides can be compared as requested.
+        lookup = await self._lookup_official(source_term)
+        exact = any(not self._scope_mismatch(entry, inferred_domain) for entry in lookup["entries"])
+        trace.append({"stage": "tier1", "term": source_term, "source": "术语在线·审定公布名词库", "status": "found_other_domain" if lookup["entries"] and not exact else lookup["status"]})
+        authority = [{**entry, "evidence_group": "authority", "match_type": "domain_mismatch" if self._scope_mismatch(entry, inferred_domain) else "exact",
+                      "recommendation_reason": f"词形命中，但词条来自「{entry.get('source_name', '')}」，与当前「{inferred_domain}」领域不一致，不能直接证明本专业译法；将继续查找二级证据。" if self._scope_mismatch(entry, inferred_domain) else "已读取完整中英词条。请将其定义、专业领域与期刊语境对照，再由人工决定译法。"} for entry in lookup["entries"]]
+        for entry in authority:
+            if entry["candidate_translation"] not in candidate_list:
+                candidate_list.append(entry["candidate_translation"])
+        if exact:
+            # Newly retrieved canonical English enables a supplementary journal query.
+            journal_cards = search_usage(source_term, candidate_list, inferred_domain, preferred_journal)
+            trace.append({"stage": "journal_supplement", "term": source_term, "source": "用一级词条英译补查期刊", "status": "found_usage" if journal_cards else "no_usage_match", "count": len(journal_cards)})
+        core_term, decomposition = source_term, []
+        catalogue = source_catalog(source_term, candidate_list[0] if candidate_list else "")
         if not exact:
-            for candidate in candidates:
-                cards.append({
-                    "recommended_translation": candidate, "domain": inferred_domain,
-                    "source_name": "术语在线检索入口", "source_level": 1,
-                    **source_link("https://www.termonline.cn", source_term, candidate),
-                    "source_checked": False, "evidence_text": "", "match_type": "unverified",
-                    "status_tag": "候选译法·待查证",
-                    "recommendation_reason": "尚未取得完整词条的可核对出处。此处是候选译法，检索链接已带入中文词语；不能作为官方译法证明。",
-                })
-        if not cards:
-            cards.append({
-                "recommended_translation": "", "domain": inferred_domain,
-                "source_name": "术语在线检索入口", "source_level": 1,
-                **source_link("https://www.termonline.cn", source_term),
-                "source_checked": False, "evidence_text": "", "match_type": "unverified",
-                "status_tag": "待查证", "recommendation_reason": "未取得可核对的官方词条。检索入口已带入此词，网站不可访问时不代表没有收录。",
-            })
-        return {
-            "source_term": source_term, "domain": inferred_domain, "is_exact": exact,
-            "match_type": "exact" if exact else "unverified", "core_term": core_term,
-            "decomposition": decomposition, "candidates": candidates,
-            "recommended_translation": candidates[0] if candidates else "",
-            "recommendation_reason": cards[0]["recommendation_reason"],
-            "cards": cards, "evidences": evidences, "lookup_trace": trace,
-            "source_verification_version": 2,
-        }
+            if lookup["entries"] and not decomp:
+                decomp = {"core_term": source_term, "components": []}
+            decomp = decomp or await self.step2_semantic_decompose(source_term, inferred_domain, context)
+            core_term = decomp.get("core_term") or source_term
+            decomposition = [{**part, "evidence": "语言分析建议，待查证"} for part in (decomp.get("components") or [])]
+            for value in (decomp.get("combined_translation"), decomp.get("alt_translation")):
+                if value and not re.search(r"[\u4e00-\u9fff]", value) and value not in candidate_list:
+                    candidate_list.append(value)
+            if core_term != source_term:
+                core = await self._lookup_official(core_term)
+                trace.append({"stage": "tier1_core", "term": core_term, "source": "术语在线·审定公布名词库", "status": core["status"]})
+                authority.extend({**entry, "evidence_group": "authority", "match_type": "core_only",
+                                  "recommendation_reason": f"仅证明核心词「{core_term}」，不能证明完整术语「{source_term}」。"} for entry in core["entries"])
+            journal_cards = search_usage(source_term, candidate_list, inferred_domain, preferred_journal)
+            primary_pages, primary_trace = await retrieve_level(catalogue, 1, source_term, candidate_list, {"T1-06"})
+            authority.extend(primary_pages)
+            trace.extend(primary_trace)
+            secondary = await self._lookup_secondary(candidate_list, inferred_domain)
+            authority.extend(secondary["entries"])
+            trace.append({"stage": "tier2", "term": source_term, "source": "OSTI 原始记录", "status": secondary["status"], "count": len(secondary["entries"])})
+            secondary_pages, secondary_trace = await retrieve_level(catalogue, 2, source_term, candidate_list, {"T2-09"})
+            authority.extend(secondary_pages)
+            trace.extend(secondary_trace)
+        else:
+            trace.append({"stage": "tier2", "source": "二级信源", "status": "skipped_tier1_found"})
+        for card in authority:
+            card.update({"recommended_translation": card["candidate_translation"], "domain": inferred_domain,
+                         "status_tag": "完整官方词条" if card["match_type"] == "exact" else "领域不符·不可直接采用" if card["match_type"] == "domain_mismatch" else "仅核心词有出处" if card["match_type"] == "core_only" else "信源英文用法·待核对"})
+        retrieved_ids = {t.get("source_id") for t in trace}
+        for source in catalogue:
+            if source["id"] in retrieved_ids:
+                continue
+            if source["source_level"] == 3:
+                status = "excluded"
+            elif source["id"] == "T1-06":
+                continue
+            elif source["id"] == "T2-09" and not exact:
+                continue
+            elif exact:
+                status = "skipped_tier1_found"
+            else:
+                status = "manual_required"
+            trace.append({"stage": f"tier{source['source_level']}", "source": source["name"], "source_id": source["id"], "status": status})
+        journal_candidates = {c["recommended_translation"].casefold().strip() for c in journal_cards}
+        official_candidates = {c["recommended_translation"].casefold().strip() for c in authority if c["match_type"] == "exact"}
+        comparison = "agreement" if journal_candidates & official_candidates else "different_candidates" if journal_cards and official_candidates else "usage_both" if journal_cards and authority else "journal_only" if journal_cards else "authority_only" if authority else "no_evidence"
+        reason = "期刊英文用法与完整官方词条存在相同候选，仍需人工核对定义与语境。" if comparison == "agreement" else "请对照两侧原文作人工裁决；英文出现、核心词命中或入口链接均不等于完整中英对应。"
+        return {"source_term": source_term, "domain": inferred_domain, "is_exact": exact, "match_type": "exact" if exact else "unverified",
+                "core_term": core_term, "decomposition": decomposition, "candidates": candidate_list,
+                "recommended_translation": "", "recommendation_reason": reason,
+                "cards": journal_cards + authority, "journal_cards": journal_cards, "authority_cards": authority,
+                "evidences": journal_cards + authority, "lookup_trace": trace, "comparison_status": comparison,
+                "requires_human_decision": True, "coverage_note": CATALOG["coverage_note"],
+                "policy": "期刊优先；一级起查；一级完整命中则不查二级；三级不采用；期刊与信源同时命中仍须人工裁决。",
+                "source_verification_version": 3}
 
     async def search_term_evidence(
         self,

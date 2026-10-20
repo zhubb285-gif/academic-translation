@@ -11,7 +11,7 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Backgro
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
-from app.core.database import get_db
+from app.core.database import get_db, SessionLocal
 from app.models.database import Document, Project, Segment
 from app.services.document_parser import DocumentParser
 
@@ -26,7 +26,7 @@ def get_safe_filename(original_name: str) -> str:
     return f"{uuid.uuid4().hex}{ext}"
 
 
-async def parse_document_task(
+async def _parse_document(
     file_path: str,
     document_id: int,
     project_id: int,
@@ -104,6 +104,24 @@ async def parse_document_task(
         raise
 
 
+async def parse_document_task(file_path: str, document_id: int, project_id: int):
+    from app.services.term_discovery import resolve_model, queue_document, run_document_discovery, _save
+    # Background work must not retain a request-scoped session.
+    with SessionLocal() as db:
+        await _parse_document(file_path, document_id, project_id, db)
+        doc = db.get(Document, document_id)
+        project = db.get(Project, project_id)
+        if not doc or not project or doc.parse_status != "done":
+            return
+        try:
+            provider, model = resolve_model(project)
+        except ValueError as exc:
+            _save(db, doc, status="needs_model", error=str(exc))
+            return
+        queue_document(db, doc, provider, model)
+    await run_document_discovery(document_id)
+
+
 @router.post("/upload/{project_id}", summary="上传文档到项目")
 async def upload_document(
     project_id: int,
@@ -158,7 +176,6 @@ async def upload_document(
         str(file_path),
         doc.id,
         project_id,
-        db,
     )
 
     return {
@@ -187,6 +204,7 @@ def get_document(document_id: int, db: Session = Depends(get_db)):
         "file_size": doc.file_size,
         "parse_status": doc.parse_status,
         "parse_error": doc.parse_error,
+        "terminology_analysis": doc.terminology_analysis,
         "word_count": doc.word_count,
         "segment_count": doc.segment_count,
         "created_at": doc.created_at,
@@ -202,6 +220,8 @@ def list_project_documents(project_id: int, db: Session = Depends(get_db)):
             "filename": d.original_filename,
             "file_type": d.file_type,
             "parse_status": d.parse_status,
+            "parse_error": d.parse_error,
+            "terminology_analysis": d.terminology_analysis,
             "word_count": d.word_count,
             "segment_count": d.segment_count,
             "created_at": d.created_at,

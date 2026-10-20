@@ -13,6 +13,8 @@ router = APIRouter(prefix="/projects", tags=["项目管理"])
 
 @router.post("", response_model=ProjectResponse, summary="创建翻译项目")
 def create_project(data: ProjectCreate, db: Session = Depends(get_db)):
+    if data.journal_id and not db.get(Journal, data.journal_id):
+        raise HTTPException(status_code=400, detail="目标期刊不存在")
     project = Project(**data.model_dump())
     db.add(project)
     db.commit()
@@ -42,7 +44,12 @@ def update_project(project_id: int, data: ProjectUpdate, db: Session = Depends(g
     project = db.query(Project).filter(Project.id == project_id).first()
     if not project:
         raise HTTPException(status_code=404, detail="项目不存在")
-    for field, value in data.model_dump(exclude_none=True).items():
+    values = data.model_dump(exclude_unset=True)
+    if values.get("journal_id") and not db.get(Journal, values["journal_id"]):
+        raise HTTPException(status_code=400, detail="目标期刊不存在")
+    for field, value in values.items():
+        if value is None and field != "journal_id":
+            continue
         setattr(project, field, value)
     db.commit()
     db.refresh(project)

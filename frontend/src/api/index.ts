@@ -80,16 +80,20 @@ export const translationApi = {
 // 术语 API
 // ============================================================
 export const terminologyApi = {
+  discovery: (projectId: number): Promise<any> => http.get(`/terminology/project/${projectId}/discovery`),
+  discover: (projectId: number, data: any = {}): Promise<any> => http.post(`/terminology/project/${projectId}/discovery`, data),
   list: (projectId: number, status?: string): Promise<any> =>
     http.get(`/terminology/project/${projectId}`, { params: { status } }),
   create: (projectId: number, data: any): Promise<any> =>
     http.post(`/terminology/project/${projectId}`, data),
   get: (termId: number): Promise<any> => http.get(`/terminology/${termId}`),
+  sources: (termId: number, candidate = ''): Promise<any> =>
+    http.get(`/terminology/${termId}/sources`, { params: { candidate } }),
   update: (termId: number, data: any): Promise<any> => http.put(`/terminology/${termId}`, data),
   delete: (termId: number): Promise<any> => http.delete(`/terminology/${termId}`),
-  confirm: (termId: number, translation: string): Promise<any> =>
+  confirm: (termId: number, translation: string, reason = ''): Promise<any> =>
     http.post(`/terminology/${termId}/confirm`, null, {
-      params: { confirmed_translation: translation },
+      params: { confirmed_translation: translation, reason },
     }),
   autoResearch: (termId: number): Promise<any> =>
     http.post(`/terminology/${termId}/auto-research`),
@@ -107,6 +111,10 @@ export const terminologyApi = {
 // 期刊 API
 // ============================================================
 export const journalsApi = {
+  library: (): Promise<any> => http.get('/journals/library'),
+  skill: (id: number): Promise<any> => http.get(`/journals/${id}/style-skill`),
+  articles: (id: number, params?: Record<string, any>): Promise<any> => http.get(`/journals/${id}/articles`, { params }),
+  article: (id: string): Promise<any> => http.get(`/journals/library/articles/${id}`),
   list: (params?: Record<string, any>): Promise<any> => http.get('/journals', { params }),
   create: (data: any): Promise<any> => http.post('/journals', data),
   get: (id: number): Promise<any> => http.get(`/journals/${id}`),

@@ -10,7 +10,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
-from app.models.database import TerminologyEntry, SourceEvidence
+from app.models.database import TerminologyEntry, SourceEvidence, Project, Journal
+from app.services.source_catalog import source_catalog, find_source
 from app.schemas.schemas import (
     TermCreate, TermUpdate, TermResponse,
     EvidenceCreate, EvidenceResponse,
@@ -19,6 +20,14 @@ from app.services.source_research import source_research_service
 from app.services.source_links import present_card, source_link, search_link
 
 router = APIRouter(prefix="/terminology", tags=["术语管理"])
+
+
+@router.get("/{term_id}/sources", summary="按术语生成信源检索清单")
+def get_term_sources(term_id: int, candidate: str = "", db: Session = Depends(get_db)):
+    term = db.query(TerminologyEntry).filter(TerminologyEntry.id == term_id).first()
+    if not term:
+        raise HTTPException(status_code=404, detail="术语不存在")
+    return {"term": term.source_term, "sources": source_catalog(term.source_term, candidate)}
 
 
 @router.post("/project/{project_id}", response_model=TermResponse, summary="创建术语条目")
@@ -87,10 +96,19 @@ async def auto_research_term(term_id: int, db: Session = Depends(get_db)):
     if not term:
         raise HTTPException(status_code=404, detail="术语不存在")
 
+    project = db.get(Project, term.project_id)
+    journal = db.get(Journal, project.journal_id) if project and project.journal_id else None
+    previous_notes = _notes(term.notes)
+    occurrences = previous_notes.get("ai_extraction", [])
+    source_context = "\n".join(item.get("context", "") for item in occurrences[:3] if isinstance(item, dict))
     research_result = await source_research_service.execute_progressive_research(
         source_term=term.source_term,
-        domain=term.domain
+        domain=term.domain or (project.domain if project else None),
+        context="\n".join(filter(None, [source_context, project.description if project else None])),
+        candidates=list(term.candidate_translations or []),
+        preferred_journal=journal.name if journal else "",
     )
+    term.domain = research_result.get("domain") or term.domain
 
     evidences = research_result.get("evidences", [])
     cards = research_result.get("cards", [])
@@ -124,8 +142,8 @@ async def auto_research_term(term_id: int, db: Session = Depends(get_db)):
             evidence_text=ev_data.get("evidence_text"),
             candidate_translation=cand or None,
             published_date=ev_data.get("published_date"),
-            is_valid=ev_data.get("is_valid", False),
-            verified_by="auto:termonline-v2" if ev_data.get("source_checked") else None,
+            is_valid=ev_data.get("is_valid", bool(ev_data.get("source_checked"))),
+            verified_by="auto:journal-research-v3" if ev_data.get("source_checked") else None,
             verified_at=datetime.utcnow() if ev_data.get("source_checked") else None,
         )
         db.add(evidence)
@@ -137,7 +155,11 @@ async def auto_research_term(term_id: int, db: Session = Depends(get_db)):
     # Finding an entry does not replace the user's final translation decision.
 
     # 将结构化卡片与拆解过程存入 notes 字段（JSON 格式），使前端随时可重现完整的证据卡
+    previous_notes = _notes(term.notes)
     notes_payload = {
+        "user_notes": previous_notes.get("user_notes", ""),
+        "human_decisions": previous_notes.get("human_decisions", []),
+        "ai_extraction": previous_notes.get("ai_extraction", []),
         "source_verification_version": research_result.get("source_verification_version"),
         "lookup_trace": research_result.get("lookup_trace", []),
         "is_exact": is_exact,
@@ -146,11 +168,15 @@ async def auto_research_term(term_id: int, db: Session = Depends(get_db)):
         "decomposition": decomposition,
         "recommendation_reason": research_result.get("recommendation_reason"),
         "cards": cards,
+        "comparison_status": research_result.get("comparison_status"),
+        "requires_human_decision": True,
+        "coverage_note": research_result.get("coverage_note"),
+        "policy": research_result.get("policy"),
         "workflow_steps": [
-            {"step": 1, "name": "完整词语检索", "desc": "搜索完整词条", "status": "hit" if is_exact else "unverified"},
-            {"step": 2, "name": "语义拆解分析", "desc": "识别核心专业术语与范围限定", "status": "skipped" if is_exact else "done"},
-            {"step": 3, "name": "官方出处核对", "desc": "仅将实际读取的条目作为证据；其他来源需继续核对", "status": "done" if evidences else "pending"},
-            {"step": 4, "name": "证据卡生成", "desc": "整理推荐译法、适用领域、原文、链接、推荐理由", "status": "done"}
+            {"step": 1, "name": "期刊文章优先检索", "desc": "从实际全文或摘要中查找英文用法", "status": "hit" if research_result.get("journal_cards") else "unverified"},
+            {"step": 2, "name": "逐级查找信源", "desc": "一级起查，完整命中停止向二级查找，三级禁用", "status": "done"},
+            {"step": 3, "name": "两侧原文对比", "desc": "区分英文出现、核心词出处与完整双语对应", "status": "done" if evidences else "pending"},
+            {"step": 4, "name": "人工最终裁决", "desc": "确认译法、理由与证据快照", "status": "pending"}
         ]
     }
     term.notes = json.dumps(notes_payload, ensure_ascii=False)
@@ -175,7 +201,14 @@ def add_evidence(term_id: int, data: EvidenceCreate, db: Session = Depends(get_d
     if not term:
         raise HTTPException(status_code=404, detail="术语不存在")
 
-    evidence = SourceEvidence(term_id=term_id, **data.model_dump())
+    values = data.model_dump()
+    source = find_source(data.source_url or "", data.source_name or "")
+    if data.source_level >= 3 or (source and source["blocked"]):
+        raise HTTPException(status_code=400, detail="三级及以下信源不可作为译法证据")
+    if source:
+        values["source_level"] = source["source_level"]
+    # Manually pasted text is not automatically a verified quotation.
+    evidence = SourceEvidence(term_id=term_id, is_valid=False, **values)
     db.add(evidence)
 
     # 自动更新术语的候选译法列表
@@ -210,6 +243,13 @@ def verify_evidence(
     ev = db.query(SourceEvidence).filter(SourceEvidence.id == evidence_id).first()
     if not ev:
         raise HTTPException(status_code=404, detail="证据不存在")
+    source = find_source(ev.source_url or "", ev.source_name or "")
+    if is_valid and (ev.source_level >= 3 or (source and source["blocked"])):
+        raise HTTPException(status_code=400, detail="三级及以下信源不能标记为可采信")
+    if is_valid and (not ev.evidence_text or not ev.candidate_translation or source_link(ev.source_url or "", "", ev.candidate_translation)["link_kind"] != "entry"):
+        raise HTTPException(status_code=400, detail="请先填写来源详情页、证据原文和对应英文，搜索结果页不能标记为已核验证据")
+    if source:
+        ev.source_level = source["source_level"]
     ev.is_valid = is_valid
     ev.verified_by = verifier
     ev.verified_at = datetime.utcnow()
@@ -222,10 +262,29 @@ def confirm_term(
     term_id: int,
     confirmed_translation: str,
     db: Session = Depends(get_db),
+    reason: str = "",
 ):
     term = db.query(TerminologyEntry).filter(TerminologyEntry.id == term_id).first()
     if not term:
         raise HTTPException(status_code=404, detail="术语不存在")
+    confirmed_translation = confirmed_translation.strip()
+    if not confirmed_translation:
+        raise HTTPException(status_code=400, detail="请填写最终译法")
+    metadata = _notes(term.notes)
+    card_assessments = {(card.get("source_url"), card.get("recommended_translation")): card
+                        for card in metadata.get("cards", []) if isinstance(card, dict)}
+    history = metadata.get("human_decisions", [])
+    history.append({"translation": confirmed_translation, "previous_translation": term.confirmed_translation,
+                    "reason": reason.strip(), "decided_at": datetime.utcnow().isoformat(),
+                    "evidence_snapshot": [{"source_url": e.source_url, "translation": e.candidate_translation,
+                                           "quote": e.evidence_text, "source_level": e.source_level,
+                                           "assessment": card_assessments.get((e.source_url, e.candidate_translation), {}).get("recommendation_reason"),
+                                           "match_type": card_assessments.get((e.source_url, e.candidate_translation), {}).get("match_type")}
+                                          for e in term.evidence if e.is_valid and e.source_level < 3
+                                          and not (find_source(e.source_url or "", e.source_name or "") or {}).get("blocked")]})
+    metadata["human_decisions"] = history
+    metadata["requires_human_decision"] = False
+    term.notes = json.dumps(metadata, ensure_ascii=False)
     term.confirmed_translation = confirmed_translation
     term.status = "confirmed"
     db.commit()
@@ -242,7 +301,19 @@ def _evidence_to_response(evidence: SourceEvidence, term: str) -> dict:
     result.update(source_link(evidence.source_url or "", term, evidence.candidate_translation or ""))
     result.update(search_link(evidence.source_url or "", term, evidence.candidate_translation or ""))
     result["source_checked"] = bool(evidence.verified_at and evidence.is_valid)
+    source = find_source(evidence.source_url or "", evidence.source_name or "")
+    result["source_blocked"] = evidence.source_level >= 3 or bool(source and source["blocked"])
+    result["source_checked"] = result["source_checked"] and not result["source_blocked"]
+    result["evidence_group"] = "journal" if evidence.source_type == "journal_usage" else "authority"
     return result
+
+
+def _notes(value: str | None) -> dict:
+    try:
+        data = json.loads(value or "{}")
+        return data if isinstance(data, dict) else {"user_notes": value or ""}
+    except (TypeError, ValueError):
+        return {"user_notes": value or ""}
 
 
 def _term_to_response(term: TerminologyEntry, db: Session) -> dict:
@@ -278,13 +349,28 @@ def _term_to_response(term: TerminologyEntry, db: Session) -> dict:
                 "match_type": "manual",
                 "status_tag": "人工已核对" if ev.verified_at and ev.is_valid else "待查证",
                 "source_checked": bool(ev.verified_at and ev.is_valid),
-                "decomposition": None
+                "decomposition": None,
+                "evidence_group": "journal" if ev.source_type == "journal_usage" else "authority",
             })
 
-    v2 = parsed_meta.get("source_verification_version") == 2
+    v2 = parsed_meta.get("source_verification_version") in (2, 3)
     if not v2 and decomposition:
         decomposition = [{**part, "evidence": "历史语言分析，待重新查证"} for part in decomposition if isinstance(part, dict)]
-    cards = [present_card(card, term.source_term, trusted=(v2 or card.get("match_type") == "manual") and card.get("source_checked", False)) for card in cards]
+    # Notes are user-editable: a version flag in notes cannot authenticate a quotation.
+    by_key = {(e.source_url, e.candidate_translation): e for e in evidences}
+    safe_cards = []
+    for card in cards:
+        if not isinstance(card, dict):
+            continue
+        record = by_key.get((card.get("source_url"), card.get("recommended_translation")))
+        trusted = bool(record and record.verified_at and record.is_valid and record.evidence_text == card.get("evidence_text"))
+        safe_cards.append(present_card(card, term.source_term, trusted=trusted and (v2 or card.get("match_type") == "manual")))
+    cards = safe_cards
+    # Reflect human invalidation on persisted cards rather than resurrecting an auto quote.
+    for card in cards:
+        record = by_key.get((card.get("source_url"), card.get("recommended_translation")))
+        if record and not record.is_valid:
+            card.update(source_checked=False, evidence_text="", status_tag="已标记无效", source_blocked=True)
 
     return {
         "id": term.id,
@@ -296,6 +382,8 @@ def _term_to_response(term: TerminologyEntry, db: Session) -> dict:
         "notes": term.notes,
         "created_at": term.created_at,
         "cards": cards,
+        "journal_cards": [c for c in cards if c.get("evidence_group") == "journal"],
+        "authority_cards": [c for c in cards if c.get("evidence_group") != "journal"],
         "decomposition": decomposition,
         "research_summary": parsed_meta,
         "evidence": [_evidence_to_response(e, term.source_term) for e in evidences],

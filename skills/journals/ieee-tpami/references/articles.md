@@ -1,0 +1,82 @@
+# IEEE Transactions on Pattern Analysis and Machine Intelligence — 实际语料清单
+
+- Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks (2016); DOI: 10.1109/tpami.2016.2577031; 仅摘要; https://openalex.org/W639708223
+- DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs (2017); DOI: 10.1109/tpami.2017.2699184; 仅摘要; https://openalex.org/W2412782625
+- SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation (2017); DOI: 10.1109/tpami.2016.2644615; 仅摘要; https://openalex.org/W1910657905
+- Representation Learning: A Review and New Perspectives (2013); DOI: 10.1109/tpami.2013.50; 仅摘要; https://openalex.org/W2163922914
+- Fully Convolutional Networks for Semantic Segmentation (2016); DOI: 10.1109/tpami.2016.2572683; 仅摘要; https://openalex.org/W2395611524
+- Image Super-Resolution Using Deep Convolutional Networks (2015); DOI: 10.1109/tpami.2015.2439281; 仅摘要; https://openalex.org/W1885185971
+- OpenPose: Realtime Multi-Person 2D Pose Estimation Using Part Affinity Fields (2019); DOI: 10.1109/tpami.2019.2929257; 仅摘要; https://openalex.org/W2962730651
+- Multimodal Machine Learning: A Survey and Taxonomy (2018); DOI: 10.1109/tpami.2018.2798607; 仅摘要; https://openalex.org/W2619383789
+- Deep High-Resolution Representation Learning for Visual Recognition (2020); DOI: 10.1109/tpami.2020.2983686; 仅摘要; https://openalex.org/W3014641072
+- Image Segmentation Using Deep Learning: A Survey (2021); DOI: 10.1109/tpami.2021.3059968; 仅摘要; https://openalex.org/W2999607073
+- An End-to-End Trainable Neural Network for Image-Based Sequence Recognition and Its Application to Scene Text Recognition (2016); DOI: 10.1109/tpami.2016.2646371; 仅摘要; https://openalex.org/W2194187530
+- Virtual Adversarial Training: A Regularization Method for Supervised and Semi-Supervised Learning (2018); DOI: 10.1109/tpami.2018.2858821; 仅摘要; https://openalex.org/W2964159205
+- Learning Hierarchical Features for Scene Labeling (2012); DOI: 10.1109/tpami.2012.231; 仅摘要; https://openalex.org/W2022508996
+- Event-Based Vision: A Survey (2020); DOI: 10.1109/tpami.2020.3008413; 仅摘要; https://openalex.org/W3040838455
+- Deep Learning for 3D Point Clouds: A Survey (2020); DOI: 10.1109/tpami.2020.3005434; 仅摘要; https://openalex.org/W3039448353
+- Deep Learning for Person Re-Identification: A Survey and Outlook (2021); DOI: 10.1109/tpami.2021.3054775; 仅摘要; https://openalex.org/W2998792609
+- U2Fusion: A Unified Unsupervised Image Fusion Network (2020); DOI: 10.1109/tpami.2020.3012548; 仅摘要; https://openalex.org/W3046194589
+- Self-Supervised Visual Feature Learning With Deep Neural Networks: A Survey (2020); DOI: 10.1109/tpami.2020.2992393; 仅摘要; https://openalex.org/W3023371261
+- Deep Learning for Image Super-Resolution: A Survey (2020); DOI: 10.1109/tpami.2020.2982166; 仅摘要; https://openalex.org/W3013529009
+- Diffusion Models in Vision: A Survey (2023); DOI: 10.1109/tpami.2023.3261988; 仅摘要; https://openalex.org/W4360884927
+- NTU RGB+D 120: A Large-Scale Benchmark for 3D Human Activity Understanding (2019); DOI: 10.1109/tpami.2019.2916873; 仅摘要; https://openalex.org/W2944006115
+- Image Super-Resolution Via Iterative Refinement (2022); DOI: 10.1109/tpami.2022.3204461; 仅摘要; https://openalex.org/W3155072588
+- Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-Shot Cross-Dataset Transfer (2020); DOI: 10.1109/tpami.2020.3019967; 仅摘要; https://openalex.org/W2955639361
+- Zero-Shot Learning—A Comprehensive Evaluation of the Good, the Bad and the Ugly (2018); DOI: 10.1109/tpami.2018.2857768; 仅摘要; https://openalex.org/W2963499153
+- A continual learning survey: Defying forgetting in classification tasks (2021); DOI: 10.1109/tpami.2021.3057446; 仅摘要; https://openalex.org/W3030364939
+- Long-Term Recurrent Convolutional Networks for Visual Recognition and Description (2016); DOI: 10.1109/tpami.2016.2599174; 仅摘要; https://openalex.org/W2508429489
+- Visual Tracking: An Experimental Survey (2014); DOI: 10.1109/tpami.2013.230; 仅摘要; https://openalex.org/W2126302311
+- HyperFace: A Deep Multi-Task Learning Framework for Face Detection, Landmark Localization, Pose Estimation, and Gender Recognition (2017); DOI: 10.1109/tpami.2017.2781233; 仅摘要; https://openalex.org/W2290180618
+- Learning Depth from Single Monocular Images Using Deep Convolutional Neural Fields (2015); DOI: 10.1109/tpami.2015.2505283; 仅摘要; https://openalex.org/W1803059841
+- Plug-and-Play Image Restoration With Deep Denoiser Prior (2021); DOI: 10.1109/tpami.2021.3088914; 仅摘要; https://openalex.org/W3081639259
+- A Comprehensive Survey of Continual Learning: Theory, Method and Application (2024); DOI: 10.1109/tpami.2024.3367329; 仅摘要; https://openalex.org/W4392173735
+- Emotion recognition based on physiological changes in music listening (2008); DOI: 10.1109/tpami.2008.26; 仅摘要; https://openalex.org/W2164368909
+- Multimodal Learning With Transformers: A Survey (2023); DOI: 10.1109/tpami.2023.3275156; 仅摘要; https://openalex.org/W4376226279
+- Medical Image Segmentation Review: The Success of U-Net (2024); DOI: 10.1109/tpami.2024.3435571; 仅摘要; https://openalex.org/W4401725766
+- Optimal Transport for Domain Adaptation (2016); DOI: 10.1109/tpami.2016.2615921; 仅摘要; https://openalex.org/W1594039573
+- Vision-Language Models for Vision Tasks: A Survey (2024); DOI: 10.1109/tpami.2024.3369699; 仅摘要; https://openalex.org/W4392172801
+- Fast Edge Detection Using Structured Forests (2014); DOI: 10.1109/tpami.2014.2377715; 仅摘要; https://openalex.org/W1976047850
+- Fast and Accurate Image Super-Resolution with Deep Laplacian Pyramid Networks (2018); DOI: 10.1109/tpami.2018.2865304; 仅摘要; https://openalex.org/W2963182372
+- FCOS: A Simple and Strong Anchor-free Object Detector (2020); DOI: 10.1109/tpami.2020.3032166; 仅摘要; https://openalex.org/W3092663126
+- Temporal Segment Networks for Action Recognition in Videos (2018); DOI: 10.1109/tpami.2018.2868668; 仅摘要; https://openalex.org/W2963315828
+- A flexible new technique for camera calibration (2000); DOI: 10.1109/34.888718; 仅摘要; https://openalex.org/W2167667767
+- SLIC Superpixels Compared to State-of-the-Art Superpixel Methods (2012); DOI: 10.1109/tpami.2012.120; 仅摘要; https://openalex.org/W2118246710
+- Fast approximate energy minimization via graph cuts (2001); DOI: 10.1109/34.969114; 仅摘要; https://openalex.org/W2143516773
+- Content-based image retrieval at the end of the early years (2000); DOI: 10.1109/34.895972; 仅摘要; https://openalex.org/W2130660124
+- Guided Image Filtering (2012); DOI: 10.1109/tpami.2012.213; 仅摘要; https://openalex.org/W2125188192
+- Contour Detection and Hierarchical Image Segmentation (2010); DOI: 10.1109/tpami.2010.161; 仅摘要; https://openalex.org/W2110158442
+- A Survey on Vision Transformer (2022); DOI: 10.1109/tpami.2022.3152247; 仅摘要; https://openalex.org/W3187418919
+- An experimental comparison of min-cut/max- flow algorithms for energy minimization in vision (2004); DOI: 10.1109/tpami.2004.60; 仅摘要; https://openalex.org/W2113137767
+- Medical image analysis: progress over two decades and the challenges ahead (2000); DOI: 10.1109/34.824822; 仅摘要; https://openalex.org/W2098979973
+- Two-dimensional pca: a new approach to appearance-based face representation and recognition (2004); DOI: 10.1109/tpami.2004.1261097; 仅摘要; https://openalex.org/W2102544846
+- Detecting faces in images: a survey (2002); DOI: 10.1109/34.982883; 仅摘要; https://openalex.org/W2121601095
+- Res2Net: A New Multi-Scale Backbone Architecture (2019); DOI: 10.1109/tpami.2019.2938758; 仅摘要; https://openalex.org/W2928165649
+- A validity measure for fuzzy clustering (1991); DOI: 10.1109/34.85677; 仅摘要; https://openalex.org/W1996747841
+- Object Tracking Benchmark (2015); DOI: 10.1109/tpami.2014.2388226; 仅摘要; https://openalex.org/W2158592639
+- Pedestrian Detection: An Evaluation of the State of the Art (2011); DOI: 10.1109/tpami.2011.155; 仅摘要; https://openalex.org/W2031454541
+- Shape modeling with front propagation: a level set approach (1995); DOI: 10.1109/34.368173; 仅摘要; https://openalex.org/W2149184914
+- What energy functions can be minimized via graph cuts? (2004); DOI: 10.1109/tpami.2004.1262177; 仅摘要; https://openalex.org/W2101309634
+- Point Set Registration: Coherent Point Drift (2010); DOI: 10.1109/tpami.2010.46; 仅摘要; https://openalex.org/W2134236847
+- Global Contrast Based Salient Region Detection (2014); DOI: 10.1109/tpami.2014.2345401; 仅摘要; https://openalex.org/W4239147634
+- Graph Regularized Nonnegative Matrix Factorization for Data Representation (2010); DOI: 10.1109/tpami.2010.231; 仅摘要; https://openalex.org/W2108119513
+- Least-squares estimation of transformation parameters between two point patterns (1991); DOI: 10.1109/34.88573; 仅摘要; https://openalex.org/W2128019145
+- State-of-the-Art in Visual Attention Modeling (2012); DOI: 10.1109/tpami.2012.89; 仅摘要; https://openalex.org/W2164084182
+- Eigenfaces vs. Fisherfaces: recognition using class specific linear projection (1997); DOI: 10.1109/34.598228; 仅摘要; https://openalex.org/W2121647436
+- Mean shift: a robust approach toward feature space analysis (2002); DOI: 10.1109/34.1000236; 仅摘要; https://openalex.org/W2067191022
+- Statistical pattern recognition: a review (2000); DOI: 10.1109/34.824819; 仅摘要; https://openalex.org/W2132549764
+- Face Description with Local Binary Patterns: Application to Face Recognition (2006); DOI: 10.1109/tpami.2006.244; 仅摘要; https://openalex.org/W2163808566
+- Characterization of signals from multiscale edges (1992); DOI: 10.1109/34.142909; 仅摘要; https://openalex.org/W2004217976
+- Dynamic Texture Recognition Using Local Binary Patterns with an Application to Facial Expressions (2007); DOI: 10.1109/tpami.2007.1110; 仅摘要; https://openalex.org/W2139916508
+- Example-based learning for view-based human face detection (1998); DOI: 10.1109/34.655648; 仅摘要; https://openalex.org/W2159686933
+- Automatic analysis of facial expressions: the state of the art (2000); DOI: 10.1109/34.895976; 仅摘要; https://openalex.org/W2159017231
+- SIFT Flow: Dense Correspondence across Scenes and Its Applications (2010); DOI: 10.1109/tpami.2010.147; 仅摘要; https://openalex.org/W2090518410
+- Decision combination in multiple classifier systems (1994); DOI: 10.1109/34.273716; 仅摘要; https://openalex.org/W2102734279
+- Online palmprint identification (2003); DOI: 10.1109/tpami.2003.1227981; 仅摘要; https://openalex.org/W2114214092
+- Scalable Nearest Neighbor Algorithms for High Dimensional Data (2014); DOI: 10.1109/tpami.2014.2321376; 仅摘要; https://openalex.org/W2086504823
+- Small sample size effects in statistical pattern recognition: recommendations for practitioners (1991); DOI: 10.1109/34.75512; 仅摘要; https://openalex.org/W2002645541
+- Spectral grouping using the nystrom method (2004); DOI: 10.1109/tpami.2004.1262185; 仅摘要; https://openalex.org/W2116810533
+- Silhouette analysis-based gait recognition for human identification (2003); DOI: 10.1109/tpami.2003.1251144; 仅摘要; https://openalex.org/W2149516292
+- Measuring the Objectness of Image Windows (2012); DOI: 10.1109/tpami.2012.28; 仅摘要; https://openalex.org/W2066624635
+- The humanID gait challenge problem: data sets, performance, and analysis (2005); DOI: 10.1109/tpami.2005.39; 仅摘要; https://openalex.org/W2151458682
+- A sparse texture representation using local affine regions (2005); DOI: 10.1109/tpami.2005.151; 仅摘要; https://openalex.org/W2126833203

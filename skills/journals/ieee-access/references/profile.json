@@ -1,0 +1,31 @@
+{
+  "article_count": 56,
+  "abstract_sample_count": 56,
+  "full_text_count": 0,
+  "abstract_median_words": 198,
+  "sentence_median_words": 23,
+  "abstract_first_person_fraction": 0.536,
+  "abstract_numeric_fraction": 0.411,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1109/access.2024.3365742",
+      "quote": "Large Language Models (LLMs) recently demonstrated extraordinary capability, including natural language processing (NLP), language translation, text generation, question answering, etc. Moreover, LLMs …",
+      "source_url": "https://openalex.org/W4391855109",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1109/access.2021.3140175",
+      "quote": "Unlike previous studies on the Metaverse based on Second Life, the current Metaverse is based on the social value of Generation Z …",
+      "source_url": "https://openalex.org/W4206484811",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1109/access.2022.3142859",
+      "quote": "Particle swarm optimization (PSO) is one of the most well-regarded swarm-based algorithms in the literature. Although the original PSO has shown good …",
+      "source_url": "https://openalex.org/W4205129187",
+      "section": "abstract"
+    }
+  ]
+}

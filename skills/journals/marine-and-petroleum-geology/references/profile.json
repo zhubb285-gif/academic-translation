@@ -1,0 +1,31 @@
+{
+  "article_count": 85,
+  "abstract_sample_count": 85,
+  "full_text_count": 0,
+  "abstract_median_words": 281,
+  "sentence_median_words": 25,
+  "abstract_first_person_fraction": 0.576,
+  "abstract_numeric_fraction": 0.859,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1016/j.marpetgeo.2024.107258",
+      "quote": "We investigate the potential fluid migration process in a plate subduction zone on the basis of integrated active-source seismic imaging from multichannel …",
+      "source_url": "https://openalex.org/W4405175736",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1016/j.marpetgeo.2024.107036",
+      "quote": "Natural gas hydrates have attracted global attention as a potential widespread energy resource. The permeability of gas-hydrate-bearing natural sediments has been investigated …",
+      "source_url": "https://openalex.org/W4401158739",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1016/j.marpetgeo.2024.106870",
+      "quote": "Bottom simulating reflections (BSRs) are widely used indicators for natural gas hydrate in reflection seismic data. BSRs, however, are typically studied on …",
+      "source_url": "https://openalex.org/W4395111738",
+      "section": "abstract"
+    }
+  ]
+}

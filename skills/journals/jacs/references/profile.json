@@ -1,0 +1,31 @@
+{
+  "article_count": 110,
+  "abstract_sample_count": 110,
+  "full_text_count": 0,
+  "abstract_median_words": 175,
+  "sentence_median_words": 25,
+  "abstract_first_person_fraction": 0.473,
+  "abstract_numeric_fraction": 0.945,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1021/jacs.0c09794",
+      "quote": "Aqueous Zn batteries are promising energy storage devices for large-scale energy-storage due to low cost and high energy density. However, their lifespan …",
+      "source_url": "https://openalex.org/W3111560045",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1021/jacs.0c01416",
+      "quote": "The association of an electron-rich substrate with an electron-accepting molecule can generate a new molecular aggregate in the ground state, called an …",
+      "source_url": "https://openalex.org/W3010504693",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1021/jacs.9b13347",
+      "quote": "Electrochemical conversion of nitrate (NO 3 – ) into ammonia (NH 3 ) recycles nitrogen and offers a route to the production …",
+      "source_url": "https://openalex.org/W3009486424",
+      "section": "abstract"
+    }
+  ]
+}

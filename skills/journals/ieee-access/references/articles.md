@@ -1,0 +1,58 @@
+# IEEE Access — 实际语料清单
+
+- Artificial Intelligence in Education: A Review (2020); DOI: 10.1109/access.2020.2988510; 仅摘要; https://openalex.org/W3017131514
+- Wireless Communications Through Reconfigurable Intelligent Surfaces (2019); DOI: 10.1109/access.2019.2935192; 仅摘要; https://openalex.org/W2968810373
+- The Internet of Things for Health Care: A Comprehensive Survey (2015); DOI: 10.1109/access.2015.2437951; 仅摘要; https://openalex.org/W1943579973
+- Digital Twin: Enabling Technologies, Challenges and Open Research (2020); DOI: 10.1109/access.2020.2998358; 仅摘要; https://openalex.org/W2982936646
+- Wireless Communications and Applications Above 100 GHz: Opportunities and Challenges for 6G and Beyond (2019); DOI: 10.1109/access.2019.2921522; 仅摘要; https://openalex.org/W2955897898
+- Unmanned Aerial Vehicles (UAVs): A Survey on Civil Applications and Key Research Challenges (2019); DOI: 10.1109/access.2019.2909530; 仅摘要; https://openalex.org/W4213147678
+- Pymoo: Multi-Objective Optimization in Python (2020); DOI: 10.1109/access.2020.2990567; 仅摘要; https://openalex.org/W3021613070
+- Unsupervised K-Means Clustering Algorithm (2020); DOI: 10.1109/access.2020.2988796; 仅摘要; https://openalex.org/W3019913914
+- A Deep Learning Approach for Intrusion Detection Using Recurrent Neural Networks (2017); DOI: 10.1109/access.2017.2762418; 仅摘要; https://openalex.org/W2762776925
+- U-Net and Its Variants for Medical Image Segmentation: A Review of Theory and Applications (2021); DOI: 10.1109/access.2021.3086020; 仅摘要; https://openalex.org/W3096947210
+- Deep Learning Approach for Intelligent Intrusion Detection System (2019); DOI: 10.1109/access.2019.2895334; 仅摘要; https://openalex.org/W2926701059
+- Effective Heart Disease Prediction Using Hybrid Machine Learning Techniques (2019); DOI: 10.1109/access.2019.2923707; 仅摘要; https://openalex.org/W2949767632
+- Digital Twin: Values, Challenges and Enablers From a Modeling Perspective (2020); DOI: 10.1109/access.2020.2970143; 仅摘要; https://openalex.org/W3003667836
+- Can AI Help in Screening Viral and COVID-19 Pneumonia? (2020); DOI: 10.1109/access.2020.3010287; 仅摘要; https://openalex.org/W3013277995
+- Review of Deep Learning Algorithms and Architectures (2019); DOI: 10.1109/access.2019.2912200; 仅摘要; https://openalex.org/W2942231644
+- A Survey of Autonomous Driving: Common Practices and Emerging Technologies (2020); DOI: 10.1109/access.2020.2983149; 仅摘要; https://openalex.org/W2953303875
+- A Metaverse: Taxonomy, Components, Applications, and Open Challenges (2022); DOI: 10.1109/access.2021.3140175; 仅摘要; https://openalex.org/W4206484811
+- Deep Learning Applications in Medical Image Analysis (2017); DOI: 10.1109/access.2017.2788044; 仅摘要; https://openalex.org/W2777186991
+- A Survey on Digital Twin: Definitions, Characteristics, Applications, and Design Implications (2019); DOI: 10.1109/access.2019.2953499; 仅摘要; https://openalex.org/W2988359971
+- Particle Swarm Optimization: A Comprehensive Survey (2022); DOI: 10.1109/access.2022.3142859; 仅摘要; https://openalex.org/W4205129187
+- A Survey on IoT Security: Application Areas, Security Threats, and Solution Architectures (2019); DOI: 10.1109/access.2019.2924045; 仅摘要; https://openalex.org/W2951694401
+- 6G and Beyond: The Future of Wireless Communications Systems (2020); DOI: 10.1109/access.2020.3010896; 仅摘要; https://openalex.org/W3045086480
+- A Survey of Deep Learning-Based Object Detection (2019); DOI: 10.1109/access.2019.2939201; 仅摘要; https://openalex.org/W2972006294
+- Internet of Things (IoT) for Next-Generation Smart Systems: A Review of Current Challenges, Future Trends and Prospects for Emerging 5G-IoT Scenarios (2020); DOI: 10.1109/access.2020.2970118; 仅摘要; https://openalex.org/W3003651800
+- Internet-of-Things (IoT)-Based Smart Agriculture: Toward Making the Fields Talk (2019); DOI: 10.1109/access.2019.2932609; 仅摘要; https://openalex.org/W2964535757
+- Disease Prediction by Machine Learning Over Big Data From Healthcare Communities (2017); DOI: 10.1109/access.2017.2694446; 仅摘要; https://openalex.org/W2610135452
+- A Survey of Ensemble Learning: Concepts, Algorithms, Applications, and Prospects (2022); DOI: 10.1109/access.2022.3207287; 仅摘要; https://openalex.org/W4296079469
+- Big Data Deep Learning: Challenges and Perspectives (2014); DOI: 10.1109/access.2014.2325029; 仅摘要; https://openalex.org/W1984020445
+- An Overview on Edge Computing Research (2020); DOI: 10.1109/access.2020.2991734; 仅摘要; https://openalex.org/W3021951958
+- BadNets: Evaluating Backdooring Attacks on Deep Neural Networks (2019); DOI: 10.1109/access.2019.2909068; 仅摘要; https://openalex.org/W2942091739
+- Machine Learning and Deep Learning Methods for Cybersecurity (2018); DOI: 10.1109/access.2018.2836950; 仅摘要; https://openalex.org/W2803881474
+- Edge-IIoTset: A New Comprehensive Realistic Cyber Security Dataset of IoT and IIoT Applications for Centralized and Federated Learning (2022); DOI: 10.1109/access.2022.3165809; 仅摘要; https://openalex.org/W4226319939
+- Speech Recognition Using Deep Neural Networks: A Systematic Review (2019); DOI: 10.1109/access.2019.2896880; 仅摘要; https://openalex.org/W2912581782
+- Machine Learning Applications for Precision Agriculture: A Comprehensive Review (2020); DOI: 10.1109/access.2020.3048415; 仅摘要; https://openalex.org/W3120697286
+- A Comprehensive Review of the COVID-19 Pandemic and the Role of IoT, Drones, AI, Blockchain, and 5G in Managing its Impact (2020); DOI: 10.1109/access.2020.2992341; 仅摘要; https://openalex.org/W3023617420
+- Toward Scalable Systems for Big Data Analytics: A Technology Tutorial (2014); DOI: 10.1109/access.2014.2332453; 仅摘要; https://openalex.org/W2157954477
+- A Survey of Sparse Representation: Algorithms and Applications (2015); DOI: 10.1109/access.2015.2430359; 仅摘要; https://openalex.org/W2130187411
+- Explainable Machine Learning for Scientific Insights and Discoveries (2020); DOI: 10.1109/access.2020.2976199; 仅摘要; https://openalex.org/W2945526235
+- Machine Learning With Big Data: Challenges and Approaches (2017); DOI: 10.1109/access.2017.2696365; 仅摘要; https://openalex.org/W2609731728
+- Plant Disease Detection and Classification by Deep Learning—A Review (2021); DOI: 10.1109/access.2021.3069646; 仅摘要; https://openalex.org/W3155966371
+- Millimeter Wave Mobile Communications for 5G Cellular: It Will Work! (2013); DOI: 10.1109/access.2013.2260813; 仅摘要; https://openalex.org/W2116334496
+- A Survey of 5G Network: Architecture and Emerging Technologies (2015); DOI: 10.1109/access.2015.2461602; 仅摘要; https://openalex.org/W2128145324
+- A Survey on the Edge Computing for the Internet of Things (2017); DOI: 10.1109/access.2017.2778504; 仅摘要; https://openalex.org/W2768475350
+- Underwater Optical Wireless Communication (2016); DOI: 10.1109/access.2016.2552538; 仅摘要; https://openalex.org/W2336491352
+- A Survey on 5G Networks for the Internet of Things: Communication Technologies and Challenges (2017); DOI: 10.1109/access.2017.2779844; 仅摘要; https://openalex.org/W2771152181
+- State of the Art in Research on Microgrids: A Review (2015); DOI: 10.1109/access.2015.2443119; 仅摘要; https://openalex.org/W1759197186
+- Towards Sustainable Energy: A Systematic Review of Renewable Energy Sources, Technologies, and Public Opinions (2019); DOI: 10.1109/access.2019.2906402; 仅摘要; https://openalex.org/W2945102769
+- A Survey of Blockchain From the Perspectives of Applications, Challenges, and Opportunities (2019); DOI: 10.1109/access.2019.2936094; 仅摘要; https://openalex.org/W2969971691
+- Critical Review on the Battery State of Charge Estimation Methods for Electric Vehicles (2017); DOI: 10.1109/access.2017.2780258; 仅摘要; https://openalex.org/W2774327138
+- Blockchain for AI: Review and Open Research Challenges (2019); DOI: 10.1109/access.2018.2890507; 仅摘要; https://openalex.org/W2907683311
+- A Survey on Consensus Mechanisms and Mining Strategy Management in Blockchain Networks (2019); DOI: 10.1109/access.2019.2896108; 仅摘要; https://openalex.org/W2905867785
+- State-of-the-Art and Energy Management System of Lithium-Ion Batteries in Electric Vehicle Applications: Issues and Recommendations (2018); DOI: 10.1109/access.2018.2817655; 仅摘要; https://openalex.org/W2792524465
+- A Comprehensive Review on NSGA-II for Multi-Objective Combinatorial Optimization Problems (2021); DOI: 10.1109/access.2021.3070634; 仅摘要; https://openalex.org/W3148921802
+- A Review on Large Language Models: Architectures, Applications, Taxonomies, Open Issues and Challenges (2024); DOI: 10.1109/access.2024.3365742; 仅摘要; https://openalex.org/W4391855109
+- Digital Twin Shop-Floor: A New Shop-Floor Paradigm Towards Smart Manufacturing (2017); DOI: 10.1109/access.2017.2756069; 仅摘要; https://openalex.org/W2757110387
+- MeDShare: Trust-Less Medical Data Sharing Among Cloud Service Providers via Blockchain (2017); DOI: 10.1109/access.2017.2730843; 仅摘要; https://openalex.org/W2736904962

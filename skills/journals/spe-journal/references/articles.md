@@ -1,0 +1,109 @@
+# SPE Journal — 实际语料清单
+
+- An Efficient Discrete-Fracture Model Applicable for General-Purpose Reservoir Simulators (2004); DOI: 10.2118/88812-pa; 仅摘要; https://openalex.org/W2131343962
+- The Ensemble Kalman Filter in Reservoir Engineering--a Review (2009); DOI: 10.2118/117274-pa; 仅摘要; https://openalex.org/W2046372107
+- Extending Predictive Capabilities to Network Models (1998); DOI: 10.2118/52052-pa; 仅摘要; https://openalex.org/W2029434326
+- Shale Gas-in-Place Calculations Part I: New Pore-Scale Considerations (2011); DOI: 10.2118/131772-pa; 仅摘要; https://openalex.org/W1986846946
+- Carbon Dioxide Storage Capacity of Organic-Rich Shales (2011); DOI: 10.2118/134583-pa; 仅摘要; https://openalex.org/W2009656120
+- Surface Chemistry of Oil Recovery From Fractured, Oil-Wet, Carbonate Formations (2004); DOI: 10.2118/88365-pa; 仅摘要; https://openalex.org/W1977222162
+- Mechanisms of Wetting Alteration by Crude Oils (1998); DOI: 10.2118/37230-pa; 仅摘要; https://openalex.org/W1989716604
+- Development of an Efficient Embedded Discrete Fracture Model for 3D Compositional Reservoir Simulation in Fractured Reservoirs (2013); DOI: 10.2118/154246-pa; 仅摘要; https://openalex.org/W2083501255
+- Dynamic Optimization of Waterflooding With Smart Wells Using Optimal Control Theory (2004); DOI: 10.2118/78278-pa; 仅摘要; https://openalex.org/W2036475510
+- Simultaneous Multifracture Treatments: Fully Coupled Fluid Flow and Fracture Mechanics for Horizontal Wells (2014); DOI: 10.2118/167626-pa; 仅摘要; https://openalex.org/W2117067030
+- Reservoir Simulation of CO2 Storage in Deep Saline Aquifers (2005); DOI: 10.2118/89343-pa; 仅摘要; https://openalex.org/W2032247692
+- Multiscale Gas Transport in Shales With Local Kerogen Heterogeneities (2012); DOI: 10.2118/146422-pa; 仅摘要; https://openalex.org/W2001959072
+- Efficient Ensemble-Based Closed-Loop Production Optimization (2009); DOI: 10.2118/112873-pa; 仅摘要; https://openalex.org/W2051554019
+- A Coupled Reservoir and Geomechanical Simulation System (1998); DOI: 10.2118/50939-pa; 仅摘要; https://openalex.org/W2050092501
+- Reservoir Monitoring and Continuous Model Updating Using Ensemble Kalman Filter (2005); DOI: 10.2118/84372-pa; 仅摘要; https://openalex.org/W2006105001
+- Advances in Coupled Geomechanical and Reservoir Modeling With Applications to Reservoir Compaction (2001); DOI: 10.2118/74142-pa; 仅摘要; https://openalex.org/W2098137286
+- Interrelationship of Wettability, Initial Water Saturation, Aging Time, and Oil Recovery by Spontaneous Imbibition and Waterflooding (2000); DOI: 10.2118/62507-pa; 仅摘要; https://openalex.org/W2071696211
+- Optimization of Nonconventional Well Type, Location, and Trajectory (2003); DOI: 10.2118/86880-pa; 仅摘要; https://openalex.org/W2088238688
+- Electrokinetics of Carbonate/Brine Interface in Low-Salinity Waterflooding: Effect of Brine Salinity, Composition, Rock Type, and pH on ?-Potential and a Surface-Complexation Model (2016); DOI: 10.2118/181745-pa; 仅摘要; https://openalex.org/W2409584111
+- Drift-Flux Modeling of Two-Phase Flow in Wellbores (2005); DOI: 10.2118/84228-pa; 仅摘要; https://openalex.org/W2038297638
+- Robust Waterflooding Optimization of Multiple Geological Scenarios (2009); DOI: 10.2118/102913-pa; 仅摘要; https://openalex.org/W2157164625
+- A Unified Model for Gas Transfer in Nanopores of Shale-Gas Reservoirs: Coupling Pore Diffusion and Surface Diffusion (2016); DOI: 10.2118/2014-1921039-pa; 仅摘要; https://openalex.org/W2318916487
+- How Much Polymer Should Be Injected During a Polymer Flood? Review of Previous and Current Practices (2016); DOI: 10.2118/179543-pa; 仅摘要; https://openalex.org/W2411407110
+- Polymer Systems for Water Shutoff and Profile Modification: A Review Over the Last Decade (2013); DOI: 10.2118/163100-pa; 仅摘要; https://openalex.org/W2072098054
+- Numerical Modeling of Aquifer Disposal of CO2 (2003); DOI: 10.2118/83695-pa; 仅摘要; https://openalex.org/W1995062576
+- Pore-Scale Characterization of Carbonates Using X-Ray Microtomography (2005); DOI: 10.2118/90368-pa; 仅摘要; https://openalex.org/W2091867118
+- Stability of Partially Hydrolyzed Polyacrylamides at Elevated Temperatures in the Absence of Divalent Cations (2009); DOI: 10.2118/121460-pa; 仅摘要; https://openalex.org/W2063099100
+- Physicochemical Interactions During Surfactant Flooding of Fractured Carbonate Reservoirs (2004); DOI: 10.2118/89423-pa; 仅摘要; https://openalex.org/W2062382514
+- How Natural Fractures Could Affect Hydraulic-Fracture Geometry (2013); DOI: 10.2118/167608-pa; 仅摘要; https://openalex.org/W2061278533
+- An Integrated Petrophysics and Geomechanics Approach for Fracability Evaluation in Shale Reservoirs (2015); DOI: 10.2118/168589-pa; 仅摘要; https://openalex.org/W2071576181
+- Production Optimization in Closed-Loop Reservoir Management (2008); DOI: 10.2118/109805-pa; 仅摘要; https://openalex.org/W2103720101
+- History Matching of Three-Phase Flow Production Data (2003); DOI: 10.2118/87336-pa; 仅摘要; https://openalex.org/W2150166938
+- A Generalized Framework Model for the Simulation of Gas Production in Unconventional Gas Reservoirs (2014); DOI: 10.2118/163609-pa; 仅摘要; https://openalex.org/W2173813363
+- Stability, Accuracy, and Efficiency of Sequential Methods for Coupled Flow and Geomechanics (2011); DOI: 10.2118/119084-pa; 仅摘要; https://openalex.org/W2130138644
+- Modeling Gas Adsorption in Marcellus Shale With Langmuir and BET Isotherms (2016); DOI: 10.2118/170801-pa; 仅摘要; https://openalex.org/W2227186012
+- Surfactant Systems for EOR in High-Temperature, High-Salinity Environments (2011); DOI: 10.2118/129675-pa; 仅摘要; https://openalex.org/W2032973371
+- Experimental Study of Fracture Conductivity for Water-Fracturing and Conventional Fracturing Applications (2001); DOI: 10.2118/74138-pa; 仅摘要; https://openalex.org/W1999002887
+- Analysis of Reservoir Applicability of Hydrophobically Associating Polymer (2015); DOI: 10.2118/174553-pa; 仅摘要; https://openalex.org/W2203632561
+- Incorporating 4D Seismic Data in Reservoir Simulation Models Using Ensemble Kalman Filter (2007); DOI: 10.2118/95789-pa; 仅摘要; https://openalex.org/W2012052869
+- Adjoint-Based Well-Placement Optimization Under Production Constraints (2008); DOI: 10.2118/105797-pa; 仅摘要; https://openalex.org/W2170480532
+- Numerical Modeling of Multistranded-Hydraulic-Fracture Propagation: Accounting for the Interaction Between Induced and Natural Fractures (2011); DOI: 10.2118/124884-pa; 仅摘要; https://openalex.org/W2025036906
+- Interference Fracturing: Nonuniform Distributions of Perforation Clusters That Promote Simultaneous Growth of Multiple Hydraulic Fractures (2014); DOI: 10.2118/172500-pa; 仅摘要; https://openalex.org/W2010743842
+- Mechanisms of Simultaneous Hydraulic-Fracture Propagation From Multiple Perforation Clusters in Horizontal Wells (2015); DOI: 10.2118/178925-pa; 仅摘要; https://openalex.org/W2237850480
+- Semianalytical Production Simulation of Complex Hydraulic-Fracture Networks (2013); DOI: 10.2118/157367-pa; 仅摘要; https://openalex.org/W1980005359
+- Physical Simulation of Hydraulic Fracturing of Large-Sized Tight Sandstone Outcrops (2020); DOI: 10.2118/204210-pa; 仅摘要; https://openalex.org/W3095475490
+- Hybrid Coupled Discrete-Fracture/Matrix and Multicontinuum Models for Unconventional-Reservoir Simulation (2015); DOI: 10.2118/178430-pa; 仅摘要; https://openalex.org/W2282070308
+- Parameters Affecting the Interaction Among Closely Spaced Hydraulic Fractures (2012); DOI: 10.2118/140426-pa; 仅摘要; https://openalex.org/W2019047527
+- Microscopic Dynamics of Water and Hydrocarbon in Shale-Kerogen Pores of Potentially Mixed Wettability (2014); DOI: 10.2118/167234-pa; 仅摘要; https://openalex.org/W2063180495
+- Analysis and Prediction of Microseismicity Induced by Hydraulic Fracturing (2004); DOI: 10.2118/87673-pa; 仅摘要; https://openalex.org/W2067235536
+- Discrete-Element-Method/Computational-Fluid-Dynamics Coupling Simulation of Proppant Embedment and Fracture Conductivity After Hydraulic Fracturing (2017); DOI: 10.2118/185172-pa; 仅摘要; https://openalex.org/W2587402793
+- Applicability of the Forchheimer Equation for Non-Darcy Flow in Porous Media (2008); DOI: 10.2118/102715-pa; 仅摘要; https://openalex.org/W1978764314
+- Hydraulic-Fracture Geomechanics and Microseismic-Source Mechanisms (2013); DOI: 10.2118/158935-pa; 仅摘要; https://openalex.org/W2177057009
+- Modeling Two-Phase Flowback of Multifractured Horizontal Wells Completed in Shale (2013); DOI: 10.2118/162593-pa; 仅摘要; https://openalex.org/W2088618900
+- Fully Coupled Hydromechanical Simulation of Hydraulic Fracturing in 3D Discrete-Fracture Networks (2016); DOI: 10.2118/173354-pa; 仅摘要; https://openalex.org/W2223485263
+- The Effects of Perforation Erosion on Practical Hydraulic-Fracturing Applications (2017); DOI: 10.2118/185173-pa; 仅摘要; https://openalex.org/W2580203450
+- Finite-Element Simulation of a Hydraulic Fracture Interacting With a Natural Fracture (2016); DOI: 10.2118/176970-pa; 仅摘要; https://openalex.org/W2471179392
+- Fracture Initiation and Propagation in a Deep Shale Gas Reservoir Subject to an Alternating-Fluid-Injection Hydraulic-Fracturing Treatment (2019); DOI: 10.2118/195571-pa; 仅摘要; https://openalex.org/W2945001809
+- A Semianalytical Methodology To Diagnose the Locations of Underperforming Hydraulic Fractures Through Pressure-Transient Analysis in Tight Gas Reservoir (2016); DOI: 10.2118/185166-pa; 仅摘要; https://openalex.org/W2566563283
+- The Fracture-Compliance Method for Picking Closure Pressure From Diagnostic Fracture-Injection Tests (2016); DOI: 10.2118/179725-pa; 仅摘要; https://openalex.org/W2270806727
+- Understanding Shale Gas Flow Behavior Using Numerical Simulation (2015); DOI: 10.2118/167753-pa; 仅摘要; https://openalex.org/W2048636621
+- A Novel Hydraulic Fracturing Model Fully Coupled With Geomechanics and Reservoir Simulation (2009); DOI: 10.2118/110845-pa; 仅摘要; https://openalex.org/W2030342295
+- Investigation of Rupture and Slip Mechanisms of Hydraulic Fractures in Multiple-Layered Formations (2019); DOI: 10.2118/197054-pa; 仅摘要; https://openalex.org/W2970044034
+- The Impact of Surfactant Imbibition and Adsorption for Improving Oil Recovery in the Wolfcamp and Eagle Ford Reservoirs (2018); DOI: 10.2118/187176-pa; 仅摘要; https://openalex.org/W2896371313
+- A Semianalytical Approach for Obtaining Type Curves of Multiple-Fractured Horizontal Wells With Secondary-Fracture Networks (2015); DOI: 10.2118/178913-pa; 仅摘要; https://openalex.org/W2288174148
+- Hydraulic-Fracture Predictions With a Fully Coupled Geomechanical Reservoir Simulator (2009); DOI: 10.2118/116470-pa; 仅摘要; https://openalex.org/W1993656754
+- Numerical Studies on Two-Way Coupled Fluid Flow and Geomechanics in Hydrate Deposits (2012); DOI: 10.2118/141304-pa; 仅摘要; https://openalex.org/W2123372268
+- Thermoporoelastic Effect on Wellbore Stability (2005); DOI: 10.2118/89039-pa; 仅摘要; https://openalex.org/W2003283887
+- Three-Dimensional Projection-Based Embedded Discrete-Fracture Model for Compositional Simulation of Fractured Reservoirs (2020); DOI: 10.2118/201243-pa; 仅摘要; https://openalex.org/W3041837940
+- Fracture Hits in Unconventional Reservoirs: A Critical Review (2020); DOI: 10.2118/203839-pa; 仅摘要; https://openalex.org/W3096929041
+- A Semianalytical Model for Production Simulation From Nonplanar Hydraulic-Fracture Geometry in Tight Oil Reservoirs (2015); DOI: 10.2118/178440-pa; 仅摘要; https://openalex.org/W2234239122
+- Enhancing Hydrocarbon Permeability After Hydraulic Fracturing: Laboratory Evaluations of Shut-Ins and Surfactant Additives (2017); DOI: 10.2118/175101-pa; 仅摘要; https://openalex.org/W2615765231
+- A Detailed Comparison of Experimental and Numerical Data on Hydraulic Fracture Height Growth Through Stress Contrasts (2009); DOI: 10.2118/106030-pa; 仅摘要; https://openalex.org/W1980612355
+- A Predictive Pore-Scale Model for Non-Darcy Flow in Porous Media (2009); DOI: 10.2118/110838-pa; 仅摘要; https://openalex.org/W2076272514
+- Semi-Analytical Well Model of Horizontal Wells With Multiple Hydraulic Fractures (2002); DOI: 10.2118/81190-pa; 仅摘要; https://openalex.org/W2000997495
+- Prediction of Shale-Gas Production at Duvernay Formation Using Deep-Learning Algorithm (2019); DOI: 10.2118/195698-pa; 仅摘要; https://openalex.org/W2963276185
+- Evaluation of the Gas Production Potential of Marine Hydrate Deposits in the Ulleung Basin of the Korean East Sea (2009); DOI: 10.2118/110859-pa; 仅摘要; https://openalex.org/W2050050579
+- Effect of Nanofluids of CuO and ZnO in Polyethylene Glycol and Polyvinylpyrrolidone on the Thermal, Electrical, and Filtration-Loss Properties of Water-Based Drilling Fluids (2015); DOI: 10.2118/178919-pa; 仅摘要; https://openalex.org/W2226433120
+- The Application of Flow Diagnostics for Reservoir Management (2014); DOI: 10.2118/171557-pa; 仅摘要; https://openalex.org/W1968559308
+- A New Ensemble Machine-Learning Framework for Searching Sweet Spots in Shale Reservoirs (2020); DOI: 10.2118/204224-pa; 仅摘要; https://openalex.org/W3094929171
+- Streamline-Based Production Data Integration With Gravity and Changing Field Conditions (2002); DOI: 10.2118/81208-pa; 仅摘要; https://openalex.org/W2063104339
+- Generalized Field-Development Optimization With Derivative-Free Procedures (2014); DOI: 10.2118/163631-pa; 仅摘要; https://openalex.org/W2177071923
+- Effect of Drillpipe Rotation on Hole Cleaning During Directional-Well Drilling (1999); DOI: 10.2118/56406-pa; 仅摘要; https://openalex.org/W2033448292
+- Lost-Circulation Control for Formation-Damage Prevention in Naturally Fractured Reservoir: Mathematical Model and Experimental Study (2017); DOI: 10.2118/182266-pa; 仅摘要; https://openalex.org/W2624207480
+- Optimal Synthesis, Characterization, and Performance Evaluation of High-Pressure High-Temperature Polymer-Based Drilling Fluid: The Effect of Viscoelasticity on Cutting Transport, Filtration Loss, and Lubricity (2020); DOI: 10.2118/200487-pa; 仅摘要; https://openalex.org/W3012300591
+- Sensitivity Analysis of Hole Cleaning Parameters in Directional Wells (2001); DOI: 10.2118/74710-pa; 仅摘要; https://openalex.org/W2082626596
+- Strategies for Sizing Particles in Drilling and Completion Fluids (2004); DOI: 10.2118/87676-pa; 仅摘要; https://openalex.org/W1998657296
+- Modeling Lost Circulation Through Drilling-Induced Fractures (2017); DOI: 10.2118/187945-pa; 仅摘要; https://openalex.org/W2745506850
+- Experimental Study on the Wellbore-Cleaning Efficiency of Microhole-Horizontal-Well Drilling (2017); DOI: 10.2118/185965-pa; 仅摘要; https://openalex.org/W2624116969
+- A Comprehensive Model of High-Rate Matrix-Acid Stimulation for Long Horizontal Wells in Carbonate Reservoirs: Part I—Scaling Up Core-Level Acid Wormholing to Field Treatments (2011); DOI: 10.2118/134265-pa; 仅摘要; https://openalex.org/W2062198682
+- Factors Affecting Cleanup of Water Blocks: A Laboratory Investigation (2005); DOI: 10.2118/84216-pa; 仅摘要; https://openalex.org/W1968485711
+- Infill-Well Fracturing Optimization in Tightly Spaced Horizontal Wells (2016); DOI: 10.2118/178513-pa; 仅摘要; https://openalex.org/W2556345053
+- Geomechanics of Lost-Circulation Events and Wellbore-Strengthening Operations (2015); DOI: 10.2118/174088-pa; 仅摘要; https://openalex.org/W2034589150
+- Performance Comparison of Algorithms for Real-Time Rate-of-Penetration Optimization in Drilling Using Data-Driven Models (2018); DOI: 10.2118/191141-pa; 仅摘要; https://openalex.org/W2810145833
+- A Wellbore/Formation-Coupled Heat-Transfer Model in Deepwater Drilling and Its Application in the Prediction of Hydrate-Reservoir Dissociation (2016); DOI: 10.2118/184398-pa; 仅摘要; https://openalex.org/W2532092799
+- Effects of Boundary Conditions and Friction on Static Buckling of Pipe in a Horizontal Well (2009); DOI: 10.2118/111511-pa; 仅摘要; https://openalex.org/W2041898506
+- Real-Time Well-Integrity Monitoring Using Fiber-Optic Distributed Acoustic Sensing (2019); DOI: 10.2118/195678-pa; 仅摘要; https://openalex.org/W2948013534
+- Cryogenic Fracturing of Wellbores Under True Triaxial-Confining Stresses: Experimental Investigation (2018); DOI: 10.2118/180071-pa; 仅摘要; https://openalex.org/W2789097955
+- Closed-Loop Field Development Under Uncertainty by Use of Optimization With Sample Validation (2015); DOI: 10.2118/173219-pa; 仅摘要; https://openalex.org/W1538691674
+- Particulate Invasion From Drilling Fluids (2000); DOI: 10.2118/67853-pa; 仅摘要; https://openalex.org/W2033601301
+- Water-Based Drilling Fluid Containing Bentonite/Poly(Sodium 4-Styrenesulfonate) Composite for Ultrahigh-Temperature Ultradeep Drilling and Its Field Performance (2020); DOI: 10.2118/199362-pa; 仅摘要; https://openalex.org/W2999856212
+- Size-Exclusion Colloidal Transport in Porous Media--Stochastic Modeling and Experimental Study (2013); DOI: 10.2118/162941-pa; 仅摘要; https://openalex.org/W2098521828
+- Analyses of Wellbore Instability in Drilling Through Chemically Active Fractured-Rock Formations (2009); DOI: 10.2118/105383-pa; 仅摘要; https://openalex.org/W2012555316
+- A Semianalytical Method for Two-Phase Flowback Rate-Transient Analysis in Shale Gas Reservoirs (2020); DOI: 10.2118/201225-pa; 仅摘要; https://openalex.org/W3037614023
+- Machine Learning for Deepwater Drilling: Gas-Kick-Alarm Classification Using Pilot-Scale Rig Data with Combined Surface-Riser-Downhole Monitoring (2021); DOI: 10.2118/205365-pa; 仅摘要; https://openalex.org/W3136700045
+- Microseismic Magnitudes andb-Values for Delineating Hydraulic Fracturing and Depletion (2017); DOI: 10.2118/186096-pa; 仅摘要; https://openalex.org/W2694180464
+- Investigation of Biodiesel-Based Drilling Fluid, Part 1: Biodiesel Evaluation, Invert-Emulsion Properties, and Development of a Novel Emulsifier Package (2016); DOI: 10.2118/180918-pa; 仅摘要; https://openalex.org/W2341851173
+- CO2 Injection Performance in the Fruitland Coal Fairway, San Juan Basin: Results of a Field Pilot (2011); DOI: 10.2118/127073-pa; 仅摘要; https://openalex.org/W1991329478

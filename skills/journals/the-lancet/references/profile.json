@@ -1,0 +1,31 @@
+{
+  "article_count": 53,
+  "abstract_sample_count": 53,
+  "full_text_count": 0,
+  "abstract_median_words": 558,
+  "sentence_median_words": 25,
+  "abstract_first_person_fraction": 1.0,
+  "abstract_numeric_fraction": 1.0,
+  "methods": "Whitespace word count; sentence split after .!? before uppercase; first-person and digit occurrence per abstract. These are descriptive corpus statistics, not author-guide requirements.",
+  "scope": "摘要语料统计；有全文时可通过原文文件另行核查章节。不得将摘要统计外推成正文硬性要求。",
+  "short_opening_examples": [
+    {
+      "doi": "10.1016/s0140-6736(24)01867-1",
+      "quote": "BACKGROUND: Antimicrobial resistance (AMR) poses an important global health challenge in the 21st century. A previous study has quantified the global and …",
+      "source_url": "https://openalex.org/W4402557213",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1016/s0140-6736(24)00933-4",
+      "quote": "BACKGROUND: Understanding the health consequences associated with exposure to risk factors is necessary to inform public health policy and practice. To systematically …",
+      "source_url": "https://openalex.org/W4396946025",
+      "section": "abstract"
+    },
+    {
+      "doi": "10.1016/s0140-6736(24)00757-8",
+      "quote": "BACKGROUND: Detailed, comprehensive, and timely reporting on population health by underlying causes of disability and premature death is crucial to understanding and …",
+      "source_url": "https://openalex.org/W4394894573",
+      "section": "abstract"
+    }
+  ]
+}

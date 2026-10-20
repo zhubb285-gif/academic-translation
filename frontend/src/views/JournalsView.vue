@@ -6,7 +6,7 @@
     </div>
 
     <header class="journal-heading">
-      <div><p class="eyebrow">为你的下一篇论文</p><h1>找到你的目标期刊。</h1><p class="heading-desc">从写作风格到投稿要求，让每一次表达更有方向。</p></div>
+      <div><p class="eyebrow">为你的下一篇论文</p><h1><TextType text="找到你的目标期刊。" :typing-speed="75" :pause-duration="4000" :deleting-speed="50" type-effect="fade" cursor-style="bar" :cursor-glide="true" :show-cursor="true" /></h1><p class="heading-desc">从写作风格到投稿要求，让每一次表达更有方向。</p></div>
       <el-button round type="primary" @click="openCreate"><el-icon><Plus /></el-icon>添加期刊</el-button>
     </header>
 
@@ -22,7 +22,7 @@
       <section v-if="selectedJournal" class="journal-details" aria-label="当前期刊规范">
         <div class="details-heading">
           <div><p class="eyebrow">投稿之前，先了解它</p><h2>{{ selectedJournal.name }}</h2><p class="journal-domain">{{ selectedJournal.domain || '学科领域待补充' }}</p></div>
-          <div class="details-actions"><a v-if="selectedJournal.author_guide_url" class="guide-link" :href="selectedJournal.author_guide_url" target="_blank" rel="noopener noreferrer">官方作者指南 ↗</a><el-button round @click="editJournal(selectedJournal)">编辑风格规则</el-button></div>
+          <div class="details-actions"><a v-if="selectedJournal.author_guide_url" class="guide-link" :href="selectedJournal.author_guide_url" target="_blank" rel="noopener noreferrer">官方作者指南 ↗</a><el-button round type="primary" plain @click="viewSkill(selectedJournal)">查看期刊 Skill</el-button><el-button round @click="editJournal(selectedJournal)">编辑风格规则</el-button></div>
         </div>
         <div class="specs-grid">
           <div><span>英语规范</span><strong>{{ selectedJournal.english_variant === 'British' ? '英式英语' : selectedJournal.english_variant === 'American' ? '美式英语' : selectedJournal.english_variant || '未设定' }}</strong></div>
@@ -37,6 +37,8 @@
       <p class="gallery-hint">拖动封面，探索更多期刊 · 左右方向键也可切换</p>
     </template>
     <el-empty v-else :description="searchQuery ? '没有找到匹配的期刊，换个关键词试试' : '还没有期刊，添加第一本吧'" />
+
+    <JournalSkillDialog v-model="showSkill" :journal-id="skillJournal?.id ?? null" :journal-name="skillJournal?.name || ''" />
 
     <!-- 添加/编辑期刊对话框 -->
     <el-dialog v-model="showDialog" :title="editingId ? '编辑期刊' : '添加期刊'" width="680px">
@@ -132,15 +134,23 @@
 </template>
 
 <script setup lang="ts">
+import TextType from '../components/TextType.vue'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { ElMessage } from 'element-plus'
 import { Plus, Search, ArrowLeft } from '@element-plus/icons-vue'
 import { journalsApi } from '../api'
 import ConcaveJournalCarousel from '../components/ConcaveJournalCarousel.vue'
+import JournalSkillDialog from '../components/JournalSkillDialog.vue'
 import { journalCover } from '../data/journalCovers'
 
 const journals = ref<any[]>([])
 const selectedIndex = ref(0)
+const showSkill = ref(false)
+const skillJournal = ref<{ id: number; name: string } | null>(null)
+function viewSkill(journal: any) {
+  skillJournal.value = { id: journal.id, name: journal.name }
+  showSkill.value = true
+}
 const loadError = ref('')
 const coverInput = ref<HTMLInputElement>()
 const customCovers = ref<Record<string, string>>({})
@@ -288,11 +298,12 @@ onBeforeUnmount(() => clearTimeout(searchTimeout))
 .collection-toolbar :deep(.el-input__wrapper) { border-radius: 24px; background: #eaeaefaa; box-shadow: none; padding: 4px 14px; }
 .gallery-loading { display: grid; justify-items: center; align-content: center; min-height: 420px; gap: 12px; color: #86868b; }
 .journal-details { background: #fff; border: 1px solid #e7e7ec; border-radius: 24px; padding: 32px 36px 20px; margin-top: 36px; }
-.details-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 28px; }
+.details-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 28px; }
 .details-heading .eyebrow { margin-bottom: 8px; font-size: 10px; }
 .details-heading h2 { font-size: 24px; line-height: 1.3; font-weight: 600; color: #1d1d1f; letter-spacing: -.7px; margin: 0; text-wrap: balance; }
 .journal-domain { font-size: 12px; color: #86868b; margin: 10px 0 0; }
-.details-actions { display: flex; gap: 14px; align-items: center; flex-shrink: 0; }
+.details-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; max-width: 100%; }
+.details-actions .el-button + .el-button { margin-left: 0; }
 .guide-link { font-size: 12px; color: #0071e3; text-decoration: none; }
 .specs-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr 1.5fr; padding: 22px 0; border-top: 1px solid #eeeef1; border-bottom: 1px solid #eeeef1; gap: 24px; }
 .specs-grid > div { display: flex; flex-direction: column; gap: 10px; }

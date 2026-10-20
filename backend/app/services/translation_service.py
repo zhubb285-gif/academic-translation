@@ -12,6 +12,7 @@ import httpx
 
 from app.core.config import settings
 from app.core.providers import PROVIDERS, auth_headers
+from app.services.journal_library import style_instruction
 
 logger = logging.getLogger(__name__)
 
@@ -50,6 +51,10 @@ def build_translation_prompt(
         prompt_parts.append(f"")
         prompt_parts.append(f"【目标期刊】{journal_name}")
         prompt_parts.append(f"【语言规范】{english_variant} English")
+        if journal_style.get("style_skill_enabled", True):
+            instruction = style_instruction(journal_name, section)
+            if instruction:
+                prompt_parts.append(instruction)
 
         if rules:
             prompt_parts.append(f"【期刊风格要求】")

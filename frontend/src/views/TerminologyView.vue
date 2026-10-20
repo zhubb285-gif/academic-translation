@@ -6,12 +6,14 @@
     <div class="page-header flex-between mb-24">
       <div>
         <div class="page-title">🔍 术语查证</div>
-        <div class="page-desc">记录专业术语的权威信源证据，确认英文译法</div>
+        <div class="page-desc">AI 先识别疑似专业术语，再查期刊与分级信源，最终由人工核定译法</div>
       </div>
       <el-button type="primary" @click="showAddDialog = true">
         <el-icon><Plus /></el-icon> 添加术语
       </el-button>
     </div>
+
+    <TermDiscoveryPanel :project-id="id" @changed="refreshTerms" />
 
     <!-- 统计 -->
     <div class="stat-grid mb-24">
@@ -29,10 +31,27 @@
       </div>
     </div>
 
+    <details v-if="library" class="library-overview mb-24"><summary>期刊术语语料 · {{ library.total }} 篇文章 · {{ library.journals.length }} 个期刊</summary><p>{{ library.coverage_note }}</p><div class="library-journals"><span v-for="journal in library.journals" :key="journal.slug"><strong>{{ journal.name }}</strong><small>{{ journal.article_count }} 篇 · 全文 {{ journal.full_text_count }} / 仅摘要 {{ journal.abstract_count }}</small></span></div><p>“自动查证”先查上述实际文本，再查一级和二级来源。无法自动读取的来源请在检索记录中继续人工核查。</p></details>
+
     <!-- 术语列表 -->
     <div class="card">
       <el-table :data="terms" v-loading="loading" stripe>
-        <el-table-column prop="source_term" label="中文术语" width="160" />
+        <el-table-column type="expand">
+          <template #default="{ row }">
+            <div class="ai-term-origins">
+              <strong>AI 识别依据 · 疑似术语，待人工判断</strong>
+              <template v-if="row.research_summary?.ai_extraction?.length">
+                <div v-for="(origin, i) in row.research_summary.ai_extraction" :key="i" class="ai-term-origin">
+                  <p>{{ origin.filename }} · {{ origin.segment_id }} · {{ origin.provider }} / {{ origin.model }}</p>
+                  <p>{{ origin.reason }}</p><blockquote>{{ origin.context }}</blockquote>
+                </div>
+              </template>
+              <p v-else>此术语为人工添加或历史条目，没有 AI 识别记录。</p>
+              <p>识别理由和模型英文候选均不属于信源证据。普通词可点击“排除”。</p>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column label="中文术语" width="160"><template #default="{ row }"><strong>{{ row.source_term }}</strong><small v-if="row.research_summary?.ai_extraction?.length" class="ai-origin-label">AI 识别 · 展开查看原文</small></template></el-table-column>
         <el-table-column prop="domain" label="领域" width="120" />
         <el-table-column label="确认译法" width="200">
           <template #default="{ row }">
@@ -70,10 +89,11 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="220" fixed="right">
+        <el-table-column label="操作" width="250" fixed="right">
           <template #default="{ row }">
             <el-button size="small" @click="triggerAutoResearch(row)" link type="warning" :loading="researchingIds.includes(row.id)">自动查证</el-button>
             <el-button size="small" @click="openDetail(row)" link type="primary">信源与证据</el-button>
+            <el-button v-if="row.status !== 'confirmed' && row.status !== 'rejected'" size="small" @click="excludeTerm(row)" link>排除</el-button>
             <el-button size="small" @click="deleteTerm(row)" link type="danger">删除</el-button>
           </template>
         </el-table-column>
@@ -100,10 +120,11 @@
     </el-dialog>
 
     <!-- 术语详情/证据对话框 -->
-    <el-dialog v-model="showDetailDialog" :title="`权威查证与证据卡：${selectedTerm?.source_term}`" width="880px">
+    <el-dialog v-model="showDetailDialog" :title="`权威查证与证据卡：${selectedTerm?.source_term}`" width="min(1080px, calc(100vw - 24px))">
       <div v-if="selectedTerm">
         <!-- 4步查证流程流水线指示器 -->
-        <div class="workflow-steps-banner mb-16">
+        <TermEvidenceComparison v-if="selectedTerm.research_summary?.source_verification_version === 3" :term="selectedTerm" :loading="researchingIds.includes(selectedTerm.id)" @select="selectForDecision" @research="triggerAutoResearch(selectedTerm)" />
+        <div v-else class="workflow-steps-banner mb-16">
           <div class="workflow-step" :class="{ 'active': true }">
             <div class="step-num">1</div>
             <div class="step-info">
@@ -168,6 +189,34 @@
           </table>
         </div>
 
+        <!-- 确认译法快捷操作栏 -->
+        <div id="term-final-decision" class="card mb-16" style="background: #fafbfc;">
+          <div class="flex-between">
+            <strong>人工最终裁决</strong>
+            <div v-if="selectedTerm.confirmed_translation">
+              <el-tag type="success">✓ 当前已确认：{{ selectedTerm.confirmed_translation }}</el-tag>
+            </div>
+            <div v-else>
+              <el-tag type="warning">⏳ 待核定确认</el-tag>
+            </div>
+          </div>
+          <div class="flex gap-8 mt-8">
+            <el-select v-model="confirmTranslation" placeholder="从候选译法中选择或输入自定义译法" allow-create filterable style="flex:1">
+              <el-option
+                v-for="t in (selectedTerm.candidate_translations || [])"
+                :key="t"
+                :label="t"
+                :value="t"
+              />
+            </el-select>
+            <el-button type="primary" @click="doConfirm" :loading="confirming">
+              <el-icon><Check /></el-icon> 确认采用
+            </el-button>
+          </div>
+          <el-input v-model="decisionReason" type="textarea" :rows="2" class="mt-8" placeholder="裁决理由（可选）：说明所采纳的期刊语境、信源定义或两者差异" aria-label="人工裁决理由" />
+          <p class="decision-note">此按钮才会确认最终译法并供翻译使用。两侧证据中的“填入”只帮助选择候选，不会自动采纳。</p>
+        </div>
+
         <section class="source-catalog mb-16" v-loading="sourcesLoading">
           <div class="catalog-heading">
             <div>
@@ -203,11 +252,11 @@
             </article>
             <el-empty v-if="!visibleSources.length && !sourcesLoading" description="没有符合筛选条件的信源" :image-size="45" />
           </div>
-          <p class="catalog-note">自动读取原文目前接入术语在线；其余链接供打开页面核对，列出入口不表示已检索到证据。既有清单 40 类，另补充 9 类学科信源。</p>
+          <p class="catalog-note">自动查证会尝试读取已接通的站内搜索与详情页，并使用术语在线和 OSTI 公开接口。网站登录、验证或动态页面可能需要人工核查；入口链接本身不是证据。</p>
         </section>
 
         <!-- 权威判断证据卡 (Evidence Cards) -->
-        <div class="cards-section mb-16">
+        <div v-if="selectedTerm.research_summary?.source_verification_version !== 3" class="cards-section mb-16">
           <div class="flex-between mb-12">
             <div>
               <strong style="font-size: 15px;">📋 权威判断证据卡 (Evidence Cards)</strong>
@@ -288,31 +337,7 @@
           <el-empty v-else description="暂无判断证据卡，请点击右上角「重新查证」" :image-size="60" />
         </div>
 
-        <!-- 确认译法快捷操作栏 -->
-        <div class="card mb-16" style="background: #fafbfc;">
-          <div class="flex-between">
-            <strong>🎯 人工最终核定译法</strong>
-            <div v-if="selectedTerm.confirmed_translation">
-              <el-tag type="success">✓ 当前已确认：{{ selectedTerm.confirmed_translation }}</el-tag>
-            </div>
-            <div v-else>
-              <el-tag type="warning">⏳ 待核定确认</el-tag>
-            </div>
-          </div>
-          <div class="flex gap-8 mt-8">
-            <el-select v-model="confirmTranslation" placeholder="从候选译法中选择或输入自定义译法" allow-create filterable style="flex:1">
-              <el-option
-                v-for="t in (selectedTerm.candidate_translations || [])"
-                :key="t"
-                :label="t"
-                :value="t"
-              />
-            </el-select>
-            <el-button type="primary" @click="doConfirm" :loading="confirming">
-              <el-icon><Check /></el-icon> 确认采用
-            </el-button>
-          </div>
-        </div>
+        <el-collapse v-if="selectedTerm.research_summary?.human_decisions?.length" class="mb-16"><el-collapse-item title="查看人工裁决历史" name="decisions"><article v-for="(decision, index) in selectedTerm.research_summary.human_decisions" :key="index" class="decision-history"><strong>{{ decision.translation }}</strong><p>{{ decision.reason || '未填写理由' }}</p><small>{{ decision.decided_at }} · 裁决时保留 {{ decision.evidence_snapshot?.length || 0 }} 条证据快照</small></article></el-collapse-item></el-collapse>
 
         <!-- 原始信源证据明细表与手动添加 -->
         <el-collapse class="mb-16">
@@ -406,12 +431,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Plus, Check } from '@element-plus/icons-vue'
 import ProjectHeaderNav from '../components/ProjectHeaderNav.vue'
-import { terminologyApi } from '../api'
+import { terminologyApi, journalsApi } from '../api'
+import TermEvidenceComparison from '../components/TermEvidenceComparison.vue'
+import TermDiscoveryPanel from '../components/TermDiscoveryPanel.vue'
 
 const route = useRoute()
 const id = computed(() => Number(route.params.id))
@@ -423,6 +450,9 @@ const showDetailDialog = ref(false)
 const selectedTerm = ref<any>(null)
 const confirmTranslation = ref('')
 const confirming = ref(false)
+const decisionReason = ref('')
+const library = ref<any>(null)
+const selectForDecision = async (value: string) => { confirmTranslation.value = value; await nextTick(); document.getElementById('term-final-decision')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'center' }); ElMessage.info('已填入候选译法，请核对并点击「确认采用」') }
 const showEvidenceForm = ref(false)
 const addingEvidence = ref(false)
 const sources = ref<any[]>([])
@@ -497,7 +527,9 @@ const triggerAutoResearch = async (term: any) => {
           await loadSources()
         }
       }
-      if (res.term.research_summary?.is_exact) {
+      if (res.term.research_summary?.source_verification_version === 3) {
+        ElMessage.success(`查证完成：期刊 ${res.term.journal_cards?.length || 0} 条、信源 ${res.term.authority_cards?.length || 0} 条，请对照后人工裁决`)
+      } else if (res.term.research_summary?.is_exact) {
         ElMessage.success(`已找到「${term.source_term}」的官方词条，信源链接会打开该词的检索结果`)
       } else {
         ElMessage.warning('尚未取得完整词条的官方证据，已提供带词检索入口')
@@ -519,6 +551,23 @@ const loadTerms = async () => {
   } finally {
     loading.value = false
   }
+}
+
+const refreshTerms = async () => {
+  try {
+    terms.value = await terminologyApi.list(id.value)
+    if (showDetailDialog.value && selectedTerm.value) {
+      const updated = terms.value.find(term => term.id === selectedTerm.value.id)
+      if (updated) selectedTerm.value = updated
+    }
+  } catch { /* Progress panel handles connection errors. */ }
+}
+const excludeTerm = async (term: any) => {
+  try {
+    await terminologyApi.update(term.id, { status: 'rejected' })
+    await refreshTerms()
+    ElMessage.success('已排除，后续翻译不会采用此词的候选译法')
+  } catch (e: any) { ElMessage.error(e.message) }
 }
 
 const addTerm = async () => {
@@ -544,6 +593,7 @@ const addTerm = async () => {
 
 const openDetail = async (term: any) => {
   selectedTerm.value = await terminologyApi.get(term.id) as any
+  decisionReason.value = ''
   confirmTranslation.value = selectedTerm.value.confirmed_translation || (selectedTerm.value.candidate_translations?.[0] || '')
   searchEnglish.value = confirmTranslation.value
   sourceTier.value = '1'
@@ -566,7 +616,9 @@ const doConfirm = async () => {
   }
   confirming.value = true
   try {
-    await terminologyApi.confirm(selectedTerm.value.id, confirmTranslation.value)
+    await terminologyApi.confirm(selectedTerm.value.id, confirmTranslation.value, decisionReason.value)
+    selectedTerm.value = await terminologyApi.get(selectedTerm.value.id)
+    decisionReason.value = ''
     selectedTerm.value.confirmed_translation = confirmTranslation.value
     selectedTerm.value.status = 'confirmed'
     // 更新列表
@@ -630,10 +682,22 @@ const deleteTerm = async (term: any) => {
   }
 }
 
-onMounted(loadTerms)
+onMounted(async () => {
+  loadTerms()
+  try { library.value = await journalsApi.library() } catch (e: any) { ElMessage.error('期刊语料概况加载失败：' + e.message) }
+})
 </script>
 
 <style scoped>
+.ai-origin-label{display:block;font-size:10px;color:#626269;margin-top:5px}.ai-term-origins{padding:16px 28px;max-width:900px;font-size:12px;line-height:1.8}.ai-term-origins>strong{font-weight:550}.ai-term-origins p{color:#626269}.ai-term-origin{border-bottom:1px solid #e5e5e7;padding:8px 0}.ai-term-origin blockquote{margin:8px 0;background:#f5f5f7;border-left:2px solid #a1a1a6;padding:12px;color:#1d1d1f}
+.library-overview { border:1px solid #e5e5e7; background:#fff; padding:20px 24px; border-radius:18px; }
+.library-overview summary { cursor:pointer; font-size:14px; font-weight:600; }
+.library-overview p,.decision-note { color:#626269; font-size:12px; line-height:1.8; }
+.library-journals { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:18px 0; }
+.library-journals > span { display:flex; flex-direction:column; gap:8px; padding:14px; border-radius:12px; background:#f5f5f7; }
+.library-journals strong { font-size:12px; font-weight:550; line-height:1.6; }.library-journals small,.decision-history small { color:#626269; font-size:11px; }
+.decision-history { padding:14px 0; border-bottom:1px solid #e5e5e7; }.decision-history p { font-size:12px; line-height:1.7; }
+
 .source-catalog {
   padding: 20px;
   border: 1px solid #e5e5e7;
